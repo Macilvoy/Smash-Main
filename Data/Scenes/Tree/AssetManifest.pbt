@@ -44,15 +44,6 @@ Assets {
   }
 }
 Assets {
-  Id: 8339508141605131761
-  Name: "Animated Neon Sign - Battery"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "fxsm_NeonSign_Battery"
-  }
-}
-Assets {
   Id: 7887238662729938253
   Name: "Sky Dome"
   PlatformAssetType: 6
