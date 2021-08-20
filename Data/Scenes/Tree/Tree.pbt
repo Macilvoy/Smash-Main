@@ -14,6 +14,7 @@ Objects {
       Z: 1
     }
   }
+  ChildIds: 8311921829353502925
   ChildIds: 10639199397065011756
   ChildIds: 4864311526003787090
   UnregisteredParameters {
@@ -92,5 +93,37 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "PeterBlood"
+  }
+}
+Objects {
+  Id: 8311921829353502925
+  Name: "Base Settings"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Base Settings"
   }
 }
