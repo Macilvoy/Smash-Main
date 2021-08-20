@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15876293496146170052
+  Name: "Animated Neon Sign - Battery"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "fxsm_NeonSign_Battery"
+  }
+}
+Assets {
   Id: 13247307285135434486
   Name: "Large Airburst Explosion VFX"
   PlatformAssetType: 8
