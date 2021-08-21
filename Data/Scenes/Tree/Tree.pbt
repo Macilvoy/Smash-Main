@@ -416,33 +416,61 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 12344222322283835995
+<<<<<<< Updated upstream
+=======
+  ChildIds: 10658161488495268672
+>>>>>>> Stashed changes
   ChildIds: 5391947313709004820
   ChildIds: 18193857817775413690
   ChildIds: 9072097935364931107
   ChildIds: 1462070141713451763
   UnregisteredParameters {
     Overrides {
+<<<<<<< Updated upstream
       Name: "cs:LFastHit"
+=======
+      Name: "cs:LFastHit_Anim"
+>>>>>>> Stashed changes
       ObjectReference {
         SelfId: 18193857817775413690
       }
     }
     Overrides {
+<<<<<<< Updated upstream
       Name: "cs:RFastHit"
+=======
+      Name: "cs:RFastHit_Anim"
+>>>>>>> Stashed changes
       ObjectReference {
         SelfId: 9072097935364931107
       }
     }
     Overrides {
+<<<<<<< Updated upstream
       Name: "cs:ForwardHit"
+=======
+      Name: "cs:StompHit_Anim"
+      ObjectReference {
+        SelfId: 1462070141713451763
+      }
+    }
+    Overrides {
+      Name: "cs:ForwardHit_Skill"
+>>>>>>> Stashed changes
       ObjectReference {
         SelfId: 5391947313709004820
       }
     }
     Overrides {
+<<<<<<< Updated upstream
       Name: "cs:StompHit"
       ObjectReference {
         SelfId: 1462070141713451763
+=======
+      Name: "cs:LFastHit_Skill"
+      ObjectReference {
+        SelfId: 10658161488495268672
+>>>>>>> Stashed changes
       }
     }
   }
@@ -468,7 +496,11 @@ Objects {
 }
 Objects {
   Id: 1462070141713451763
+<<<<<<< Updated upstream
   Name: "StompHit"
+=======
+  Name: "StompHit_Anim"
+>>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -531,7 +563,11 @@ Objects {
 }
 Objects {
   Id: 9072097935364931107
+<<<<<<< Updated upstream
   Name: "RFastHit"
+=======
+  Name: "RFastHit_Anim"
+>>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -594,7 +630,11 @@ Objects {
 }
 Objects {
   Id: 18193857817775413690
+<<<<<<< Updated upstream
   Name: "LFastHit"
+=======
+  Name: "LFastHit_Anim"
+>>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -657,7 +697,11 @@ Objects {
 }
 Objects {
   Id: 5391947313709004820
+<<<<<<< Updated upstream
   Name: "ForwardHit"
+=======
+  Name: "ForwardHit_Skill"
+>>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -732,6 +776,80 @@ Objects {
   }
 }
 Objects {
+<<<<<<< Updated upstream
+=======
+  Id: 10658161488495268672
+  Name: "LFastHit_Skill"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14909653331074285679
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Ability {
+    IsEnabled: true
+    CastPhaseSettings {
+      Duration: 0.01
+      CanMove: true
+      CanJump: true
+      CanRotate: true
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    ExecutePhaseSettings {
+      Duration: 0.1
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    RecoveryPhaseSettings {
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    CooldownPhaseSettings {
+      Duration: 0.5
+      CanMove: true
+      CanJump: true
+      CanRotate: true
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    Animation: "unarmed_punch_left"
+    KeyBinding_v2 {
+      Value: "mc:egameaction:primaryaction"
+    }
+  }
+}
+Objects {
+>>>>>>> Stashed changes
   Id: 12344222322283835995
   Name: "BoxTrigger"
   Transform {

@@ -10,7 +10,7 @@ end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
-Task.Wait(5)
+Task.Wait(15)
 
 Game.StartRound()
 print("started")
