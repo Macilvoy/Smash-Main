@@ -416,39 +416,25 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 12344222322283835995
-<<<<<<< Updated upstream
-=======
   ChildIds: 10658161488495268672
->>>>>>> Stashed changes
   ChildIds: 5391947313709004820
   ChildIds: 18193857817775413690
   ChildIds: 9072097935364931107
   ChildIds: 1462070141713451763
   UnregisteredParameters {
     Overrides {
-<<<<<<< Updated upstream
-      Name: "cs:LFastHit"
-=======
       Name: "cs:LFastHit_Anim"
->>>>>>> Stashed changes
       ObjectReference {
         SelfId: 18193857817775413690
       }
     }
     Overrides {
-<<<<<<< Updated upstream
-      Name: "cs:RFastHit"
-=======
       Name: "cs:RFastHit_Anim"
->>>>>>> Stashed changes
       ObjectReference {
         SelfId: 9072097935364931107
       }
     }
     Overrides {
-<<<<<<< Updated upstream
-      Name: "cs:ForwardHit"
-=======
       Name: "cs:StompHit_Anim"
       ObjectReference {
         SelfId: 1462070141713451763
@@ -456,21 +442,14 @@ Objects {
     }
     Overrides {
       Name: "cs:ForwardHit_Skill"
->>>>>>> Stashed changes
       ObjectReference {
         SelfId: 5391947313709004820
       }
     }
     Overrides {
-<<<<<<< Updated upstream
-      Name: "cs:StompHit"
-      ObjectReference {
-        SelfId: 1462070141713451763
-=======
       Name: "cs:LFastHit_Skill"
       ObjectReference {
         SelfId: 10658161488495268672
->>>>>>> Stashed changes
       }
     }
   }
@@ -496,11 +475,7 @@ Objects {
 }
 Objects {
   Id: 1462070141713451763
-<<<<<<< Updated upstream
-  Name: "StompHit"
-=======
   Name: "StompHit_Anim"
->>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -563,11 +538,7 @@ Objects {
 }
 Objects {
   Id: 9072097935364931107
-<<<<<<< Updated upstream
-  Name: "RFastHit"
-=======
   Name: "RFastHit_Anim"
->>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -630,11 +601,7 @@ Objects {
 }
 Objects {
   Id: 18193857817775413690
-<<<<<<< Updated upstream
-  Name: "LFastHit"
-=======
   Name: "LFastHit_Anim"
->>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -697,11 +664,7 @@ Objects {
 }
 Objects {
   Id: 5391947313709004820
-<<<<<<< Updated upstream
-  Name: "ForwardHit"
-=======
   Name: "ForwardHit_Skill"
->>>>>>> Stashed changes
   Transform {
     Location {
     }
@@ -776,8 +739,6 @@ Objects {
   }
 }
 Objects {
-<<<<<<< Updated upstream
-=======
   Id: 10658161488495268672
   Name: "LFastHit_Skill"
   Transform {
@@ -849,7 +810,6 @@ Objects {
   }
 }
 Objects {
->>>>>>> Stashed changes
   Id: 12344222322283835995
   Name: "BoxTrigger"
   Transform {
