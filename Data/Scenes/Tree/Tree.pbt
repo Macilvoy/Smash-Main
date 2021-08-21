@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ChildIds: 2784838782614239969
+  ChildIds: 7367735074338159388
   ChildIds: 16813558807825262224
   ChildIds: 4595972765270393093
   ChildIds: 14713340454944924967
@@ -29,7 +29,7 @@ Objects {
   ChildIds: 14909653331074285679
   ChildIds: 8138271727624978735
   ChildIds: 1777115979542811113
-  ChildIds: 7367735074338159388
+  ChildIds: 2784838782614239969
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -45,12 +45,15 @@ Objects {
   }
 }
 Objects {
-  Id: 7367735074338159388
-  Name: "Game Settings"
+  Id: 2784838782614239969
+  Name: "Spawn Point"
   Transform {
     Location {
+      Y: 450
+      Z: 115
     }
     Rotation {
+      Yaw: 89.9999924
     }
     Scale {
       X: 1
@@ -59,6 +62,8 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -68,84 +73,12 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Settings {
-    IsDefault: true
-    GameSettings {
-      RagdollOnDeath: true
-      EnablePlayerStorage: true
-      ChatMode {
-        Value: "mc:echatmode:teamandall"
-      }
-      ChatSettings {
-        ChatMode {
-        }
-        ChatPosition {
-          X: 40
-        }
-        ChatSize {
-          X: 450
-          Y: 400
-        }
-        ChatHorizontalAlignment {
-          Value: "mc:ecorehorizontalalign:left"
-        }
-        ChatVerticalAlignment {
-          Value: "mc:ecorehorizontalalign:center"
-        }
-      }
-      PhysicsSettings {
-        MinContactOffset: 2
-        MaxContactOffset: 8
-      }
-      RelevanceSettings {
-        key: "decal"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      RelevanceSettings {
-        key: "vfx"
-        value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
-        }
-      }
-      VoiceChatSettings {
-        VoiceChatMode {
-          Value: "mc:evoicechatmode:all"
-        }
-        VoiceChannelType {
-          Value: "mc:evoicechanneltype:normal"
-        }
-        AudibleDistance: 6000
-        ConversationalDistance: 1500
-        AudioFadeModel {
-          Value: "mc:evoiceaudiofademodel:inverse"
-        }
-        AudioFadeIntensityByDistance: 1
-        VoiceChatPosition {
-          X: -40
-          Y: 40
-        }
-        VoiceChatHorizontalAlignment {
-          Value: "mc:ecorehorizontalalign:right"
-        }
-        VoiceChatVerticalAlignment {
-          Value: "mc:ecoreverticalalign:top"
-        }
-        VoiceChatEntryHorizontalFlow {
-          Value: "mc:ecorehorizontalflow:righttoleft"
-        }
-        VoiceChatEntryVerticalFlow {
-          Value: "mc:ecoreverticalflow:toptobottom"
-        }
-      }
-      PlayerInteractDistance: 500
-      PlayerInteractAngleDeg: 50
-    }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
   }
 }
 Objects {
@@ -483,33 +416,40 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 12344222322283835995
+  ChildIds: 10658161488495268672
   ChildIds: 5391947313709004820
   ChildIds: 18193857817775413690
   ChildIds: 9072097935364931107
   ChildIds: 1462070141713451763
   UnregisteredParameters {
     Overrides {
-      Name: "cs:LFastHit"
+      Name: "cs:LFastHit_Anim"
       ObjectReference {
         SelfId: 18193857817775413690
       }
     }
     Overrides {
-      Name: "cs:RFastHit"
+      Name: "cs:RFastHit_Anim"
       ObjectReference {
         SelfId: 9072097935364931107
       }
     }
     Overrides {
-      Name: "cs:ForwardHit"
+      Name: "cs:StompHit_Anim"
+      ObjectReference {
+        SelfId: 1462070141713451763
+      }
+    }
+    Overrides {
+      Name: "cs:ForwardHit_Skill"
       ObjectReference {
         SelfId: 5391947313709004820
       }
     }
     Overrides {
-      Name: "cs:StompHit"
+      Name: "cs:LFastHit_Skill"
       ObjectReference {
-        SelfId: 1462070141713451763
+        SelfId: 10658161488495268672
       }
     }
   }
@@ -535,7 +475,7 @@ Objects {
 }
 Objects {
   Id: 1462070141713451763
-  Name: "StompHit"
+  Name: "StompHit_Anim"
   Transform {
     Location {
     }
@@ -598,7 +538,7 @@ Objects {
 }
 Objects {
   Id: 9072097935364931107
-  Name: "RFastHit"
+  Name: "RFastHit_Anim"
   Transform {
     Location {
     }
@@ -661,7 +601,7 @@ Objects {
 }
 Objects {
   Id: 18193857817775413690
-  Name: "LFastHit"
+  Name: "LFastHit_Anim"
   Transform {
     Location {
     }
@@ -724,7 +664,7 @@ Objects {
 }
 Objects {
   Id: 5391947313709004820
-  Name: "ForwardHit"
+  Name: "ForwardHit_Skill"
   Transform {
     Location {
     }
@@ -793,6 +733,77 @@ Objects {
       }
     }
     Animation: "unarmed_shout"
+    KeyBinding_v2 {
+      Value: "mc:egameaction:primaryaction"
+    }
+  }
+}
+Objects {
+  Id: 10658161488495268672
+  Name: "LFastHit_Skill"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14909653331074285679
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Ability {
+    IsEnabled: true
+    CastPhaseSettings {
+      Duration: 0.01
+      CanMove: true
+      CanJump: true
+      CanRotate: true
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    ExecutePhaseSettings {
+      Duration: 0.1
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    RecoveryPhaseSettings {
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    CooldownPhaseSettings {
+      Duration: 0.5
+      CanMove: true
+      CanJump: true
+      CanRotate: true
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    Animation: "unarmed_punch_left"
     KeyBinding_v2 {
       Value: "mc:egameaction:primaryaction"
     }
@@ -1098,7 +1109,7 @@ Objects {
       Z: 26.3636169
     }
     Rotation {
-      Yaw: -89.9999847
+      Yaw: -90
     }
     Scale {
       X: 1
@@ -1709,10 +1720,6 @@ Objects {
   Id: 14713340454944924967
   Name: "Third Person Camera Settings"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -1885,7 +1892,7 @@ Objects {
       Z: 115
     }
     Rotation {
-      Yaw: 89.9999847
+      Yaw: 90
     }
     Scale {
       X: 1
@@ -1914,15 +1921,12 @@ Objects {
   }
 }
 Objects {
-  Id: 2784838782614239969
-  Name: "Spawn Point"
+  Id: 7367735074338159388
+  Name: "Game Settings"
   Transform {
     Location {
-      Y: 450
-      Z: 115
     }
     Rotation {
-      Yaw: 89.9999771
     }
     Scale {
       X: 1
@@ -1931,8 +1935,6 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  UnregisteredParameters {
-  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1942,11 +1944,83 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  PlayerSpawnPoint {
-    TeamInt: 1
-    PlayerScaleMultiplier: 1
+  Settings {
+    IsDefault: true
+    GameSettings {
+      RagdollOnDeath: true
+      EnablePlayerStorage: true
+      ChatMode {
+        Value: "mc:echatmode:teamandall"
+      }
+      ChatSettings {
+        ChatMode {
+        }
+        ChatPosition {
+          X: 40
+        }
+        ChatSize {
+          X: 450
+          Y: 400
+        }
+        ChatHorizontalAlignment {
+          Value: "mc:ecorehorizontalalign:left"
+        }
+        ChatVerticalAlignment {
+          Value: "mc:ecorehorizontalalign:center"
+        }
+      }
+      PhysicsSettings {
+        MinContactOffset: 2
+        MaxContactOffset: 8
+      }
+      RelevanceSettings {
+        key: "decal"
+        value {
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      RelevanceSettings {
+        key: "vfx"
+        value {
+          LowDistance: 4500
+          MediumDistance: 7000
+          HighDistance: 9000
+        }
+      }
+      VoiceChatSettings {
+        VoiceChatMode {
+          Value: "mc:evoicechatmode:all"
+        }
+        VoiceChannelType {
+          Value: "mc:evoicechanneltype:normal"
+        }
+        AudibleDistance: 6000
+        ConversationalDistance: 1500
+        AudioFadeModel {
+          Value: "mc:evoiceaudiofademodel:inverse"
+        }
+        AudioFadeIntensityByDistance: 1
+        VoiceChatPosition {
+          X: -40
+          Y: 40
+        }
+        VoiceChatHorizontalAlignment {
+          Value: "mc:ecorehorizontalalign:right"
+        }
+        VoiceChatVerticalAlignment {
+          Value: "mc:ecoreverticalalign:top"
+        }
+        VoiceChatEntryHorizontalFlow {
+          Value: "mc:ecorehorizontalflow:righttoleft"
+        }
+        VoiceChatEntryVerticalFlow {
+          Value: "mc:ecoreverticalflow:toptobottom"
+        }
+      }
+      PlayerInteractDistance: 500
+      PlayerInteractAngleDeg: 50
+    }
   }
 }
