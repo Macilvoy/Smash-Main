@@ -1,11 +1,363 @@
 Name: "Macilvoy"
 RootId: 1602072049588011465
 Objects {
+  Id: 13602796716702732314
+  Name: "Humanoid 1 Rig"
+  Transform {
+    Location {
+      X: -141.062256
+      Z: -2202.53589
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1602072049588011465
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 15006897881222808420
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    AnimatedMesh {
+      AnimationStance: "unarmed_idle_relaxed"
+      AnimationStancePlaybackRate: 1
+      AnimationStanceShouldLoop: true
+      AnimationPlaybackRateMultiplier: 1
+      PlayOnStartAnimation {
+        PlaybackRate: 1
+      }
+      SkinnedMeshes {
+        Id: 13225800027566452361
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+      SkinnedMeshes {
+        Id: 841534158063459245
+      }
+    }
+  }
+}
+Objects {
+  Id: 4666894224403037416
+  Name: "Animation System"
+  Transform {
+    Location {
+      X: -5.04687691
+      Y: -2.96944523
+      Z: -2194.47949
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1602072049588011465
+  ChildIds: 7939623376905608272
+  ChildIds: 2713776681023753195
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Equipment {
+    SocketName: "pelvis"
+    PickupTrigger {
+      SelfId: 7939623376905608272
+    }
+  }
+}
+Objects {
+  Id: 2713776681023753195
+  Name: "ClientContext"
+  Transform {
+    Location {
+      X: 0.862669
+      Y: 15.3856945
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4666894224403037416
+  ChildIds: 17688002385660466956
+  ChildIds: 6373807290214689099
+  ChildIds: 11877637052835874034
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 11877637052835874034
+  Name: "Anchor"
+  Transform {
+    Location {
+      X: -21.3121319
+      Y: -50.1259766
+      Z: 77.9331055
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2713776681023753195
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Anchor"
+  }
+}
+Objects {
+  Id: 6373807290214689099
+  Name: "Animations"
+  Transform {
+    Location {
+      X: -15.1686707
+      Z: 8.91918945
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2713776681023753195
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Animations"
+  }
+}
+Objects {
+  Id: 17688002385660466956
+  Name: "IK"
+  Transform {
+    Location {
+      X: -21.31213
+      Y: -50.1259766
+      Z: 2307.53589
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2713776681023753195
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:LHand"
+      ObjectReference {
+        SelfId: 10980012678618695258
+      }
+    }
+    Overrides {
+      Name: "cs:RHand"
+      ObjectReference {
+        SelfId: 10427009009424736518
+      }
+    }
+    Overrides {
+      Name: "cs:Pelvis"
+      ObjectReference {
+        SelfId: 9164438670732237574
+      }
+    }
+    Overrides {
+      Name: "cs:LFoot"
+      ObjectReference {
+        SelfId: 5513839526735590491
+      }
+    }
+    Overrides {
+      Name: "cs:RFoot"
+      ObjectReference {
+        SelfId: 3110942395288351413
+      }
+    }
+    Overrides {
+      Name: "cs:LLegKeys"
+      ObjectReference {
+        SelfId: 12362994884583572714
+      }
+    }
+    Overrides {
+      Name: "cs:RLegKeys"
+      ObjectReference {
+        SelfId: 7994157900045962543
+      }
+    }
+    Overrides {
+      Name: "cs:RHandKeys"
+      ObjectReference {
+        SelfId: 4436632536826715532
+      }
+    }
+    Overrides {
+      Name: "cs:LHandKeys"
+      ObjectReference {
+        SelfId: 12522352281210522063
+      }
+    }
+    Overrides {
+      Name: "cs:PelvisKeys"
+      ObjectReference {
+        SelfId: 5873366391219662052
+      }
+    }
+    Overrides {
+      Name: "cs:Animations"
+      ObjectReference {
+        SelfId: 6373807290214689099
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 18215791265265690889
+    }
+  }
+}
+Objects {
+  Id: 7939623376905608272
+  Name: "Equip Trigger"
+  Transform {
+    Location {
+      X: -2.94620514
+      Y: -1.67046261
+      Z: 5.70141602
+    }
+    Rotation {
+      Yaw: 90
+    }
+    Scale {
+      X: 0.159397885
+      Y: 0.159397885
+      Z: 0.159397885
+    }
+  }
+  ParentId: 4666894224403037416
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 17901890061001034731
   Name: "Default Floor"
   Transform {
     Location {
-      Z: -2357.53638
+      Z: -2357.53589
     }
     Rotation {
     }
