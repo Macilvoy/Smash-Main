@@ -24,7 +24,7 @@ for a=1,5 do
 end
 local PlayerState={}
 for a=1,5 do
-	PlayerState[a]={}	--0-BreakHitState / 1-BreakHitTime
+	PlayerState[a]={}	--0-BreakHitState / 1-BreakHitTime / 2-BasicDownHit state
 end
 
 function Stun(player)
@@ -140,6 +140,42 @@ function HeavyHitOverlap(theTrigger)
 end
 
 --===========================================================AllHitActions===================================================
+---------------------------------------------------------BasicDownHit-----------------------------------------------------
+function BasicDownHit(player,direction)
+	local equips=player:GetEquipment()
+
+	for _,obj in pairs(equips) do
+		if obj.name=="ANIMS" then
+			for a=1,5 do
+    			if KeyState[a][0]==player.name then
+    				MyLocalID=a
+    			end
+    		end
+			HitReset(player.name)	--	|Check for hit reset|	--
+			PlayerState[MyLocalID][2]=true
+			Stun(player)
+			player:AddImpulse(directionVector3[direction]*4)
+			obj:GetCustomProperty("StompHit_Anim"):WaitForObject():Activate()
+			trigger=World.SpawnAsset(HeavyHitTrigger)
+			trigger:SetNetworkedCustomProperty("Owner",player.name)
+			trigger:SetNetworkedCustomProperty("Direction",direction)
+			trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
+			trigger:AttachToPlayer(player,"upper_spine")
+			trigger:SetWorldPosition(player:GetWorldPosition())
+			if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(1,1,4)) end
+			while player.isJumping and Object.IsValid(trigger) do
+    			if PlayerState[MyLocalID][2]==false or PlayerState[MyLocalID][0] then
+    				break
+    			else
+    				Task.Wait(0.05)
+    			end
+			end
+			--player:ResetVelocity()
+			ResetMovement(player)
+			PlayerState[MyLocalID][2]=false
+		end
+	end
+end
 ---------------------------------------------------------BasicSideHit-----------------------------------------------------
 function BasicSideHit(player,direction)
 	local equips=player:GetEquipment()
@@ -252,6 +288,8 @@ function OnBindingPressed(player, binding)
 		        	BasicSideHit(player,5)
         		elseif KeyState[a][4] then
         			BasicSideHit(player,1)
+        		elseif KeyState[a][3] and player.isJumping and PlayerState[a][2]==false then
+        			BasicDownHit(player,7)
         		end
         		break
         	end
@@ -287,6 +325,9 @@ function OnBindingPressed(player, binding)
     	for a=1,5 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
     			KeyState[a][3]=true
+    			if KeyState[a][6] and player.isJumping and PlayerState[a][2]==false then
+        			BasicDownHit(player,7)
+        		end
         		break
         	end
         end
@@ -361,7 +402,7 @@ function OnRoundStart()
 	local players=Game.GetPlayers()
 	for _,pl in pairs(players) do
 		for a=1,5 do
-			if KeyState[a][0]==nil then KeyState[a][0]=pl.name for b=1,20 do KeyState[a][b]=false end PlayerState[a][0]=false PlayerState[a][1]=0.0 break end
+			if KeyState[a][0]==nil then KeyState[a][0]=pl.name for b=1,20 do KeyState[a][b]=false end PlayerState[a][0]=false PlayerState[a][1]=0.0 PlayerState[a][2]=false break end
 		end
 	end
 end
