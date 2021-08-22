@@ -12,23 +12,25 @@ function Tick()
 	Dist=nil
 	players=Game.GetPlayers()
 	speed=nil
-	if players[1]~=nil then
+	if players[1]~=nil and players[1].isDead==false then
 		Centr= players[1]:GetWorldPosition()
 	end
 	for _,player in ipairs(players) do
-		if MinY==nil or player:GetWorldPosition().y<MinY then
-			MinY=player:GetWorldPosition().y
+		if player.isDead==false then
+			if MinY==nil or player:GetWorldPosition().y<MinY then
+				MinY=player:GetWorldPosition().y
+			end
+			if MinZ==nil or player:GetWorldPosition().z<MinZ then
+				MinZ=player:GetWorldPosition().z
+			end
+			if MaxY==nil or player:GetWorldPosition().y>MaxY then
+				MaxY=player:GetWorldPosition().y
+			end
+			if MaxZ==nil or player:GetWorldPosition().y>MaxZ then
+				MaxZ=player:GetWorldPosition().z
+			end
+			Centr= (Centr+player:GetWorldPosition())/2
 		end
-		if MinZ==nil or player:GetWorldPosition().z<MinZ then
-			MinZ=player:GetWorldPosition().z
-		end
-		if MaxY==nil or player:GetWorldPosition().y>MaxY then
-			MaxY=player:GetWorldPosition().y
-		end
-		if MaxZ==nil or player:GetWorldPosition().y>MaxZ then
-			MaxZ=player:GetWorldPosition().z
-		end
-		Centr= (Centr+player:GetWorldPosition())/2
 	end
 	
 	if MinY~=nil then

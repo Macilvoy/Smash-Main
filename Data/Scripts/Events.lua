@@ -24,7 +24,7 @@ for a=1,5 do
 end
 local PlayerState={}
 for a=1,5 do
-	PlayerState[a]={}	--0-BreakHitState / 1-BreakHitTime / 2-BasicDownHit state
+	PlayerState[a]={}	--0-BreakHitState / 1-BreakHitTime / 2-BasicDownHit state / 3-BasicUpHit state / 4-BasicUpHit time
 end
 
 function Stun(player)
@@ -32,6 +32,12 @@ function Stun(player)
 	player.isCrouchEnabled=false
 	player.maxJumpCount=0
 	player:ResetVelocity()
+end
+
+function StunMovement(player)
+	player.maxWalkSpeed=0
+	player.isCrouchEnabled=false
+	player.maxJumpCount=0
 end
 
 function ResetMovement(player)
@@ -140,6 +146,42 @@ function HeavyHitOverlap(theTrigger)
 end
 
 --===========================================================AllHitActions===================================================
+---------------------------------------------------------BasicUpHit-----------------------------------------------------
+function BasicUpHit(player,direction)
+	local equips=player:GetEquipment()
+
+	for _,obj in pairs(equips) do
+		if obj.name=="ANIMS" then
+			for a=1,5 do
+    			if KeyState[a][0]==player.name then
+    				MyLocalID=a
+    			end
+    		end
+			--	|Check for hit reset|	--
+			for b=1,5 do
+			    if KeyState[b][0]==player.name and PlayerState[b][0] then
+			    	return
+				end
+			end
+			--	=====================	--
+			PlayerState[MyLocalID][3]=true
+			PlayerState[MyLocalID][4]=time()
+			StunMovement(player)
+			player:AddImpulse(directionVector3[direction]*3)
+			obj:GetCustomProperty("UpHit_Anim"):WaitForObject():Activate()
+			trigger=World.SpawnAsset(HeavyHitTrigger)
+			trigger:SetNetworkedCustomProperty("Owner",player.name)
+			trigger:SetNetworkedCustomProperty("Direction",direction)
+			trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
+			trigger:AttachToPlayer(player,"upper_spine")
+			trigger:SetWorldPosition(player:GetWorldPosition())
+			if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(1,1,4)) end
+    		Task.Wait(0.2)
+			--player:ResetVelocity()
+			ResetMovement(player)
+		end
+	end
+end
 ---------------------------------------------------------BasicDownHit-----------------------------------------------------
 function BasicDownHit(player,direction)
 	local equips=player:GetEquipment()
@@ -151,7 +193,13 @@ function BasicDownHit(player,direction)
     				MyLocalID=a
     			end
     		end
-			HitReset(player.name)	--	|Check for hit reset|	--
+			--	|Check for hit reset|	--
+			for b=1,5 do
+			    if KeyState[b][0]==player.name and PlayerState[b][0] then
+			    	return
+				end
+			end
+			--	=====================	--
 			PlayerState[MyLocalID][2]=true
 			Stun(player)
 			player:AddImpulse(directionVector3[direction]*4)
@@ -170,7 +218,7 @@ function BasicDownHit(player,direction)
     				Task.Wait(0.05)
     			end
 			end
-			--player:ResetVelocity()
+			player:ResetVelocity()
 			ResetMovement(player)
 			PlayerState[MyLocalID][2]=false
 		end
@@ -183,18 +231,24 @@ function BasicSideHit(player,direction)
 	for _,obj in pairs(equips) do
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("LFastHit_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
-				Stun(player)
-				--player:AddImpulse(directionVector3[direction]*5)
-				HitReset(player.name)	--	|Check for hit reset|	--	
+				StunMovement(player)
+				--	|Check for hit reset|	--
+				for b=1,5 do
+				    if KeyState[b][0]==player.name and PlayerState[b][0] then
+				    	return
+					end
+				end
+				--	=====================	--
 				obj:GetCustomProperty("LFastHit_Skill"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
+				trigger:AttachToPlayer(player,"upper_spine")
 				trigger:SetWorldPosition(player:GetWorldPosition())
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(3,3,1)) end				
 				Task.Wait(0.1)
-				player:ResetVelocity()
+				--player:ResetVelocity()
 				ResetMovement(player)
 			end
 		end
@@ -207,7 +261,13 @@ function HitSpree(player,direction)
 	local PrHit=false
 	for a=0,10 do
 		Task.Wait(0.1)
-		HitReset(player.name)	--	|Check for hit reset|	--
+		--	|Check for hit reset|	--
+		for b=1,5 do
+		    if KeyState[b][0]==player.name and PlayerState[b][0] then
+		    	return
+			end
+		end
+		--	=====================	--
 		for _,obj in pairs(equips) do
 			if obj.name=="ANIMS" then
 				if PrHit then
@@ -226,7 +286,13 @@ function HitSpree(player,direction)
 			end
 		end
 	end
-	HitReset(player.name)	--	|Check for hit reset|	--
+	--	|Check for hit reset|	--
+	for b=1,5 do
+	    if KeyState[b][0]==player.name and PlayerState[b][0] then
+	    	return
+		end
+	end
+	--	=====================	--
 	for _,obj in pairs(equips) do
 		if obj.name=="ANIMS" then
 			obj:GetCustomProperty("StompHit_Anim"):WaitForObject():Activate()
@@ -252,7 +318,13 @@ function ForwardHit(player,direction)
 				player:AddImpulse(directionVector3[direction]*5)
 				
 				obj:GetCustomProperty("ForwardHit_Skill"):WaitForObject():Activate()
-				HitReset(player.name)	--	|Check for hit reset|	--	
+				--	|Check for hit reset|	--
+				for b=1,5 do
+				    if KeyState[b][0]==player.name and PlayerState[b][0] then
+				    	return
+					end
+				end
+				--	=====================	--
 				trigger=World.SpawnAsset(StunTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
@@ -276,6 +348,11 @@ function Tick()
 				PlayerState[b][0]=false
 			end
 		end
+		if PlayerState[b][3] then
+			if time()>=PlayerState[b][4]+1.5 then
+				PlayerState[b][3]=false
+			end
+		end
 	end
 end
 
@@ -290,6 +367,8 @@ function OnBindingPressed(player, binding)
         			BasicSideHit(player,1)
         		elseif KeyState[a][3] and player.isJumping and PlayerState[a][2]==false then
         			BasicDownHit(player,7)
+        		elseif KeyState[a][1] and PlayerState[a][3]==false then
+        			BasicUpHit(player,3)
         		end
         		break
         	end
@@ -303,6 +382,17 @@ function OnBindingPressed(player, binding)
 		        	ForwardHit(player,5)
         		elseif KeyState[a][4] then
         			ForwardHit(player,1)
+        		end
+        		break
+        	end
+        end
+    end
+    if binding == "ability_extra_21" then
+    	for a=1,5 do
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    			KeyState[a][1]=true
+    			if KeyState[a][6] and PlayerState[a][3]==false then
+        			BasicUpHit(player,3)
         		end
         		break
         	end
@@ -364,6 +454,14 @@ function OnBindingReleased(player, binding)
         	end
         end
     end
+    if binding == "ability_extra_21" then
+    	for a=1,5 do
+    		if KeyState[a][0]==player.name then
+    			KeyState[a][1]=false
+        		break
+        	end
+        end
+    end
     if binding == "ability_extra_30" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name then
@@ -402,7 +500,7 @@ function OnRoundStart()
 	local players=Game.GetPlayers()
 	for _,pl in pairs(players) do
 		for a=1,5 do
-			if KeyState[a][0]==nil then KeyState[a][0]=pl.name for b=1,20 do KeyState[a][b]=false end PlayerState[a][0]=false PlayerState[a][1]=0.0 PlayerState[a][2]=false break end
+			if KeyState[a][0]==nil then KeyState[a][0]=pl.name for b=1,20 do KeyState[a][b]=false end PlayerState[a][0]=false PlayerState[a][1]=0.0 PlayerState[a][2]=false PlayerState[a][3]=false PlayerState[a][4]=0.0 break end
 		end
 	end
 end

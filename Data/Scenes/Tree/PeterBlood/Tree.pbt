@@ -340,6 +340,7 @@ Objects {
   ChildIds: 18193857817775413690
   ChildIds: 9072097935364931107
   ChildIds: 1462070141713451763
+  ChildIds: 9169771092384215711
   UnregisteredParameters {
     Overrides {
       Name: "cs:LFastHit_Anim"
@@ -371,6 +372,12 @@ Objects {
         SelfId: 10658161488495268672
       }
     }
+    Overrides {
+      Name: "cs:UpHit_Anim"
+      ObjectReference {
+        SelfId: 9169771092384215711
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {
@@ -389,6 +396,69 @@ Objects {
     SocketName: "root"
     PickupTrigger {
       SelfId: 12344222322283835995
+    }
+  }
+}
+Objects {
+  Id: 9169771092384215711
+  Name: "UpHit_Anim"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 14909653331074285679
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Ability {
+    IsEnabled: true
+    CastPhaseSettings {
+      Duration: 0.01
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    ExecutePhaseSettings {
+      Duration: 0.2
+      PreventOtherAbilities: true
+      IsTargetDataUpdated: true
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    RecoveryPhaseSettings {
+      Duration: 0.05
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    CooldownPhaseSettings {
+      Facing_V2 {
+        Value: "mc:eabilitysetfacing:none"
+      }
+    }
+    Animation: "unarmed_punch_right_flying_uppercut"
+    KeyBinding_v2 {
+      Value: "mc:egameaction:primaryaction"
     }
   }
 }
@@ -712,7 +782,7 @@ Objects {
       }
     }
     CooldownPhaseSettings {
-      Duration: 0.5
+      Duration: 0.2
       CanMove: true
       CanJump: true
       CanRotate: true
@@ -1025,10 +1095,10 @@ Objects {
     Location {
       X: -91.5144653
       Y: 1021.51678
-      Z: 26.3636169
+      Z: 118.557358
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: -90
     }
     Scale {
       X: 1
@@ -1063,7 +1133,7 @@ Objects {
       AnimationStanceShouldLoop: true
       AnimationPlaybackRateMultiplier: 1
       PlayOnStartAnimation {
-        Animation: "unarmed_stomp"
+        Animation: "unarmed_magic_up"
         PlaybackRate: 1
         ShouldLoop: true
       }
