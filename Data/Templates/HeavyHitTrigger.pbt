@@ -54,7 +54,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
+          Value: "mc:eindicatorvisibility:alwaysvisible"
         }
         Trigger {
           TeamSettings {
