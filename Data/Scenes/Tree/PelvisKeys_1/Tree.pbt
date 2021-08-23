@@ -1,7 +1,7 @@
-Name: "PelvisKeys"
-RootId: 14305060182637269969
+Name: "PelvisKeys_1"
+RootId: 15697104473621448738
 Objects {
-  Id: 12617400833290575635
+  Id: 11952213750287901869
   Name: "PelvisKey"
   Transform {
     Location {
@@ -17,7 +17,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 14305060182637269969
+  ParentId: 15697104473621448738
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

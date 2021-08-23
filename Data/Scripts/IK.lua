@@ -1,9 +1,64 @@
+-- --___________________________________________________________________________________________
+
+-- --####################################### SYSTEM LOGIC ######################################
+-- --___________________________________________________________________________________________
+
+-- --   Animations_Root => Animations
+-- --                     |
+-- --                     |     => animIndex => animId => AnimId
+-- --                     |       |
+-- --                     |       |  => animationLength => Length (((=> AnimationTimer)))
+-- --                     |
+-- --                     |     => animation => Bones => Bone
+-- --                     |                             |  => RHandKeys
+-- --                     |                             |    |     => rightHIKs
+-- --                     |                             |    |       |     => rightHIK
+-- --                     |                             |    |       |
+-- --                     |                             |    |       |     => keyIndex => keyframe => Keyframe
+-- --                     |                             |  => LHandKeys
+-- --                     |                             |    |     => leftHIKs
+-- --                     |                             |    |       |     => leftHIK
+-- --                     |                             |    |       |
+-- --                     |                             |    |       |     => keyIndex => keyframe => Keyframe
+-- --                     |                             |  => LLegKeys
+-- --                     |                             |    |     => rightLIKs
+-- --                     |                             |    |       |     => rightLIK
+-- --                     |                             |    |       |
+-- --                     |                             |    |       |     => keyIndex => keyframe => Keyframe
+-- --                     |                             |  => RLegKeys
+-- --                     |                             |    |     => leftLIKs
+-- --                     |                             |    |       |     => leftLIK
+-- --                     |                             |    |       |
+-- --                     |                             |    |       |     => keyIndex => keyframe => Keyframe
+-- --                     |                             |  => PelvisKeys
+-- --                     |                             |    |     => pelvisIKs
+-- --                     |                             |    |       |     => pelvisIK
+-- --                     |                             |    |       |
+-- --                     |                             |    |       |     => keyIndex => keyframe => Keyframe
+-- --                     |
+-- --   player => Aniplayer
+-- --___________________________________________________________________________________________
+-- --###########################################################################################
+-- --###########################################################################################
+-- --###########################################################################################
+
 -- local LHand = script:GetCustomProperty("LHand"):WaitForObject()
 -- local RHand = script:GetCustomProperty("RHand"):WaitForObject()
 -- local Pelvis = script:GetCustomProperty("Pelvis"):WaitForObject()
 -- local LFoot = script:GetCustomProperty("LFoot"):WaitForObject()
 -- local RFoot = script:GetCustomProperty("RFoot"):WaitForObject()
 -- local Animations_Root = script:GetCustomProperty("Animations"):WaitForObject()
+
+-- local Wkey = "ability_extra_21"
+-- local Akey = "ability_extra_30"
+-- local Skey = "ability_extra_31"
+-- local Dkey = "ability_extra_32"
+-- local Qkey = "ability_extra_20"
+-- local Ekey = "ability_extra_22"
+-- local Rkey = "ability_extra_23"
+-- local Spacekey = "ability_extra_17"
+-- local TABkey = "ability_extra_19"
+-- local LShiftkey = "ability_extra_12"
 
 -- local Animations = {}
 -- local Bones = {}
@@ -35,9 +90,23 @@
 
 -- local Aniplayer = nil
 
+-- local Animating = 0
+
+-- local AnimId = 1
+-- local Keyframe = 1
+-- local animationLength = 0
+-- local Length = 1
+-- local KeyframeInterval = script:GetCustomProperty("KeyframeInterval")
+
+
+-- --############################# getting list of animations #############################
+
 -- Animations = Animations_Root:GetChildren()
 -- for animIndex, animation in ipairs(Animations) do
--- Bones = animation:GetChildren()
+
+--     --############################# getting bones from animation #######################
+-- if animIndex == AnimId then
+--     Bones = animation:GetChildren()
 --     for _, Bone in pairs(Bones) do
 --         if Bone.name=="RHandKeys" then
 --         RHandKeys = Bone:GetChildren()
@@ -55,57 +124,107 @@
 --         PelvisKeys = Bone:GetChildren()
 --         end
 --     end
+
+--     --############################# getting animation length ############################
+
+-- --animationLength = #PelvisKeys[animIndex]
+-- animationLength = #RHandKeys
+
+--     --############################# getting keys for IKs ################################
+
 --     for keyIndex, Key in ipairs(RHandKeys) do
---         rightHIKs[animIndex][keyIndex] = Key
---         rightHIKsPos[animIndex][keyIndex] = Key:GetPosition()
---         rightHIKsRot[animIndex][keyIndex] = Key:GetRotation()
+--         if keyIndex == Keyframe then
+--         rightHIKs = Key--[animIndex][keyIndex]
+--         rightHIKsPos = Key:GetPosition()
+--         rightHIKsRot = Key:GetRotation()
+--         end
 --     end
 --     for keyIndex, Key in ipairs(LHandKeys) do
---         leftHIKs[animIndex][keyIndex] = Key
---         leftHIKsPos[animIndex][keyIndex] = Key:GetPosition()
---         leftHIKsRot[animIndex][keyIndex] = Key:GetRotation()
+--         if keyIndex == Keyframe then
+--         leftHIKs = Key
+--         leftHIKsPos = Key:GetPosition()
+--         leftHIKsRot = Key:GetRotation()
+--         end
 --     end
 --     for keyIndex, Key in ipairs(LLegKeys) do
---         leftLIKs[animIndex][keyIndex] = Key
---         leftLIKsPos[animIndex][keyIndex] = Key:GetPosition()
---         leftLIKsRot[animIndex][keyIndex] = Key:GetRotation()
+--         if keyIndex == Keyframe then
+--         leftLIKs = Key
+--         leftLIKsPos = Key:GetPosition()
+--         leftLIKsRot = Key:GetRotation()
+--         end
 --     end
 --     for keyIndex, Key in ipairs(RLegKeys) do
---         rightLIKs[animIndex][keyIndex] = Key
---         rightLIKsPos[animIndex][keyIndex] = Key:GetPosition()
---         rightLIKsRot[animIndex][keyIndex] = Key:GetRotation()
+--         if keyIndex == Keyframe then
+--         rightLIKs = Key
+--         rightLIKsPos = Key:GetPosition()
+--         rightLIKsRot = Key:GetRotation()
+--         end
 --     end
 --     for keyIndex, Key in ipairs(PelvisKeys) do
---         pelvisIKs[animIndex][keyIndex] = Key
---         pelvisIKsPos[animIndex][keyIndex] = Key:GetPosition()
---         pelvisIKsRot[animIndex][keyIndex] = Key:GetRotation()
+--         if keyIndex == Keyframe then
+--         pelvisIKs = Key
+--         pelvisIKsPos = Key:GetPosition()
+--         pelvisIKsRot = Key:GetRotation()
+--         end
 --     end
+--     --####################################################################################
+-- end
 -- end
 
--- function GetAnimation(AnimId,Keyframe)
+-- function GetAnimation()
 
---     rightHIK = rightHIKs[AnimId][Keyframe]
---     rightHIK.SetPosition = Vector3.New(rightHIKsPos[AnimId][Keyframe])
---     rightHIK.SetRotation = Rotation.New(rightHIKsRot[AnimId][Keyframe])
+--     rightHIK = rightHIKs
+--     print(rightHIK)
+--     rightHIK.SetPosition = Vector3.New(rightHIKsPos)
+--     rightHIK.SetRotation = Rotation.New(rightHIKsRot)
+--     print(rightHIK.SetPosition)
 
---     leftHIK = leftHIKs[AnimId][Keyframe]
---     leftHIK.SetPosition = Vector3.New(leftHIKsPos[AnimId][Keyframe])
---     leftHIK.SetRotation = Rotation.New(leftHIKsRot[AnimId][Keyframe])
+--     leftHIK = leftHIKs
+--     leftHIK.SetPosition = Vector3.New(leftHIKsPos)
+--     leftHIK.SetRotation = Rotation.New(leftHIKsRot)
 
---     leftLIK = rightHIKs[AnimId][Keyframe]
---     leftLIK.SetPosition = Vector3.New(leftLIKsPos[AnimId][Keyframe])
---     leftLIK.SetRotation = Rotation.New(leftLIKsRot[AnimId][Keyframe])
+--     leftLIK = leftLIKs
+--     leftLIK.SetPosition = Vector3.New(leftLIKsPos)
+--     leftLIK.SetRotation = Rotation.New(leftLIKsRot)
 
---     rightLIK = rightHIKs[AnimId][Keyframe]
---     rightLIK.SetPosition = Vector3.New(rightLIKsPos[AnimId][Keyframe])
---     rightLIK.SetRotation = Rotation.New(rightLIKsRot[AnimId][Keyframe])
+--     rightLIK = rightLIKs
+--     rightLIK.SetPosition = Vector3.New(rightLIKsPos)
+--     rightLIK.SetRotation = Rotation.New(rightLIKsRot)
 
---     pelvisIK = rightHIKs[AnimId][Keyframe]
---     pelvisIK.SetPosition = Vector3.New(pelvisIKsPos[AnimId][Keyframe])
---     pelvisIK.SetRotation = Rotation.New(pelvisIKsRot[AnimId][Keyframe])
+--     pelvisIK = pelvisIKs
+--     pelvisIK.SetPosition = Vector3.New(pelvisIKsPos)
+--     pelvisIK.SetRotation = Rotation.New(pelvisIKsRot)
+
+--     Length = animationLength*KeyframeInterval
 
 -- end
 
+-- -- while(true) do
+-- --     Task.Wait(propFrameInterval)
+-- --     local gameId = nil
+-- --     frameIndex = frameIndex + 1
+-- --     if(frameIndex > propFrames) then
+-- --         frameIndex = 1
+-- --         gameId = propGameId1
+-- --     else
+-- --         if(propGameId1 ~= nil and frameIndex <= 5) then
+-- --             gameId = propGameId1
+-- --         elseif(propGameId2 ~= nil and frameIndex >= 6 and frameIndex <= 10) then
+-- --             gameId = propGameId2
+-- --         elseif(propGameId3 ~= nil and frameIndex >= 11 and frameIndex <= 15) then
+-- --             gameId = propGameId3
+-- --         elseif(propGameId4 ~= nil and frameIndex >= 16 and frameIndex <= 20) then
+-- --             gameId = propGameId4
+-- --         elseif(propGameId5 ~= nil and frameIndex >= 21 and frameIndex <= 25) then
+-- --             gameId = propGameId5
+-- --         elseif(propGameId6 ~= nil and frameIndex >= 26 and frameIndex <= 30) then
+-- --             gameId = propGameId6
+-- --         end
+-- --     end
+-- --     local imageToDisplay = ((frameIndex - 1) % 5) + 1
+-- --     propGamePortalImage:SetSmartProperty("Game ID", gameId)
+-- --     propGamePortalImage:SetSmartProperty("Screenshot Index", imageToDisplay)
+-- -- end
 -- -- local WAYPOINTS = WAYPOINT_ROOT:GetChildren()
 -- -- local WAYPOINT_POSITIONS = {}
 -- -- local WAYPOINT_TO_INDEX = {}
@@ -121,14 +240,47 @@
 -- -- local propGameId6 = script:GetCustomProperty("GameId6")
 
 
--- local frameIndex = 1
+-- -- local frameIndex = 1
 
 -- function OnPlayerJoined(player)
 --     player.bindingPressedEvent:Connect(OnBindingPressed)
---     player.bindingReleasedEventEvent:Connect(OnBindingReleased)
+--     player.bindingReleasedEvent:Connect(OnBindingReleased)
+--     Aniplayer = player
 -- end
 
+-- --[[
+-- ability_extra_21 = W
+-- ability_extra_30 = A
+-- ability_extra_31 = S
+-- ability_extra_32 = D
+
+-- ability_extra_20 = Q
+-- ability_extra_22 = E
+-- ability_extra_23 = R
+
+-- ability_extra_33 = F
+
+-- ability_extra_40 = X
+
+-- ability_extra_38 = L
+
+-- ability_extra_17 = Space
+-- ability_extra_19 = TAB
+-- ability_extra_12 = LShift
+
+-- ]]
+
 -- function OnBindingPressed(player, binding)
+
+--     if binding == "ability_extra_5" then
+--         AnimId = 2
+--         Keyframe = 1
+--         Animating = 1
+--         print("yo")
+--         print(AnimId)
+--         print(Keyframe)
+--         print(Animating)
+--     end
 
 -- end
 
@@ -136,43 +288,43 @@
 
 -- end
 
--- function OnEndOverlap(trigger, other)
---     local wayPointIndex = GetWayPointIndex(trigger)
---     if API.GetPlayerWayPointIndex(player) ~= wayPointIndex then
---         return
---     end
+-- -- function OnEndOverlap(trigger, other)
+-- --     local wayPointIndex = GetWayPointIndex(trigger)
+-- --     if API.GetPlayerWayPointIndex(player) ~= wayPointIndex then
+-- --         return
+-- --     end
 
---     local nextWayPointIndex = WrapWayPointIndex(wayPointIndex+1)
---     local prevWayPointIndex = WrapWayPointIndex(wayPointIndex-1)
+-- --     local nextWayPointIndex = WrapWayPointIndex(wayPointIndex+1)
+-- --     local prevWayPointIndex = WrapWayPointIndex(wayPointIndex-1)
 
---     local wayPointPosition = GetWayPointPosition(wayPointIndex)
---     local nextWayPointPosition = GetWayPointPosition(nextWayPointIndex)
---     local prevWayPointPosition = GetWayPointPosition(prevWayPointIndex)
+-- --     local wayPointPosition = GetWayPointPosition(wayPointIndex)
+-- --     local nextWayPointPosition = GetWayPointPosition(nextWayPointIndex)
+-- --     local prevWayPointPosition = GetWayPointPosition(prevWayPointIndex)
 
---     local directionToNextWayPoint = (nextWayPointPosition-wayPointPosition):GetNormalized()
---     local directionToPrevWayPoint = (prevWayPointPosition-wayPointPosition):GetNormalized()
+-- --     local directionToNextWayPoint = (nextWayPointPosition-wayPointPosition):GetNormalized()
+-- --     local directionToPrevWayPoint = (prevWayPointPosition-wayPointPosition):GetNormalized()
 
---     local relativePlayerPosition = player:GetWorldPosition() - wayPointPosition
--- end
+-- --     local relativePlayerPosition = player:GetWorldPosition() - wayPointPosition
+-- -- end
 
 
--- function SetIK(anchor, Driver, hit, IK)
+-- function SetIK(anchor, animatedPlayer, hit, IK)
 --     if hit then
 --     anchor:SetWorldPosition(hit:GetImpactPosition())
 --     anchor:SetWorldRotation(Rotation.New (IK:GetWorldRotation()))
 --     if not anchor.clientUserData.isActivated then
---     anchor:Activate(Driver)
+--     anchor:Activate(animatedPlayer)
 --     anchor.clientUserData.isActivated = true
 --     end
 --     else
 --     if anchor.clientUserData.isActivated then
---     anchor:Deactivate(Driver)
+--     anchor:Deactivate(animatedPlayer)
 --     anchor.clientUserData.isActivated = false
 --     end
 --     end
 -- end
 
--- function Tick()
+-- function LocateIK()
 --     GetAnimation()
 --     local locatePelvis = World.Raycast(pelvisIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
 --     SetIK(Pelvis, Aniplayer, locatePelvis, pelvisIK)
@@ -184,44 +336,52 @@
 --     SetIK(LFoot, Aniplayer, locateLleg, leftLIK)
 --     local locateRleg = World.Raycast(rightLIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
 --     SetIK(RFoot, Aniplayer, locateRleg, rightLIK)
+--     DebugIK()
 -- end
 
--- while(true) do
---     Task.Wait(propFrameInterval)
---     local gameId = nil
---     frameIndex = frameIndex + 1
---     if(frameIndex > propFrames) then
---         frameIndex = 1
---         gameId = propGameId1
---     else
---         if(propGameId1 ~= nil and frameIndex <= 5) then
---             gameId = propGameId1
---         elseif(propGameId2 ~= nil and frameIndex >= 6 and frameIndex <= 10) then
---             gameId = propGameId2
---         elseif(propGameId3 ~= nil and frameIndex >= 11 and frameIndex <= 15) then
---             gameId = propGameId3
---         elseif(propGameId4 ~= nil and frameIndex >= 16 and frameIndex <= 20) then
---             gameId = propGameId4
---         elseif(propGameId5 ~= nil and frameIndex >= 21 and frameIndex <= 25) then
---             gameId = propGameId5
---         elseif(propGameId6 ~= nil and frameIndex >= 26 and frameIndex <= 30) then
---             gameId = propGameId6
+-- function DebugIK()
+
+--     CoreDebug.DrawLine(pelvisIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+-- 	CoreDebug.DrawLine(rightHIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+-- 	CoreDebug.DrawLine(leftHIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+--     CoreDebug.DrawLine(rightLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+-- 	CoreDebug.DrawLine(leftLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+
+-- end
+
+-- function Tick()
+
+--     Task.Wait(0.5) --SERVER TICK EMULATOR
+-- print("tick")
+--     if Animating == 1 then
+
+--      Task.Wait(KeyframeInterval)
+
+--      Keyframe = Keyframe + 1
+-- print(Keyframe)
+-- print(Length)
+--         if(Keyframe*KeyframeInterval > Length) then
+--             Keyframe = 1
+--             AnimId = 1
+--             LocateIK()
+--             Animating = 0
+--         else
+--             LocateIK()
 --         end
 --     end
---     local imageToDisplay = ((frameIndex - 1) % 5) + 1
---     propGamePortalImage:SetSmartProperty("Game ID", gameId)
---     propGamePortalImage:SetSmartProperty("Screenshot Index", imageToDisplay)
 -- end
 
 
--- -- Store the world position of each waypoint
--- for index, waypoint in ipairs(WAYPOINTS) do
---     WAYPOINT_POSITIONS[index] = waypoint:GetWorldPosition()
---     WAYPOINT_TO_INDEX[waypoint] = index
--- end
 
--- function GetWayPoints()
---     return WAYPOINTS
--- end
+
+-- -- -- Store the world position of each waypoint
+-- -- for index, waypoint in ipairs(WAYPOINTS) do
+-- --     WAYPOINT_POSITIONS[index] = waypoint:GetWorldPosition()
+-- --     WAYPOINT_TO_INDEX[waypoint] = index
+-- -- end
+
+-- -- function GetWayPoints()
+-- --     return WAYPOINTS
+-- -- end
 
 -- Game.playerJoinedEvent:Connect(OnPlayerJoined)

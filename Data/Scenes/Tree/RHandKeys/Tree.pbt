@@ -1,13 +1,12 @@
 Name: "RHandKeys"
-RootId: 4436632536826715532
+RootId: 14853744028184028295
 Objects {
-  Id: 6656892487390280255
+  Id: 14328384404045629027
   Name: "RHandKey"
   Transform {
     Location {
-      X: -85.2360153
-      Y: -5.34057617e-05
-      Z: 48.157959
+      X: 9.53674316e-07
+      Y: -5.34057544e-05
     }
     Rotation {
       Yaw: -2.04905627e-05
@@ -18,7 +17,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 4436632536826715532
+  ParentId: 14853744028184028295
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

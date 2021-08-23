@@ -1,12 +1,13 @@
-Name: "PelvisKeys"
-RootId: 14305060182637269969
+Name: "LHandKeys_1"
+RootId: 3937083383872902045
 Objects {
-  Id: 12617400833290575635
-  Name: "PelvisKey"
+  Id: 11648061742370133825
+  Name: "LHandKey"
   Transform {
     Location {
-      X: 3.81469658e-06
-      Y: 2.27373675e-13
+      X: -42.298
+      Y: -6.10351562e-05
+      Z: 52.8029785
     }
     Rotation {
       Yaw: -2.04905627e-05
@@ -17,7 +18,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 14305060182637269969
+  ParentId: 3937083383872902045
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
