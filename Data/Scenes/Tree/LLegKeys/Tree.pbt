@@ -1,13 +1,12 @@
 Name: "LLegKeys"
-RootId: 12362994884583572714
+RootId: 10987837832529538752
 Objects {
-  Id: 7966945222118936629
+  Id: 11645506013354256418
   Name: "LLegKey"
   Transform {
     Location {
-      X: 27.1044445
-      Y: -3.81469727e-06
-      Z: -116.149902
+      X: 9.53674544e-07
+      Y: -3.81469658e-06
     }
     Rotation {
       Yaw: -2.04905627e-05
@@ -18,7 +17,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 12362994884583572714
+  ParentId: 10987837832529538752
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

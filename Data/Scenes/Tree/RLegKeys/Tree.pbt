@@ -1,13 +1,12 @@
 Name: "RLegKeys"
-RootId: 7994157900045962543
+RootId: 9341916076147586570
 Objects {
-  Id: 11405882333533895782
+  Id: 4891785699552523956
   Name: "RLegKey"
   Transform {
     Location {
-      X: -27.1049824
-      Y: 5.7220459e-06
-      Z: -116.149902
+      X: 9.53673862e-07
+      Y: 5.72204453e-06
     }
     Rotation {
       Yaw: -2.04905627e-05
@@ -18,7 +17,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 7994157900045962543
+  ParentId: 9341916076147586570
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

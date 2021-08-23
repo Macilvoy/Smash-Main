@@ -5,7 +5,7 @@ Objects {
   Name: "Humanoid 1 Rig"
   Transform {
     Location {
-      X: -141.062256
+      X: -179.430878
       Z: -2202.53589
     }
     Rotation {
@@ -38,7 +38,7 @@ Objects {
       IsEnemyCollisionEnabled: true
     }
     AnimatedMesh {
-      AnimationStance: "unarmed_idle_relaxed"
+      AnimationStance: "unarmed_bind_pose"
       AnimationStancePlaybackRate: 1
       AnimationStanceShouldLoop: true
       AnimationPlaybackRateMultiplier: 1
@@ -80,7 +80,6 @@ Objects {
   ParentId: 1602072049588011465
   ChildIds: 7939623376905608272
   ChildIds: 2713776681023753195
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -105,8 +104,6 @@ Objects {
   Name: "ClientContext"
   Transform {
     Location {
-      X: 0.862669
-      Y: 15.3856945
     }
     Rotation {
       Yaw: 90
@@ -119,8 +116,8 @@ Objects {
   }
   ParentId: 4666894224403037416
   ChildIds: 17688002385660466956
-  ChildIds: 6373807290214689099
   ChildIds: 11877637052835874034
+  ChildIds: 6373807290214689099
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -135,6 +132,39 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 6373807290214689099
+  Name: "Animations"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -1.02452814e-05
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2713776681023753195
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Animations"
   }
 }
 Objects {
@@ -173,40 +203,6 @@ Objects {
   }
 }
 Objects {
-  Id: 6373807290214689099
-  Name: "Animations"
-  Transform {
-    Location {
-      X: -15.1686707
-      Z: 8.91918945
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2713776681023753195
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Animations"
-  }
-}
-Objects {
   Id: 17688002385660466956
   Name: "IK"
   Transform {
@@ -225,6 +221,10 @@ Objects {
   }
   ParentId: 2713776681023753195
   UnregisteredParameters {
+    Overrides {
+      Name: "cs:KeyframeInterval"
+      Int: 5
+    }
     Overrides {
       Name: "cs:LHand"
       ObjectReference {
@@ -253,36 +253,6 @@ Objects {
       Name: "cs:RFoot"
       ObjectReference {
         SelfId: 3110942395288351413
-      }
-    }
-    Overrides {
-      Name: "cs:LLegKeys"
-      ObjectReference {
-        SelfId: 12362994884583572714
-      }
-    }
-    Overrides {
-      Name: "cs:RLegKeys"
-      ObjectReference {
-        SelfId: 7994157900045962543
-      }
-    }
-    Overrides {
-      Name: "cs:RHandKeys"
-      ObjectReference {
-        SelfId: 4436632536826715532
-      }
-    }
-    Overrides {
-      Name: "cs:LHandKeys"
-      ObjectReference {
-        SelfId: 12522352281210522063
-      }
-    }
-    Overrides {
-      Name: "cs:PelvisKeys"
-      ObjectReference {
-        SelfId: 5873366391219662052
       }
     }
     Overrides {
