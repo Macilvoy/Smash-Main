@@ -101,6 +101,14 @@ function ForwardOverlap(theTrigger)
 			for _,obj in pairs(players) do
 				if Object.IsValid(theTrigger) and obj.name==theTrigger:GetCustomProperty("Owner") then
 					HitSpree(obj, theTrigger:GetCustomProperty("Direction") )
+					
+					for b=1,5 do
+					    if KeyState[b][0]==player.name then
+					    	PlayerState[b][0]=true
+					    	PlayerState[b][1]=time()
+						end
+					end
+					
 					if Object.IsValid(theTrigger) then theTrigger:Destroy() end
 				end
 			end
@@ -120,6 +128,14 @@ function HitOverlap(theTrigger)
 					VFX:Play()
 				end
 			end
+			
+			for b=1,5 do
+			    if KeyState[b][0]==player.name then
+			    	PlayerState[b][0]=true
+			    	PlayerState[b][1]=time()
+				end
+			end
+			
 			if Object.IsValid(theTrigger) then theTrigger:Destroy() end
 		end
 	end
@@ -140,6 +156,14 @@ function HeavyHitOverlap(theTrigger)
 					end
 				end
 			end
+			
+			for b=1,5 do
+			    if KeyState[b][0]==player.name then
+			    	PlayerState[b][0]=true
+			    	PlayerState[b][1]=time()
+				end
+			end
+			
 			if Object.IsValid(theTrigger) then theTrigger:Destroy() end
 		end
 	end
@@ -174,7 +198,7 @@ function BasicUpHit(player,direction)
 			trigger:SetNetworkedCustomProperty("Direction",direction)
 			trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 			trigger:AttachToPlayer(player,"root")
-			trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y,player:GetWorldPosition().z+100))
+			if Object.IsValid(trigger) then trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y,player:GetWorldPosition().z+100)) end
 			if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(1,1,1)) end
     		Task.Wait(0.2)
 			--player:ResetVelocity()
@@ -209,7 +233,7 @@ function BasicDownHit(player,direction)
 			trigger:SetNetworkedCustomProperty("Direction",direction)
 			trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 			trigger:AttachToPlayer(player,"root")
-			trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y,player:GetWorldPosition().z-100))
+			if Object.IsValid(trigger) then trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y,player:GetWorldPosition().z-100)) end
 			if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(1,1,1)) end
 			while player.isJumping and Object.IsValid(trigger) do
     			if PlayerState[MyLocalID][2]==false or PlayerState[MyLocalID][0] then
@@ -245,7 +269,7 @@ function BasicSideHit(player,direction)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:AttachToPlayer(player,"root")
-				trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y+directionVector3[direction].y/1000,player:GetWorldPosition().z))
+				if Object.IsValid(trigger) then trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y+directionVector3[direction].y/1000,player:GetWorldPosition().z)) end
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(1,1,1)) end				
 				Task.Wait(0.1)
 				--player:ResetVelocity()
@@ -330,7 +354,7 @@ function ForwardHit(player,direction)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger.beginOverlapEvent:Connect(ForwardOverlap)
 				trigger:AttachToPlayer(player,"root")
-				trigger:SetWorldPosition(player:GetWorldPosition())
+				if Object.IsValid(trigger) then trigger:SetWorldPosition(player:GetWorldPosition()) end
 				
 				Task.Wait(0.3)
 				player:ResetVelocity()
