@@ -1,13 +1,12 @@
 Name: "Animations"
-RootId: 6373807290214689099
+RootId: 1665461738386295316
 Objects {
-  Id: 2665699483560073956
+  Id: 1743726166432161540
   Name: "A-pose"
   Transform {
     Location {
     }
     Rotation {
-      Yaw: -89.999939
     }
     Scale {
       X: 1
@@ -15,7 +14,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6373807290214689099
+  ParentId: 1665461738386295316
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -32,15 +32,20 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "A-pose"
   }
+  InstanceHistory {
+    SelfId: 1743726166432161540
+    SubobjectId: 9336603638212974701
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 3522271452111972949
+  Id: 1265808109785643911
   Name: "T-pose"
   Transform {
     Location {
     }
     Rotation {
-      Yaw: -89.999939
     }
     Scale {
       X: 1
@@ -48,7 +53,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6373807290214689099
+  ParentId: 1665461738386295316
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -64,5 +70,11 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "T-pose"
+  }
+  InstanceHistory {
+    SelfId: 1265808109785643911
+    SubobjectId: 9813836152042896622
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
   }
 }

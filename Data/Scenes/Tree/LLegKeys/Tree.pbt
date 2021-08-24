@@ -1,7 +1,7 @@
 Name: "LLegKeys"
-RootId: 10987837832529538752
+RootId: 3110067331197904116
 Objects {
-  Id: 11645506013354256418
+  Id: 6687829184842428667
   Name: "LLegKey"
   Transform {
     Location {
@@ -17,7 +17,8 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 10987837832529538752
+  ParentId: 3110067331197904116
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -45,5 +46,11 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 6687829184842428667
+    SubobjectId: 14226663461587662738
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
   }
 }

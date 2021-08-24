@@ -1,7 +1,7 @@
 Name: "A-pose"
-RootId: 2665699483560073956
+RootId: 1743726166432161540
 Objects {
-  Id: 8983849642108944655
+  Id: 16814873118834085288
   Name: "LHandKeys"
   Transform {
     Location {
@@ -10,7 +10,6 @@ Objects {
       Z: 3.82495117
     }
     Rotation {
-      Yaw: 89.9999466
     }
     Scale {
       X: 1
@@ -18,7 +17,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2665699483560073956
+  ParentId: 1743726166432161540
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -35,9 +35,15 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "LHandKeys"
   }
+  InstanceHistory {
+    SelfId: 16814873118834085288
+    SubobjectId: 8141061427632605889
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 14853744028184028295
+  Id: 1721904245351966494
   Name: "RHandKeys"
   Transform {
     Location {
@@ -46,7 +52,6 @@ Objects {
       Z: -0.361572266
     }
     Rotation {
-      Yaw: 89.9999466
     }
     Scale {
       X: 1
@@ -54,7 +59,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2665699483560073956
+  ParentId: 1743726166432161540
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -71,9 +77,15 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "RHandKeys"
   }
+  InstanceHistory {
+    SelfId: 1721904245351966494
+    SubobjectId: 10251843079363567735
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 9341916076147586570
+  Id: 15581971827536508623
   Name: "RLegKeys"
   Transform {
     Location {
@@ -82,7 +94,6 @@ Objects {
       Z: -116.195312
     }
     Rotation {
-      Yaw: 89.9999466
     }
     Scale {
       X: 1
@@ -90,7 +101,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2665699483560073956
+  ParentId: 1743726166432161540
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -107,9 +119,15 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "RLegKeys"
   }
+  InstanceHistory {
+    SelfId: 15581971827536508623
+    SubobjectId: 4728492554860294566
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 10987837832529538752
+  Id: 3110067331197904116
   Name: "LLegKeys"
   Transform {
     Location {
@@ -118,7 +136,6 @@ Objects {
       Z: -116.195312
     }
     Rotation {
-      Yaw: 89.9999466
     }
     Scale {
       X: 1
@@ -126,7 +143,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2665699483560073956
+  ParentId: 1743726166432161540
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -143,16 +161,20 @@ Objects {
     IsFilePartition: true
     FilePartitionName: "LLegKeys"
   }
+  InstanceHistory {
+    SelfId: 3110067331197904116
+    SubobjectId: 12864989721824781213
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 14305060182637269969
+  Id: 11056159639824221652
   Name: "PelvisKeys"
   Transform {
     Location {
-      Z: -4.80273438
     }
     Rotation {
-      Yaw: 89.9999466
     }
     Scale {
       X: 1
@@ -160,7 +182,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 2665699483560073956
+  ParentId: 1743726166432161540
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -176,5 +199,11 @@ Objects {
   Folder {
     IsFilePartition: true
     FilePartitionName: "PelvisKeys"
+  }
+  InstanceHistory {
+    SelfId: 11056159639824221652
+    SubobjectId: 58525501920641725
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
   }
 }
