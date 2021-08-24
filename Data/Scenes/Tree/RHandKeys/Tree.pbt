@@ -18,7 +18,6 @@ Objects {
     }
   }
   ParentId: 1721904245351966494
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -72,7 +71,6 @@ Objects {
     }
   }
   ParentId: 1721904245351966494
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -126,7 +124,6 @@ Objects {
     }
   }
   ParentId: 1721904245351966494
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -180,7 +177,6 @@ Objects {
     }
   }
   ParentId: 1721904245351966494
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -234,7 +230,6 @@ Objects {
     }
   }
   ParentId: 1721904245351966494
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }

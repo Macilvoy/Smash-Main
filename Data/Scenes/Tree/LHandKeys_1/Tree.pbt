@@ -19,7 +19,6 @@ Objects {
     }
   }
   ParentId: 922193993476967355
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
