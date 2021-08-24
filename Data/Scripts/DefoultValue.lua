@@ -1,3 +1,10 @@
+function OnBindingPressed(player, bindingPressed)
+    if bindingPressed == "ability_extra_50" then
+        Game.StartRound()
+        print("started")
+    end
+end
+
 function OnPlayerJoined(player)
 	local data = Storage.GetPlayerData(player)
 	
@@ -6,11 +13,13 @@ function OnPlayerJoined(player)
     -- Each time they join they gain 1 XP. Stop and play the game again to test that this value keeps going up
     player:SetResource("armour", armour)
     player:SetResource("weapon", weapon)
+    
+    player.bindingPressedEvent:Connect(OnBindingPressed)
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 
-Task.Wait(5)
+Task.Wait(15)
 
-Game.StartRound()
-print("started")
+--Game.StartRound()
+--print("started")
