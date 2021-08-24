@@ -1,7 +1,7 @@
 Name: "LHandKeys"
-RootId: 8983849642108944655
+RootId: 16814873118834085288
 Objects {
-  Id: 38776755868854614
+  Id: 12633482805937577075
   Name: "LHandKey"
   Transform {
     Location {
@@ -17,7 +17,8 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 8983849642108944655
+  ParentId: 16814873118834085288
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -45,5 +46,11 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 12633482805937577075
+    SubobjectId: 3959675151852362522
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
   }
 }

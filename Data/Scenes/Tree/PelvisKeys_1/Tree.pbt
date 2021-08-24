@@ -1,7 +1,7 @@
 Name: "PelvisKeys_1"
-RootId: 15697104473621448738
+RootId: 13056098884655942853
 Objects {
-  Id: 11952213750287901869
+  Id: 5524085918889935266
   Name: "PelvisKey"
   Transform {
     Location {
@@ -9,7 +9,6 @@ Objects {
       Y: 2.27373675e-13
     }
     Rotation {
-      Yaw: -2.04905627e-05
     }
     Scale {
       X: 0.211656734
@@ -17,7 +16,8 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 15697104473621448738
+  ParentId: 13056098884655942853
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -45,5 +45,11 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 5524085918889935266
+    SubobjectId: 15351026063419360971
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
   }
 }

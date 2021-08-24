@@ -17,10 +17,14 @@ function OnBindingPressed(player, binding)
     --     DefaultFloor.collision = Collision.FORCE_ON
     --     DefaultFloor1.collision = Collision.FORCE_ON
     -- end
+    if binding == "ability_extra_5" then
+    player.gravityScale = 0
+    end
 end
 
 function OnPlayerJoined(player)
   --  UIContainer.visibility = Visibility.FORCE_ON
+ -- player.isVisible = false
     player.bindingPressedEvent:Connect(OnBindingPressed)
 end
 

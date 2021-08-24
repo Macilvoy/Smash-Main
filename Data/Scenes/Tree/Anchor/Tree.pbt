@@ -1,7 +1,7 @@
 Name: "Anchor"
-RootId: 11877637052835874034
+RootId: 5760272398948147802
 Objects {
-  Id: 10427009009424736518
+  Id: 1602441857861007102
   Name: "RHand"
   Transform {
     Location {
@@ -15,7 +15,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11877637052835874034
+  ParentId: 5760272398948147802
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -36,9 +37,15 @@ Objects {
     }
     BlendWeight: 1
   }
+  InstanceHistory {
+    SelfId: 1602441857861007102
+    SubobjectId: 10348628034163470743
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 9164438670732237574
+  Id: 10755572289481826487
   Name: "Pelvis"
   Transform {
     Location {
@@ -52,7 +59,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11877637052835874034
+  ParentId: 5760272398948147802
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -73,9 +81,15 @@ Objects {
     }
     BlendWeight: 1
   }
+  InstanceHistory {
+    SelfId: 10755572289481826487
+    SubobjectId: 928808307373287390
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 5513839526735590491
+  Id: 2607464584155882282
   Name: "LFoot"
   Transform {
     Location {
@@ -89,7 +103,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11877637052835874034
+  ParentId: 5760272398948147802
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -110,9 +125,15 @@ Objects {
     }
     BlendWeight: 1
   }
+  InstanceHistory {
+    SelfId: 2607464584155882282
+    SubobjectId: 13659172506118267971
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 3110942395288351413
+  Id: 5068006998186006318
   Name: "RFoot"
   Transform {
     Location {
@@ -126,7 +147,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11877637052835874034
+  ParentId: 5760272398948147802
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -147,9 +169,15 @@ Objects {
     }
     BlendWeight: 1
   }
+  InstanceHistory {
+    SelfId: 5068006998186006318
+    SubobjectId: 16137980471196897351
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
 }
 Objects {
-  Id: 10980012678618695258
+  Id: 12290737789748335901
   Name: "LHand"
   Transform {
     Location {
@@ -163,7 +191,8 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11877637052835874034
+  ParentId: 5760272398948147802
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -183,5 +212,11 @@ Objects {
       Value: "mc:eikanchortype:lefthand"
     }
     BlendWeight: 1
+  }
+  InstanceHistory {
+    SelfId: 12290737789748335901
+    SubobjectId: 3688952605810659956
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
   }
 }
