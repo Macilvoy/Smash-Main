@@ -1,5 +1,5 @@
 Assets {
-  Id: 13094430414861367920
+  Id: 5629493443735808759
   Name: "playerCostumeExampleReadMe"
   PlatformAssetType: 3
   TextAsset {

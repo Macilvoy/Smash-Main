@@ -1,5 +1,5 @@
 Assets {
-  Id: 5159144324816812203
+  Id: 7170342472173209549
   Name: "MultiplayerCostumeExample"
   PlatformAssetType: 5
   TemplateAsset {
@@ -31,7 +31,7 @@ Assets {
         Folder {
           BundleDummy {
             ReferencedAssets {
-              Id: 13020093103262988717
+              Id: 430931148615513160
             }
           }
         }

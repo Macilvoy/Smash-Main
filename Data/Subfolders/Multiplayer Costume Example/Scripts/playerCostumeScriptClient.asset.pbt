@@ -1,5 +1,5 @@
 Assets {
-  Id: 7822755760991740559
+  Id: 470702197394852178
   Name: "playerCostumeScriptClient"
   PlatformAssetType: 3
   TextAsset {

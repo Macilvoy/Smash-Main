@@ -1,5 +1,5 @@
 Assets {
-  Id: 13020093103262988717
+  Id: 430931148615513160
   Name: "CostumeTrigger - Place Me In The World"
   PlatformAssetType: 5
   TemplateAsset {
@@ -41,7 +41,7 @@ Assets {
           Overrides {
             Name: "cs:CostumeGEO"
             AssetReference {
-              Id: 10021430155820497044
+              Id: 6579617163171944046
             }
           }
           Overrides {
@@ -101,7 +101,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 13094430414861367920
+            Id: 5629493443735808759
           }
         }
       }
@@ -176,13 +176,13 @@ Assets {
           Overrides {
             Name: "cs:CostumeTrackerParent"
             AssetReference {
-              Id: 1146603326773840120
+              Id: 15226301460845889998
             }
           }
           Overrides {
             Name: "cs:CostumeTrackerChild"
             AssetReference {
-              Id: 4422283238509908481
+              Id: 7890433449080331207
             }
           }
         }
@@ -198,7 +198,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 15246905372519325860
+            Id: 6159676109246784913
           }
         }
       }
@@ -276,7 +276,7 @@ Assets {
           Overrides {
             Name: "cs:CostumeManager"
             AssetReference {
-              Id: 17346435216073825290
+              Id: 10874841431347809857
             }
           }
         }
@@ -291,7 +291,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 18323537690303435135
+            Id: 5003331059247704665
           }
         }
       }
