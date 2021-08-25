@@ -1708,9 +1708,8 @@ Objects {
   Name: "Humanoid 2 Rig"
   Transform {
     Location {
-      X: -91.5144653
-      Y: 1021.51678
-      Z: 118.557358
+      Y: 821.125671
+      Z: 118.557
     }
     Rotation {
       Yaw: -90
