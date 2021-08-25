@@ -39,7 +39,7 @@ Objects {
   Name: "Humanoid 1 Rig"
   Transform {
     Location {
-      X: -179.430878
+      X: -179.431
       Z: -2202.53589
     }
     Rotation {
@@ -138,166 +138,6 @@ Objects {
   }
 }
 Objects {
-  Id: 14301346932447682163
-  Name: "Animation System"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1602072049588011465
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Equipment {
-    SocketName: "pelvis"
-    PickupTrigger {
-      SelfId: 6038688141672041448
-    }
-  }
-  InstanceHistory {
-    SelfId: 14301346932447682163
-    SubobjectId: 6906311244854679834
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-    WasRoot: true
-  }
-}
-Objects {
-  Id: 3845970722890223220
-  Name: "ClientContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 1602072049588011465
-  ChildIds: 6255350745831249585
-  ChildIds: 1665461738386295316
-  ChildIds: 5760272398948147802
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-  }
-  InstanceHistory {
-    SelfId: 3845970722890223220
-    SubobjectId: 12465704017221077277
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-  }
-}
-Objects {
-  Id: 5760272398948147802
-  Name: "Anchor"
-  Transform {
-    Location {
-      Y: 9.53674316e-07
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3845970722890223220
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Anchor"
-  }
-  InstanceHistory {
-    SelfId: 5760272398948147802
-    SubobjectId: 15442890423990314291
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-  }
-}
-Objects {
-  Id: 1665461738386295316
-  Name: "Animations"
-  Transform {
-    Location {
-    }
-    Rotation {
-      Yaw: -6.8301847e-06
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 3845970722890223220
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Animations"
-  }
-  InstanceHistory {
-    SelfId: 1665461738386295316
-    SubobjectId: 10285195290243157373
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-  }
-}
-Objects {
   Id: 6255350745831249585
   Name: "IK"
   Transform {
@@ -307,7 +147,7 @@ Objects {
       Z: 2307.53589
     }
     Rotation {
-      Yaw: -6.8301847e-06
+      Yaw: -6.83018243e-06
     }
     Scale {
       X: 1
@@ -315,58 +155,16 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 3845970722890223220
+  ParentId: 1602072049588011465
   UnregisteredParameters {
     Overrides {
       Name: "cs:KeyframeInterval"
       Int: 1
     }
     Overrides {
-      Name: "cs:LHand"
-      ObjectReference {
-        SelfId: 12290737789748335901
-      }
-    }
-    Overrides {
-      Name: "cs:RHand"
-      ObjectReference {
-        SelfId: 1602441857861007102
-      }
-    }
-    Overrides {
-      Name: "cs:Pelvis"
-      ObjectReference {
-        SelfId: 10755572289481826487
-      }
-    }
-    Overrides {
-      Name: "cs:LFoot"
-      ObjectReference {
-        SelfId: 2607464584155882282
-      }
-    }
-    Overrides {
-      Name: "cs:RFoot"
-      ObjectReference {
-        SelfId: 5068006998186006318
-      }
-    }
-    Overrides {
-      Name: "cs:Animations"
-      ObjectReference {
-        SelfId: 1665461738386295316
-      }
-    }
-    Overrides {
       Name: "cs:AnimationSystem"
-      ObjectReference {
-        SelfId: 14301346932447682163
-      }
-    }
-    Overrides {
-      Name: "cs:EquipTrigger"
-      ObjectReference {
-        SelfId: 6038688141672041448
+      AssetReference {
+        Id: 1865911534509973337
       }
     }
   }
@@ -387,21 +185,11 @@ Objects {
       Id: 18215791265265690889
     }
   }
-  InstanceHistory {
-    SelfId: 6255350745831249585
-    SubobjectId: 14947388216448963032
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-  }
 }
 Objects {
-  Id: 2197151806955002816
-  Name: "NewScript_1"
+  Id: 11341932103299894993
+  Name: "AnimSystem Re"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -409,79 +197,38 @@ Objects {
     }
   }
   ParentId: 1602072049588011465
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:AnimationSystem"
-      ObjectReference {
-        SelfId: 14301346932447682163
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 6507950625677175225
+      value {
+        Overrides {
+          Name: "Name"
+          String: "AnimSystem Re"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -0.982068419
+            Y: -0.556820869
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 9570767685514965570
+    TemplateAsset {
+      Id: 1865911534509973337
     }
-  }
-}
-Objects {
-  Id: 6038688141672041448
-  Name: "Equip Trigger"
-  Transform {
-    Location {
-      X: -2.94620514
-      Y: -1.67046261
-      Z: 5.70141602
-    }
-    Rotation {
-      Yaw: 89.9999924
-    }
-    Scale {
-      X: 0.159397885
-      Y: 0.159397885
-      Z: 0.159397885
-    }
-  }
-  ParentId: 1602072049588011465
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  Trigger {
-    TeamSettings {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    TriggerShape_v2 {
-      Value: "mc:etriggershape:box"
-    }
-  }
-  InstanceHistory {
-    SelfId: 6038688141672041448
-    SubobjectId: 14586324534178745473
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
   }
 }
 Objects {
