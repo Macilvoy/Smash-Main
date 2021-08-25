@@ -3,8 +3,10 @@
 --####################################### SYSTEM LOGIC ######################################
 --___________________________________________________________________________________________
 
---   Animations_Root => Animations
+--   Animations_Root => weapon
 --                     |
+--                     |=> Animations
+--                     |       |
 --                     |     => animIndex => animId => AnimId
 --                     |       |
 --                     |       |  => animationLength => Length (((=> AnimationTimer)))
@@ -63,6 +65,7 @@ local Spacekey = "ability_extra_17"
 local TABkey = "ability_extra_19"
 local LShiftkey = "ability_extra_12"
 
+local Weapons = {}
 local Animations = {}
 local Bones = {}
 local RHandKeys = {}
@@ -96,128 +99,13 @@ local Aniplayer = nil
 
 local Animating = 1
 local isAttached = 0
---local AnimClientFolder = nil
 
+local WeaponId = 1 -- ############################# GET RESOURCE FROM MENU
 local AnimId = 1
 local Keyframe = 1
 local animationLength = 0
 local Length = 1
 local KeyframeInterval = script:GetCustomProperty("KeyframeInterval")
-
--- --############################# getting list of animations #############################
-
--- Animations = Animations_Root:GetChildren()
--- for animIndex, animation in ipairs(Animations) do
-
---     --############################# getting bones from animation #######################
--- if animIndex == AnimId then
---     Bones = animation:GetChildren()
---     for _, Bone in pairs(Bones) do
---         if Bone.name=="RHandKeys" then
---         RHandKeys = Bone:GetChildren()
---         end
---         if Bone.name=="LHandKeys" then
---         LHandKeys = Bone:GetChildren()
---         end
---         if Bone.name=="LLegKeys" then
---         LLegKeys = Bone:GetChildren()
---         end
---         if Bone.name=="RLegKeys" then
---         RLegKeys = Bone:GetChildren()
---         end
---         if Bone.name=="PelvisKeys" then
---         PelvisKeys = Bone:GetChildren()
---         end
---     end
-
---     --############################# getting animation length ############################
-
--- --animationLength = #PelvisKeys[animIndex]
--- animationLength = #RHandKeys
-
---     --############################# getting keys for IKs ################################
-
---     for keyIndex, Key in ipairs(RHandKeys) do
---         if keyIndex == Keyframe then
---         rightHIKs = Key--[animIndex][keyIndex]
---         rightHIKsPos = Key:GetWorldPosition()
---         rightHIKsRot = Key:GetWorldRotation()
---         end
---     end
---     for keyIndex, Key in ipairs(LHandKeys) do
---         if keyIndex == Keyframe then
---         leftHIKs = Key
---         leftHIKsPos = Key:GetWorldPosition()
---         leftHIKsRot = Key:GetWorldRotation()
---         end
---     end
---     for keyIndex, Key in ipairs(LLegKeys) do
---         if keyIndex == Keyframe then
---         leftLIKs = Key
---         leftLIKsPos = Key:GetWorldPosition()
---         leftLIKsRot = Key:GetWorldRotation()
---         end
---     end
---     for keyIndex, Key in ipairs(RLegKeys) do
---         if keyIndex == Keyframe then
---         rightLIKs = Key
---         rightLIKsPos = Key:GetWorldPosition()
---         rightLIKsRot = Key:GetWorldRotation()
---         end
---     end
---     for keyIndex, Key in ipairs(PelvisKeys) do
---         if keyIndex == Keyframe then
---         pelvisIKs = Key
---         pelvisIKsPos = Key:GetWorldPosition()
---         pelvisIKsRot = Key:GetRotation()
---         end
---     end
---     --####################################################################################
--- end
--- end
-
--- while(true) do
---     Task.Wait(propFrameInterval)
---     local gameId = nil
---     frameIndex = frameIndex + 1
---     if(frameIndex > propFrames) then
---         frameIndex = 1
---         gameId = propGameId1
---     else
---         if(propGameId1 ~= nil and frameIndex <= 5) then
---             gameId = propGameId1
---         elseif(propGameId2 ~= nil and frameIndex >= 6 and frameIndex <= 10) then
---             gameId = propGameId2
---         elseif(propGameId3 ~= nil and frameIndex >= 11 and frameIndex <= 15) then
---             gameId = propGameId3
---         elseif(propGameId4 ~= nil and frameIndex >= 16 and frameIndex <= 20) then
---             gameId = propGameId4
---         elseif(propGameId5 ~= nil and frameIndex >= 21 and frameIndex <= 25) then
---             gameId = propGameId5
---         elseif(propGameId6 ~= nil and frameIndex >= 26 and frameIndex <= 30) then
---             gameId = propGameId6
---         end
---     end
---     local imageToDisplay = ((frameIndex - 1) % 5) + 1
---     propGamePortalImage:SetSmartProperty("Game ID", gameId)
---     propGamePortalImage:SetSmartProperty("Screenshot Index", imageToDisplay)
--- end
--- local WAYPOINTS = WAYPOINT_ROOT:GetChildren()
--- local WAYPOINT_POSITIONS = {}
--- local WAYPOINT_TO_INDEX = {}
-
--- local propGamePortalImage = script:GetCustomProperty("GamePortalImage"):WaitForObject()
--- local propFrames = script:GetCustomProperty("Frames")
--- local propFrameInterval = script:GetCustomProperty("FrameInterval")
--- local propGameId1 = script:GetCustomProperty("GameId1")
--- local propGameId2 = script:GetCustomProperty("GameId2")
--- local propGameId3 = script:GetCustomProperty("GameId3")
--- local propGameId4 = script:GetCustomProperty("GameId4")
--- local propGameId5 = script:GetCustomProperty("GameId5")
--- local propGameId6 = script:GetCustomProperty("GameId6")
-
-
--- local frameIndex = 1
 
 --[[
 ability_extra_21 = W
@@ -247,10 +135,6 @@ function OnBindingPressed(player, binding)
         AnimId = 2
         Keyframe = 1
         Animating = 1
-    --    print("yo")
-    --    print(AnimId)
-     --   print(Keyframe)
-     --   print(Animating)
     end
 
 end
@@ -259,63 +143,28 @@ function OnBindingReleased(player, binding)
 
 end
 
--- function OnEndOverlap(trigger, other)
---     local wayPointIndex = GetWayPointIndex(trigger)
---     if API.GetPlayerWayPointIndex(player) ~= wayPointIndex then
---         return
---     end
-
---     local nextWayPointIndex = WrapWayPointIndex(wayPointIndex+1)
---     local prevWayPointIndex = WrapWayPointIndex(wayPointIndex-1)
-
---     local wayPointPosition = GetWayPointPosition(wayPointIndex)
---     local nextWayPointPosition = GetWayPointPosition(nextWayPointIndex)
---     local prevWayPointPosition = GetWayPointPosition(prevWayPointIndex)
-
---     local directionToNextWayPoint = (nextWayPointPosition-wayPointPosition):GetNormalized()
---     local directionToPrevWayPoint = (prevWayPointPosition-wayPointPosition):GetNormalized()
-
---     local relativePlayerPosition = player:GetWorldPosition() - wayPointPosition
--- end
-
-
 function SetIK(anchor, animatedPlayer, IK)
-    --if hit then
     anchor:MoveTo(Vector3.New(IK:GetWorldPosition()),0,false)
     anchor:RotateTo(Rotation.New (IK:GetWorldRotation()),0,false)
     if not anchor.serverUserData.isActivated then
     anchor:Activate(animatedPlayer)
     anchor.serverUserData.isActivated = true
     end
-  --  else
-    -- if anchor.clientUserData.isActivated then
-    -- anchor:Deactivate(animatedPlayer)
-    -- anchor.clientUserData.isActivated = false
-    -- end
-    --end
 end
 
 function LocateIK()
-    --GetAnimation()
-    -- local locatePelvis = World.Raycast(pelvisIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
      SetIK(Pelvis, Aniplayer, pelvisIK)
-    -- local locateLhand = World.Raycast(leftHIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
      SetIK(LHand, Aniplayer, leftHIK)
-    --local locateRhand = World.Raycast(rightHIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
     SetIK(RHand, Aniplayer, rightHIK)
-    -- local locateLleg = World.Raycast(leftLIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
      SetIK(LFoot, Aniplayer, leftLIK)
-    -- local locateRleg = World.Raycast(rightLIK:GetWorldPosition(), Aniplayer:GetWorldPosition())
      SetIK(RFoot, Aniplayer, rightLIK)
 end
 
 function GetAnimation()
 
     rightHIK = rightHIKs
-   -- print(rightHIK)
     rightHIK:SetWorldPosition(Vector3.New(rightHIKsPos))
     rightHIK:SetWorldRotation(Rotation.New(rightHIKsRot))
-    --print(rightHIK:GetPosition())
 
      leftHIK = leftHIKs
      leftHIK:SetWorldPosition(Vector3.New(leftHIKsPos))
@@ -334,8 +183,6 @@ function GetAnimation()
      pelvisIK:SetRotation(Rotation.New(pelvisIKsRot))
 
     Length = animationLength*KeyframeInterval
-  --  print(pelvisIK:GetWorldPosition())
-   -- print(pelvisIK:GetWorldRotation())
 end
 
 
@@ -350,18 +197,11 @@ function DebugIK()
 end
 
 function OnPlayerJoined(player)
---  EquipTrigger:AttachToPlayer(player, "pelvis")
-   -- RHand:SetRotation(Rotation.New(0, 0, 0))
---    local LOCAL_PLAYER = Game.GetLocalPlayer()
---    if LOCAL_PLAYER == player then
+
    Aniplayer = player
    AnimSystem = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()})
    print(AnimSystem)
    local SystemChildren = AnimSystem:GetChildren()
---    for _, folder in ipairs(SystemChildren) do
---     if folder.name=="AnimSystem" then
---         AnimClientFolder = folder
---     end
     for _, Clientfolder in ipairs(SystemChildren) do
      if Clientfolder.name=="Equip Trigger" then
          EquipTrigger = Clientfolder
@@ -393,30 +233,16 @@ function OnPlayerJoined(player)
 
     end
    end
---end
 EquipTrigger.beginOverlapEvent:Connect(SystemInit)
---AnimSystem.equippedEvent:Connect(SystemInit)
     player.bindingPressedEvent:Connect(OnBindingPressed)
     player.bindingReleasedEvent:Connect(OnBindingReleased)
 end
 
---end
-
 
 function SystemInit(System, player)
 if isAttached == 0 then
-        -- local objects = EquipTrigger:GetOverlappingObjects()
-        -- -- if Hitbox:IsOverlapping(player) then
-        -- -- 	Events.Broadcast("StartVehicle",player)
-        -- -- end
-        -- for _, obj in pairs(objects) do
-
-        --     if obj == Animations_Root then
-        --print("lol")
                 Animations_Root:AttachToPlayer(player, "pelvis")
                 isAttached = 1
-           -- end
-        --end
     else
         return
 end
@@ -424,7 +250,10 @@ end
 
 function ResyncAnimation()
     --############################# getting list of animations #############################
-Animations = Animations_Root:GetChildren()
+    Weapons = Animations_Root:GetChildren()
+for weaponIndex, weapon in ipairs(Weapons) do
+    if weaponIndex == WeaponId then
+        Animations = weapon:GetChildren()
 for animIndex, animation in ipairs(Animations) do
 
     --############################# getting bones from animation #######################
@@ -450,7 +279,6 @@ if animIndex == AnimId then
 
     --############################# getting animation length ############################
 
---animationLength = #PelvisKeys[animIndex]
 animationLength = #RHandKeys
 
     --############################# getting keys for IKs ################################
@@ -494,12 +322,11 @@ animationLength = #RHandKeys
 end
 end
 end
+end
+end
 
 function Tick()
-    --Task.Wait(0.5) --SERVER TICK EMULATOR
---print("tick")
---print(Animating)
---print(Aniplayer:GetWorldRotation())
+
 if isAttached == 1 then
 ResyncAnimation()
 GetAnimation()
@@ -508,11 +335,7 @@ DebugIK()
 
    --Task.Wait(KeyframeInterval)
      Keyframe = Keyframe + 1
-   --  print(Aniplayer:GetWorldPosition())
-    -- print(Aniplayer:GetWorldRotation())
-   -- print(AnimId)
-   -- print(Keyframe)
-   -- print(Length)
+
         if(Keyframe*KeyframeInterval > Length) then
              AnimId = 1
              Keyframe = 1
@@ -522,21 +345,7 @@ DebugIK()
             LocateIK()
          end
     end
-    --print(rightHIK:GetWorldPosition())
 end
 end
 
-
-
-
--- -- Store the world position of each waypoint
--- for index, waypoint in ipairs(WAYPOINTS) do
---     WAYPOINT_POSITIONS[index] = waypoint:GetWorldPosition()
---     WAYPOINT_TO_INDEX[waypoint] = index
--- end
-
--- function GetWayPoints()
---     return WAYPOINTS
--- end
---EquipTrigger.beginOverlapEvent:Connect(SystemInit)
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
