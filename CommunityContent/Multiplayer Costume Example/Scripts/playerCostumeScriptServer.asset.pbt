@@ -1,8 +1,8 @@
 Assets {
-  Id: 6159676109246784913
+  Id: 15246905372519325860
   Name: "playerCostumeScriptServer"
   PlatformAssetType: 3
   TextAsset {
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

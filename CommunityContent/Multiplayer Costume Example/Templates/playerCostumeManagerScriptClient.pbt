@@ -1,5 +1,5 @@
 Assets {
-  Id: 10874841431347809857
+  Id: 17346435216073825290
   Name: "playerCostumeManagerScriptClient"
   PlatformAssetType: 5
   TemplateAsset {
@@ -27,7 +27,7 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 1227581356796706060
+            Id: 17360568047515523961
           }
         }
       }
@@ -37,5 +37,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

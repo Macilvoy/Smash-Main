@@ -152,12 +152,6 @@ Objects {
     }
   }
   ParentId: 1602072049588011465
-  ChildIds: 6038688141672041448
-  ChildIds: 2197151806955002816
-  ChildIds: 1665461738386295316
-  ChildIds: 5760272398948147802
-  ChildIds: 6255350745831249585
-  ChildIds: 3845970722890223220
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -199,7 +193,10 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14301346932447682163
+  ParentId: 1602072049588011465
+  ChildIds: 6255350745831249585
+  ChildIds: 1665461738386295316
+  ChildIds: 5760272398948147802
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -223,6 +220,84 @@ Objects {
   }
 }
 Objects {
+  Id: 5760272398948147802
+  Name: "Anchor"
+  Transform {
+    Location {
+      Y: 9.53674316e-07
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3845970722890223220
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Anchor"
+  }
+  InstanceHistory {
+    SelfId: 5760272398948147802
+    SubobjectId: 15442890423990314291
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
+}
+Objects {
+  Id: 1665461738386295316
+  Name: "Animations"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: -6.8301847e-06
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 3845970722890223220
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Animations"
+  }
+  InstanceHistory {
+    SelfId: 1665461738386295316
+    SubobjectId: 10285195290243157373
+    InstanceId: 1149481586272547391
+    TemplateId: 9800851363915619213
+  }
+}
+Objects {
   Id: 6255350745831249585
   Name: "IK"
   Transform {
@@ -232,7 +307,7 @@ Objects {
       Z: 2307.53589
     }
     Rotation {
-      Yaw: -6.83018561e-06
+      Yaw: -6.8301847e-06
     }
     Scale {
       X: 1
@@ -240,7 +315,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14301346932447682163
+  ParentId: 3845970722890223220
   UnregisteredParameters {
     Overrides {
       Name: "cs:KeyframeInterval"
@@ -288,8 +363,13 @@ Objects {
         SelfId: 14301346932447682163
       }
     }
+    Overrides {
+      Name: "cs:EquipTrigger"
+      ObjectReference {
+        SelfId: 6038688141672041448
+      }
+    }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -315,86 +395,6 @@ Objects {
   }
 }
 Objects {
-  Id: 5760272398948147802
-  Name: "Anchor"
-  Transform {
-    Location {
-      Y: 9.53674316e-07
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14301346932447682163
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Anchor"
-  }
-  InstanceHistory {
-    SelfId: 5760272398948147802
-    SubobjectId: 15442890423990314291
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-  }
-}
-Objects {
-  Id: 1665461738386295316
-  Name: "Animations"
-  Transform {
-    Location {
-    }
-    Rotation {
-      Yaw: -6.83018561e-06
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 14301346932447682163
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Animations"
-  }
-  InstanceHistory {
-    SelfId: 1665461738386295316
-    SubobjectId: 10285195290243157373
-    InstanceId: 1149481586272547391
-    TemplateId: 9800851363915619213
-  }
-}
-Objects {
   Id: 2197151806955002816
   Name: "NewScript_1"
   Transform {
@@ -408,7 +408,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14301346932447682163
+  ParentId: 1602072049588011465
   UnregisteredParameters {
     Overrides {
       Name: "cs:AnimationSystem"
@@ -446,7 +446,7 @@ Objects {
       Z: 5.70141602
     }
     Rotation {
-      Yaw: 90
+      Yaw: 89.9999924
     }
     Scale {
       X: 0.159397885
@@ -454,7 +454,7 @@ Objects {
       Z: 0.159397885
     }
   }
-  ParentId: 14301346932447682163
+  ParentId: 1602072049588011465
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -685,6 +685,7 @@ Objects {
       CanMoveDown: true
       IsMountEnabled: true
       MaxHitpoints: 100
+      PlayerMasterVolumeMultiplier: 1
     }
   }
   InstanceHistory {

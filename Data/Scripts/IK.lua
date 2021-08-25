@@ -49,7 +49,7 @@ local LFoot = script:GetCustomProperty("LFoot"):WaitForObject()
 local RFoot = script:GetCustomProperty("RFoot"):WaitForObject()
 local Animations_Root = script:GetCustomProperty("Animations"):WaitForObject()
 local AnimationSystem = script:GetCustomProperty("AnimationSystem"):WaitForObject()
-
+local propEquipTrigger = script:GetCustomProperty("EquipTrigger"):WaitForObject()
 
 local Wkey = "ability_extra_21"
 local Akey = "ability_extra_30"
@@ -279,7 +279,6 @@ function SetIK(anchor, animatedPlayer, IK)
     --if hit then
     anchor:MoveTo(Vector3.New(IK:GetWorldPosition()),KeyframeInterval,false)
     anchor:RotateTo(Rotation.New (IK:GetWorldRotation()),KeyframeInterval,false)
-   print(IK:GetWorldPosition())
     if not anchor.serverUserData.isActivated then
     anchor:Activate(animatedPlayer)
     anchor.serverUserData.isActivated = true
@@ -361,6 +360,7 @@ end
 function Tick()
     GetAnimation()
     DebugIK()
+    print(rightHIK:GetWorldPosition())
     --Task.Wait(0.5) --SERVER TICK EMULATOR
 --print("tick")
 --print(Animating)

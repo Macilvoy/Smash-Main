@@ -1,8 +1,8 @@
 Assets {
-  Id: 12181175059816084441
+  Id: 4504558023844691704
   Name: "playerCostumeManagerScriptClient"
   PlatformAssetType: 3
   TextAsset {
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }
