@@ -199,7 +199,7 @@ end
 function OnPlayerJoined(player)
 
    Aniplayer = player
-   AnimSystem = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()})
+   AnimSystem = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()-Vector3.New(0,0,118.557)})
    print(AnimSystem)
    local SystemChildren = AnimSystem:GetChildren()
     for _, Clientfolder in ipairs(SystemChildren) do
@@ -241,7 +241,8 @@ end
 
 function SystemInit(System, player)
 if isAttached == 0 then
-                Animations_Root:AttachToPlayer(player, "pelvis")
+    player.animationStance = "unarmed_bind_pose"
+    AnimSystem:AttachToPlayer(player, "root")
                 isAttached = 1
     else
         return

@@ -43,6 +43,7 @@ Assets {
           Location {
             X: 0.982068419
             Y: 0.556820869
+            Z: 118.557
           }
           Rotation {
           }
@@ -273,7 +274,7 @@ Assets {
           Location {
             X: -1.96413672
             Y: -1.11364174
-            Z: 132.956146
+            Z: 118.557
           }
           Rotation {
             Yaw: 89.9999542
@@ -318,7 +319,6 @@ Assets {
             Z: 118.557
           }
           Rotation {
-            Yaw: -6.83018334e-06
           }
           Scale {
             X: 1
