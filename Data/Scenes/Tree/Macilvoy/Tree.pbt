@@ -1,12 +1,48 @@
 Name: "Macilvoy"
 RootId: 1602072049588011465
 Objects {
-  Id: 5834764046906664839
-  Name: "test"
+  Id: 4436773740699403042
+  Name: "post"
   Transform {
     Location {
-      X: -30
-      Y: 70.8844833
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1602072049588011465
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "post"
+  }
+  InstanceHistory {
+    SelfId: 4436773740699403042
+    SubobjectId: 15624189579786668589
+    InstanceId: 11934548976407597969
+    TemplateId: 16360568341073172784
+    WasRoot: true
+  }
+}
+Objects {
+  Id: 15819937657670977160
+  Name: "Training Map"
+  Transform {
+    Location {
+      X: 859.267578
+      Z: -50
     }
     Rotation {
     }
@@ -31,16 +67,16 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "test"
+    FilePartitionName: "Training Map"
   }
 }
 Objects {
-  Id: 13602796716702732314
-  Name: "Humanoid 1 Rig"
+  Id: 9398118562246921575
+  Name: "Horizontal Map"
   Transform {
     Location {
-      X: -179.431
-      Z: -2202.53589
+      X: 859.267578
+      Z: -50
     }
     Rotation {
     }
@@ -63,55 +99,28 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 15006897881222808420
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    AnimatedMesh {
-      AnimationStance: "unarmed_bind_pose"
-      AnimationStancePlaybackRate: 1
-      AnimationStanceShouldLoop: true
-      AnimationPlaybackRateMultiplier: 1
-      PlayOnStartAnimation {
-        PlaybackRate: 1
-      }
-      SkinnedMeshes {
-        Id: 13225800027566452361
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
-      }
-      SkinnedMeshes {
-        Id: 841534158063459245
-      }
-    }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Horizontal Map"
   }
 }
 Objects {
-  Id: 17901890061001034731
-  Name: "Default Floor"
+  Id: 9918346935822804479
+  Name: "Vertical Map"
   Transform {
     Location {
-      Z: -2357.53589
+      X: 859.267578
+      Z: -50
     }
     Rotation {
     }
     Scale {
-      X: 75.4936676
-      Y: 111.066528
+      X: 1
+      Y: 1
       Z: 1
     }
   }
   ParentId: 1602072049588011465
-  UnregisteredParameters {
-  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -119,22 +128,48 @@ Objects {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Vertical Map"
+  }
+}
+Objects {
+  Id: 5834764046906664839
+  Name: "test"
+  Transform {
+    Location {
+      X: -30
+      Y: 70.8844833
     }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
+    Rotation {
     }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
     }
+  }
+  ParentId: 1602072049588011465
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "test"
   }
 }
 Objects {
@@ -168,6 +203,7 @@ Objects {
       }
     }
   }
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
