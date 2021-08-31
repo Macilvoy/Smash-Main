@@ -144,8 +144,8 @@ function OnBindingReleased(player, binding)
 end
 
 function SetIK(anchor, animatedPlayer, IK)
-    anchor:MoveTo(Vector3.New(IK:GetWorldPosition()),0,false)
-    anchor:RotateTo(Rotation.New (IK:GetWorldRotation()),0,false)
+    anchor:MoveTo(Vector3.New(IK:GetWorldPosition()),KeyframeInterval/10,false)
+    anchor:RotateTo(Rotation.New (IK:GetWorldRotation()),KeyframeInterval/10,false)
     if not anchor.serverUserData.isActivated then
     anchor:Activate(animatedPlayer)
     anchor.serverUserData.isActivated = true
@@ -334,7 +334,7 @@ GetAnimation()
 DebugIK()
     if Animating == 1 then
 
-   --Task.Wait(KeyframeInterval)
+     Task.Wait(KeyframeInterval/10)
      Keyframe = Keyframe + 1
 
         if(Keyframe*KeyframeInterval > Length) then

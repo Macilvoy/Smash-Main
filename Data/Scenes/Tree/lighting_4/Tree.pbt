@@ -1,7 +1,7 @@
-Name: "lighting_2"
-RootId: 8304499987188923806
+Name: "lighting_4"
+RootId: 15366232984376814789
 Objects {
-  Id: 3040723900421335820
+  Id: 2539420089388595864
   Name: "Area Light"
   Transform {
     Location {
@@ -16,7 +16,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8304499987188923806
+  ParentId: 15366232984376814789
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -47,8 +47,8 @@ Objects {
         AreaLight {
           BarnDoorAngle: 50
           BarnDoorLength: 20
-          SourceWidth: 10000
-          SourceHeight: 10000
+          SourceWidth: 5000
+          SourceHeight: 5000
         }
       }
       MaxDrawDistance: 10000
@@ -57,14 +57,14 @@ Objects {
   }
 }
 Objects {
-  Id: 9292345431491275465
+  Id: 10218473983910518831
   Name: "Area Light"
   Transform {
     Location {
       X: 1574.84888
-      Z: 2051.25146
     }
     Rotation {
+      Pitch: -1.36603776e-05
       Yaw: 180
       Roll: 180
     }
@@ -74,7 +74,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 8304499987188923806
+  ParentId: 15366232984376814789
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -105,7 +105,7 @@ Objects {
         AreaLight {
           BarnDoorAngle: 50
           BarnDoorLength: 20
-          SourceWidth: 12000
+          SourceWidth: 5000
           SourceHeight: 5000
         }
       }

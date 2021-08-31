@@ -35,21 +35,21 @@ Assets {
   }
 }
 Assets {
+  Id: 9785595532150528260
+  Name: "Depth of Field Post Process"
+  PlatformAssetType: 20
+  PrimaryAsset {
+    AssetType: "BlueprintAssetRef"
+    AssetId: "fxbp_post_process_DOF"
+  }
+}
+Assets {
   Id: 8806292115898130680
   Name: "Advanced Sketch Line Post Process"
   PlatformAssetType: 20
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "fxbp_ppm_sketchline"
-  }
-}
-Assets {
-  Id: 3869661720539866154
-  Name: "Lensflare Post Process"
-  PlatformAssetType: 20
-  PrimaryAsset {
-    AssetType: "BlueprintAssetRef"
-    AssetId: "fxbp_post_process_lensflare"
   }
 }
 Assets {

@@ -1,7 +1,132 @@
-Name: "Vertical Map"
-RootId: 9918346935822804479
+Name: "map1"
+RootId: 17875764271824315431
 Objects {
-  Id: 14930749599823181226
+  Id: 3438408349335454987
+  Name: "fx"
+  Transform {
+    Location {
+      X: -859.268
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17875764271824315431
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "fx_1"
+  }
+}
+Objects {
+  Id: 3254059436094717968
+  Name: "sfx"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17875764271824315431
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "sfx_2"
+  }
+}
+Objects {
+  Id: 17743117883248540857
+  Name: "Training Map"
+  Transform {
+    Location {
+      X: 937.47876
+      Z: 2481.93237
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 304.778076
+      Z: 180.388123
+    }
+  }
+  ParentId: 17875764271824315431
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.736000061
+        G: 0.736000061
+        B: 0.736000061
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 8368486982288174738
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceon"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    DisableCastShadows: true
+    InteractWithTriggers: true
+    StaticMesh {
+      Physics {
+      }
+      BoundsScale: 1
+    }
+  }
+}
+Objects {
+  Id: 8304499987188923806
   Name: "lighting"
   Transform {
     Location {
@@ -16,7 +141,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 9918346935822804479
+  ParentId: 17875764271824315431
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -35,28 +160,28 @@ Objects {
   }
 }
 Objects {
-  Id: 14758351110069492573
-  Name: "Vertical Map Floor"
+  Id: 14772837017099884322
+  Name: "Horizontal Map Floor"
   Transform {
     Location {
-      X: -859.267578
+      X: -859.268
     }
     Rotation {
     }
     Scale {
       X: 5
-      Y: 9.97736263
+      Y: 92.903
       Z: 1
     }
   }
-  ParentId: 9918346935822804479
+  ParentId: 17875764271824315431
   UnregisteredParameters {
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceon"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:forceon"
@@ -78,23 +203,23 @@ Objects {
   }
 }
 Objects {
-  Id: 14818190387257757649
-  Name: "Vertical Map"
+  Id: 10615556891454081975
+  Name: "Horizontal Map"
   Transform {
     Location {
-      X: 859.268
-      Z: 50
+      X: 859.267578
+      Z: 3134.39014
     }
     Rotation {
       Roll: -90
     }
     Scale {
       X: 3.77327633
-      Y: 12.474411
-      Z: 8.76573277
+      Y: 7.245
+      Z: 12.474
     }
   }
-  ParentId: 9918346935822804479
+  ParentId: 17875764271824315431
   UnregisteredParameters {
     Overrides {
       Name: "bp:Color Offset A"
@@ -134,7 +259,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Game ID"
-      String: "37ae96/smashbackground1"
+      String: "253b66/smashbackground2"
     }
     Overrides {
       Name: "bp:Cast Shadows"
@@ -190,7 +315,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Rotation"
-      Float: 0
+      Float: -90
     }
     Overrides {
       Name: "bp:Unlit"
@@ -198,17 +323,11 @@ Objects {
     }
     Overrides {
       Name: "bp:Maintain picture scale"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "bp:Screenshot Index"
-      Int: 2
-    }
-    Overrides {
-      Name: "bp:Scene View Distortion Type"
-      Enum {
-        Value: "mc:eportalscenedistortiontype:newenumerator0"
-      }
+      Int: 1
     }
   }
   Collidable_v2 {

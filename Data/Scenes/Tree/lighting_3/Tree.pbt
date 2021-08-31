@@ -1,212 +1,16 @@
-Name: "lighting_1"
-RootId: 15418769341314221404
+Name: "lighting_3"
+RootId: 6102100043992223816
 Objects {
-  Id: 11117493805314475710
-  Name: "Spotlight"
-  Transform {
-    Location {
-      X: 2643.81152
-      Y: 2372.70947
-      Z: 1847.11829
-    }
-    Rotation {
-      Pitch: -58.960907
-      Yaw: 135.603256
-      Roll: 0.386273652
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15418769341314221404
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Light {
-    Intensity: 50
-    Color {
-      R: 1
-      G: 1
-      B: 1
-      A: 1
-    }
-    CastShadows: true
-    VolumetricIntensity: 100
-    TeamSettings {
-    }
-    Light {
-      Temperature: 6500
-      LocalLight {
-        AttenuationRadius: 6000
-        SpotLight {
-          SourceRadius: 20
-          SoftSourceRadius: 20
-          FallOffExponent: 8
-          UseFallOffExponent: true
-          InnerConeAngle: 30
-          OuterConeAngle: 40
-          Profile {
-            Value: "mc:espotlightprofile:basicspotlight"
-          }
-        }
-      }
-      MaxDrawDistance: 10000
-      MaxDistanceFadeRange: 2000
-    }
-  }
-}
-Objects {
-  Id: 14621197328827334254
-  Name: "Spotlight"
-  Transform {
-    Location {
-      X: 2643.81152
-      Y: -1554.57654
-      Z: 1847.11829
-    }
-    Rotation {
-      Pitch: -58.9607544
-      Yaw: -143.133698
-      Roll: 0.386368066
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15418769341314221404
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Light {
-    Intensity: 50
-    Color {
-      R: 1
-      G: 1
-      B: 1
-      A: 1
-    }
-    CastShadows: true
-    VolumetricIntensity: 100
-    TeamSettings {
-    }
-    Light {
-      Temperature: 6500
-      LocalLight {
-        AttenuationRadius: 6000
-        SpotLight {
-          SourceRadius: 20
-          SoftSourceRadius: 20
-          FallOffExponent: 8
-          UseFallOffExponent: true
-          InnerConeAngle: 30
-          OuterConeAngle: 40
-          Profile {
-            Value: "mc:espotlightprofile:basicspotlight"
-          }
-        }
-      }
-      MaxDrawDistance: 10000
-      MaxDistanceFadeRange: 2000
-    }
-  }
-}
-Objects {
-  Id: 13321945565460720570
-  Name: "Spotlight"
-  Transform {
-    Location {
-      X: 2643.81152
-      Y: 421.955
-      Z: 1847.11829
-    }
-    Rotation {
-      Pitch: -58.960968
-      Yaw: -179.486511
-      Roll: 0.386294544
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15418769341314221404
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Light {
-    Intensity: 50
-    Color {
-      R: 1
-      G: 1
-      B: 1
-      A: 1
-    }
-    CastShadows: true
-    VolumetricIntensity: 100
-    TeamSettings {
-    }
-    Light {
-      Temperature: 6500
-      LocalLight {
-        AttenuationRadius: 6000
-        SpotLight {
-          SourceRadius: 20
-          SoftSourceRadius: 20
-          FallOffExponent: 8
-          UseFallOffExponent: true
-          InnerConeAngle: 30
-          OuterConeAngle: 40
-          Profile {
-            Value: "mc:espotlightprofile:basicspotlight"
-          }
-        }
-      }
-      MaxDrawDistance: 10000
-      MaxDistanceFadeRange: 2000
-    }
-  }
-}
-Objects {
-  Id: 10760336786823646228
+  Id: 15239096934681739095
   Name: "Area Light"
   Transform {
     Location {
-      X: -1574.84888
+      X: 208.24585
+      Y: 1690.88354
     }
     Rotation {
-      Roll: -179.999985
+      Yaw: -43.414
+      Roll: 89.9999924
     }
     Scale {
       X: 1
@@ -214,7 +18,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15418769341314221404
+  ParentId: 6102100043992223816
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -228,7 +32,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Light {
-    Intensity: 1000
+    Intensity: 100
     Color {
       R: 1
       G: 1
@@ -241,12 +45,12 @@ Objects {
     Light {
       Temperature: 6500
       LocalLight {
-        AttenuationRadius: 10000
+        AttenuationRadius: 6000
         AreaLight {
           BarnDoorAngle: 50
           BarnDoorLength: 20
-          SourceWidth: 10000
-          SourceHeight: 10000
+          SourceWidth: 2881.02759
+          SourceHeight: 1503.28149
         }
       }
       MaxDrawDistance: 10000
@@ -255,17 +59,16 @@ Objects {
   }
 }
 Objects {
-  Id: 7181548231034119337
+  Id: 14546148780864711855
   Name: "Area Light"
   Transform {
     Location {
-      X: 1574.84888
-      Y: -0.0023585395
-      Z: 3297.47705
+      X: 208.24585
+      Y: -1738.85352
     }
     Rotation {
-      Yaw: 180
-      Roll: 180
+      Yaw: 43.4142914
+      Roll: 89.9999924
     }
     Scale {
       X: 1
@@ -273,7 +76,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15418769341314221404
+  ParentId: 6102100043992223816
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -287,7 +90,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Light {
-    Intensity: 1000
+    Intensity: 100
     Color {
       R: 1
       G: 1
@@ -300,12 +103,127 @@ Objects {
     Light {
       Temperature: 6500
       LocalLight {
-        AttenuationRadius: 10000
+        AttenuationRadius: 6000
         AreaLight {
           BarnDoorAngle: 50
           BarnDoorLength: 20
-          SourceWidth: 15000
-          SourceHeight: 10000
+          SourceWidth: 2881.02759
+          SourceHeight: 1503.28149
+        }
+      }
+      MaxDrawDistance: 10000
+      MaxDistanceFadeRange: 2000
+    }
+  }
+}
+Objects {
+  Id: 10518762548507356537
+  Name: "Area Light"
+  Transform {
+    Location {
+      X: 199.752319
+      Y: 16.7958565
+      Z: 1061.72217
+    }
+    Rotation {
+      Pitch: -41.6833496
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6102100043992223816
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Light {
+    Intensity: 100
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 6000
+        AreaLight {
+          BarnDoorAngle: 50
+          BarnDoorLength: 20
+          SourceWidth: 2881.02759
+          SourceHeight: 1503.28149
+        }
+      }
+      MaxDrawDistance: 10000
+      MaxDistanceFadeRange: 2000
+    }
+  }
+}
+Objects {
+  Id: 1498531475225953642
+  Name: "Area Light"
+  Transform {
+    Location {
+      X: -616.243774
+      Y: 16.7958565
+      Z: 0.000106811523
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6102100043992223816
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Light {
+    Intensity: 100
+    Color {
+      R: 1
+      G: 1
+      B: 1
+      A: 1
+    }
+    VolumetricIntensity: 5
+    TeamSettings {
+    }
+    Light {
+      Temperature: 6500
+      LocalLight {
+        AttenuationRadius: 6000
+        AreaLight {
+          BarnDoorAngle: 50
+          BarnDoorLength: 20
+          SourceWidth: 2881.02759
+          SourceHeight: 1503.28149
         }
       }
       MaxDrawDistance: 10000

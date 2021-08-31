@@ -2541,7 +2541,8 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
-      Y: -694.302795
+      X: 6.42454688e-06
+      Y: -650
       Z: 115
     }
     Rotation {
@@ -2628,17 +2629,17 @@ Objects {
       RelevanceSettings {
         key: "decal"
         value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
+          LowDistance: 45000
+          MediumDistance: 70000
+          HighDistance: 90000
         }
       }
       RelevanceSettings {
         key: "vfx"
         value {
-          LowDistance: 4500
-          MediumDistance: 7000
-          HighDistance: 9000
+          LowDistance: 45000
+          MediumDistance: 70000
+          HighDistance: 90000
         }
       }
       VoiceChatSettings {
@@ -2681,7 +2682,7 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
-      Y: 683.217285
+      Y: 650
       Z: 115
     }
     Rotation {
