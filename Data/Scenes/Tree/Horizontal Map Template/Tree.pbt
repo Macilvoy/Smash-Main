@@ -1,4 +1,4 @@
-Name: "Horizontal Map"
+Name: "Horizontal Map Template"
 RootId: 9398118562246921575
 Objects {
   Id: 15366232984376814789
@@ -31,7 +31,7 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "lighting_1"
+    FilePartitionName: "lighting_4"
   }
 }
 Objects {

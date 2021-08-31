@@ -25,11 +25,11 @@ Objects {
     }
     Overrides {
       Name: "bp:Grain Jitter"
-      Float: 1
+      Float: 0.0329017043
     }
     Overrides {
       Name: "bp:Grain Intensity"
-      Float: 0.106773026
+      Float: 0.270032495
     }
   }
   Collidable_v2 {
@@ -56,13 +56,10 @@ Objects {
   }
 }
 Objects {
-  Id: 3513727289549194941
-  Name: "Lensflare Post Process"
+  Id: 6274885447408816282
+  Name: "Depth of Field Post Process"
   Transform {
     Location {
-      X: 81.228653
-      Y: 105.153564
-      Z: -4.57763672e-05
     }
     Rotation {
     }
@@ -75,26 +72,26 @@ Objects {
   ParentId: 4436773740699403042
   UnregisteredParameters {
     Overrides {
-      Name: "bp:Threshold"
-      Float: 14.3205948
+      Name: "bp:Use Focus Object"
+      Bool: true
     }
     Overrides {
-      Name: "bp:Shape"
-      Enum {
-        Value: "mc:edofshapes:0"
+      Name: "bp:Focus Object"
+      ObjectReference {
+        SelfId: 8553477725164165327
       }
     }
     Overrides {
-      Name: "bp:Blend Weight"
-      Float: 1
+      Name: "bp:Depth Blur Radius"
+      Float: 32
     }
     Overrides {
-      Name: "bp:Intensity"
-      Float: 0.281960547
+      Name: "bp:Depth Blur Distance For 50%"
+      Float: 30.5538387
     }
     Overrides {
-      Name: "bp:Bokeh Size"
-      Float: 16
+      Name: "bp:Focal Distance"
+      Float: 0
     }
   }
   Collidable_v2 {
@@ -106,18 +103,15 @@ Objects {
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
   Blueprint {
     BlueprintAsset {
-      Id: 3869661720539866154
+      Id: 9785595532150528260
     }
     TeamSettings {
     }
-  }
-  InstanceHistory {
-    SelfId: 3513727289549194941
-    SubobjectId: 15385870603714891698
-    InstanceId: 11934548976407597969
-    TemplateId: 16360568341073172784
   }
 }
 Objects {
@@ -257,7 +251,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Threshold"
-      Float: 1.0263195
+      Float: 9.13823605
     }
     Overrides {
       Name: "bp:Blend Weight"
