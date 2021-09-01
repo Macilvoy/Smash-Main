@@ -29,7 +29,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Grain Intensity"
-      Float: 0.270032495
+      Float: 0.117119111
     }
   }
   Collidable_v2 {

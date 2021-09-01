@@ -99,6 +99,8 @@ local Aniplayer = nil
 
 local Animating = 1
 local isAttached = 0
+local KeyPressed = 0 -- TEMP CHECK
+local pressedBefore = false
 
 local WeaponId = 1 -- ############################# GET RESOURCE FROM MENU
 local AnimId = 1
@@ -106,6 +108,27 @@ local Keyframe = 1
 local animationLength = 0
 local Length = 1
 local KeyframeInterval = script:GetCustomProperty("KeyframeInterval")
+
+local WeaponAssets = script:GetCustomProperty("weapon")
+
+local weaponId = 0
+
+function EquipWeapon(player)
+    WeaponAssetsSpawned = World.SpawnAsset(WeaponAssets, {position = player:GetWorldPosition()-Vector3.New(0,0,1000)})
+    local AssetsChildren = WeaponAssetsSpawned:GetChildren()
+     for folderIndex, Weaponfolder in ipairs(AssetsChildren) do
+      if folderIndex == weaponId then
+       local HandsFolders = Weaponfolder:GetChildren()
+       for handIndex, Handfolder in ipairs(HandsFolders) do
+        if handIndex == 1 then
+            Handfolder:AttachToPlayer(player, "right_prop")
+        else
+            Handfolder:AttachToPlayer(player, "left_prop")
+        end
+    end
+    end
+    end
+end
 
 --[[
 ability_extra_21 = W
@@ -115,6 +138,10 @@ ability_extra_32 = D
 
 ability_extra_20 = Q
 ability_extra_22 = E
+
+ability_extra_36 = J
+ability_extra_37 = K
+
 ability_extra_23 = R
 
 ability_extra_33 = F
@@ -131,15 +158,38 @@ ability_extra_12 = LShift
 
 function OnBindingPressed(player, binding)
 
-    if binding == "ability_extra_5" then
+    if binding == "ability_extra_30" or binding == "ability_extra_32" then
         AnimId = 2
         Keyframe = 1
         Animating = 1
+        KeyPressed = 1
+        pressedBefore = true
+    end
+    if binding == "ability_extra_5" then
+        weaponId = 1
+        EquipWeapon(player)
+    end
+    if binding == "ability_extra_6" then
+        weaponId = 2
+        EquipWeapon(player)
+    end
+    if binding == "ability_extra_7" then
+        weaponId = 3
+        EquipWeapon(player)
     end
 
 end
 
 function OnBindingReleased(player, binding)
+ if not pressedBefore then
+     return
+ end
+    if binding == "ability_extra_30" or binding == "ability_extra_32" then
+        AnimId = 1
+        Keyframe = 1
+        Animating = 1
+        KeyPressed = 0
+    end
 
 end
 
@@ -333,17 +383,18 @@ ResyncAnimation()
 GetAnimation()
 DebugIK()
     if Animating == 1 then
-
-     Task.Wait(KeyframeInterval/10)
+        Task.Wait(KeyframeInterval/10)
      Keyframe = Keyframe + 1
-
-        if(Keyframe*KeyframeInterval > Length) then
+     LocateIK()
+        if(Keyframe*KeyframeInterval > Length) and KeyPressed == 0 then
              AnimId = 1
              Keyframe = 1
              Animating = 1
-             LocateIK()
-         else
-            LocateIK()
+            -- LocateIK()
+        elseif (Keyframe*KeyframeInterval > Length) and KeyPressed == 1 then
+            Keyframe = 1
+        --    LocateIK()
+       -- else LocateIK()
          end
     end
 end
