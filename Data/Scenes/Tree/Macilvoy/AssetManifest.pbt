@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13744517087865393217
+  Name: "Londrina Solid Black"
+  PlatformAssetType: 28
+  PrimaryAsset {
+    AssetType: "FontAssetRef"
+    AssetId: "LondrinaSolidBlack_ref"
+  }
+}
+Assets {
   Id: 11515117758838888176
   Name: "BG Flat 002"
   PlatformAssetType: 9
@@ -77,6 +86,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "BackgroundNoOutline_015"
+  }
+}
+Assets {
+  Id: 375237155406852169
+  Name: "Left Turn"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Racing_Icon_016"
   }
 }
 Assets {

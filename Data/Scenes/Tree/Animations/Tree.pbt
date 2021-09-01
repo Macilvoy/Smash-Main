@@ -1,8 +1,8 @@
-Name: "backup"
-RootId: 11753849419086254839
+Name: "Animations"
+RootId: 12679537384369639084
 Objects {
-  Id: 12679537384369639084
-  Name: "Animations"
+  Id: 8689148788172141745
+  Name: "Boxing Gloves"
   Transform {
     Location {
     }
@@ -14,7 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11753849419086254839
+  ParentId: 12679537384369639084
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -30,6 +30,6 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Animations"
+    FilePartitionName: "Boxing Gloves"
   }
 }

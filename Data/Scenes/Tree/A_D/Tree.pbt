@@ -1,7 +1,7 @@
-Name: "T-pose"
-RootId: 14511746217421440695
+Name: "A_D"
+RootId: 321792189949466055
 Objects {
-  Id: 6495216017342434007
+  Id: 120892766673744157
   Name: "LHandKeys"
   Transform {
     Location {
@@ -17,7 +17,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14511746217421440695
+  ParentId: 321792189949466055
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,11 +33,11 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "LHandKeys"
+    FilePartitionName: "LHandKeys_1"
   }
 }
 Objects {
-  Id: 1862403689174104269
+  Id: 17911501588176382320
   Name: "RHandKeys"
   Transform {
     Location {
@@ -53,7 +53,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14511746217421440695
+  ParentId: 321792189949466055
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -69,11 +69,11 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RHandKeys"
+    FilePartitionName: "RHandKeys_1"
   }
 }
 Objects {
-  Id: 5811368177245867332
+  Id: 14440918046223374753
   Name: "RLegKeys"
   Transform {
     Location {
@@ -89,7 +89,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14511746217421440695
+  ParentId: 321792189949466055
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -105,11 +105,11 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "RLegKeys"
+    FilePartitionName: "RLegKeys_1"
   }
 }
 Objects {
-  Id: 11187652331026331989
+  Id: 9487049766135318404
   Name: "LLegKeys"
   Transform {
     Location {
@@ -125,7 +125,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14511746217421440695
+  ParentId: 321792189949466055
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -141,11 +141,11 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "LLegKeys"
+    FilePartitionName: "LLegKeys_1"
   }
 }
 Objects {
-  Id: 16223501530134293725
+  Id: 646042600174072008
   Name: "PelvisKeys"
   Transform {
     Location {
@@ -158,7 +158,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14511746217421440695
+  ParentId: 321792189949466055
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -174,6 +174,6 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "PelvisKeys"
+    FilePartitionName: "PelvisKeys_1"
   }
 }
