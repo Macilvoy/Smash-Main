@@ -1,18 +1,18 @@
 Name: "LHandKeys_1"
-RootId: 120892766673744157
+RootId: 9372118208302732915
 Objects {
-  Id: 1423995753160739409
+  Id: 7377873484650517198
   Name: "LHandKey"
   Transform {
     Location {
-      X: -8.82799911
-      Y: 23.7800026
-      Z: 39.896
+      X: 17.633
+      Y: -11.8279991
+      Z: -51.683
     }
     Rotation {
-      Pitch: -60.3519897
-      Yaw: -177.925
-      Roll: 178.036
+      Pitch: -14.8120117
+      Yaw: -106.42099
+      Roll: 82.423
     }
     Scale {
       X: 0.382817805
@@ -20,7 +20,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -49,21 +49,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 7377873484650517198
+    SubobjectId: 3227032727894182125
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 12415029635938560000
+  Id: 16467432039948335493
   Name: "LHandKey"
   Transform {
     Location {
-      X: -12.8149986
-      Y: 23.801
-      Z: 42.681
+      X: 17.633
+      Y: -11.8279991
+      Z: -51.683
     }
     Rotation {
-      Pitch: -42.4859924
-      Yaw: -178.742
-      Roll: 178.684
+      Pitch: -14.8120117
+      Yaw: -106.42099
+      Roll: 82.423
     }
     Scale {
       X: 0.382817805
@@ -71,7 +77,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -100,21 +106,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 16467432039948335493
+    SubobjectId: 12548105817681748902
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 6462125664136994198
+  Id: 5064233261635371137
   Name: "LHandKey"
   Transform {
     Location {
-      X: 7.49100113
-      Y: 12.7539787
-      Z: 10.99
+      X: 17.633
+      Y: -11.8279991
+      Z: -51.683
     }
     Rotation {
-      Pitch: -72.730011
-      Yaw: 100.841
-      Roll: -90.034
+      Pitch: -14.8120117
+      Yaw: -106.421
+      Roll: 82.423
     }
     Scale {
       X: 0.382817805
@@ -122,7 +134,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -151,21 +163,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 5064233261635371137
+    SubobjectId: 931124320842930850
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 10210742942853114734
+  Id: 9798005212188117371
   Name: "LHandKey"
   Transform {
     Location {
-      X: 32.984
-      Y: 15.5690117
-      Z: -0.063
+      X: -46.905
+      Y: 34.633
+      Z: 375.841
     }
     Rotation {
-      Pitch: 4.766
-      Yaw: 20.002
-      Roll: -4.79299927
+      Pitch: 54.469
+      Yaw: 174.368
+      Roll: 167.929
     }
     Scale {
       X: 0.382817805
@@ -173,7 +191,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -202,21 +220,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 9798005212188117371
+    SubobjectId: 14794958262265008984
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 11601983410080046011
+  Id: 5322629533288803537
   Name: "LHandKey"
   Transform {
     Location {
-      X: 55.764
-      Y: 31.9820061
-      Z: 9.799
+      X: -93.109993
+      Y: 36.24
+      Z: 345.724
     }
     Rotation {
-      Pitch: 14.28
-      Yaw: 53.478
-      Roll: 0.195
+      Pitch: 32.088
+      Yaw: 179.838
+      Roll: 171.753
     }
     Scale {
       X: 0.382817805
@@ -224,7 +248,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -253,21 +277,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 5322629533288803537
+    SubobjectId: 249394178864314098
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 2285167888815531468
+  Id: 10473246971382553334
   Name: "LHandKey"
   Transform {
     Location {
-      X: 61.612
-      Y: 38.4619865
-      Z: 3.901
+      X: 26.6199989
+      Y: 32.815
+      Z: 115.723
     }
     Rotation {
-      Pitch: 26.878
-      Yaw: 53.094
-      Roll: 10.829
+      Pitch: -3.29599
+      Yaw: 5.414
+      Roll: 93.909
     }
     Scale {
       X: 0.382817805
@@ -275,7 +305,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -304,21 +334,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 10473246971382553334
+    SubobjectId: 15849208680107868373
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 10734779296601198959
+  Id: 18193263388951628458
   Name: "LHandKey"
   Transform {
     Location {
-      X: 54.479
-      Y: 29.21101
-      Z: 1.591
+      X: 32.068
+      Y: 34.6209831
+      Z: 117.253
     }
     Rotation {
-      Pitch: 13.041
-      Yaw: 46.155
-      Roll: -2.39199829
+      Pitch: 44.921
+      Yaw: 9.701
+      Roll: 96.725
     }
     Scale {
       X: 0.382817805
@@ -326,7 +362,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 120892766673744157
+  ParentId: 9372118208302732915
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -356,55 +392,10 @@ Objects {
       BoundsScale: 1
     }
   }
-}
-Objects {
-  Id: 13464488859125736117
-  Name: "LHandKey"
-  Transform {
-    Location {
-      X: 15.659
-      Y: 16.229
-      Z: 4.938
-    }
-    Rotation {
-      Pitch: -35.0870056
-      Yaw: 23.419
-      Roll: -21.2720032
-    }
-    Scale {
-      X: 0.382817805
-      Y: 0.047
-      Z: 0.211656734
-    }
-  }
-  ParentId: 120892766673744157
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 896875555958293030
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
+  InstanceHistory {
+    SelfId: 18193263388951628458
+    SubobjectId: 13173228308637913225
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
