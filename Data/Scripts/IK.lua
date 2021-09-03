@@ -377,13 +377,13 @@ end
 end
 
 function Tick()
-
+    Task.Wait(KeyframeInterval/10)
 if isAttached == 1 then
 ResyncAnimation()
 GetAnimation()
 DebugIK()
     if Animating == 1 then
-        Task.Wait(KeyframeInterval/10)
+
      Keyframe = Keyframe + 1
      LocateIK()
         if(Keyframe*KeyframeInterval > Length) and KeyPressed == 0 then

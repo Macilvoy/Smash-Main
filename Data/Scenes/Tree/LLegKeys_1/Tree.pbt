@@ -1,18 +1,18 @@
 Name: "LLegKeys_1"
-RootId: 9487049766135318404
+RootId: 396553070842163687
 Objects {
-  Id: 3987089013319803612
+  Id: 10102914871916319466
   Name: "LLegKey"
   Transform {
     Location {
-      X: 14.638
-      Y: -0.576999664
-      Z: 52.726
+      X: 44.967
+      Y: -13.4140015
+      Z: 2.209
     }
     Rotation {
-      Pitch: -55.3909912
-      Yaw: -5.253
-      Roll: -11.3469849
+      Pitch: -3.20800781
+      Yaw: 34.072
+      Roll: -0.170013428
     }
     Scale {
       X: 0.644847751
@@ -20,7 +20,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -49,21 +49,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 10102914871916319466
+    SubobjectId: 14312160887211428041
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 8181706659824633419
+  Id: 875916110901061003
   Name: "LLegKey"
   Transform {
     Location {
-      X: 15.526
-      Y: -1.20499992
-      Z: 56.131
+      X: 46.639
+      Y: -24.806
+      Z: 2.209
     }
     Rotation {
-      Pitch: -49.8980103
-      Yaw: -6.958
-      Roll: -9.99099731
+      Pitch: -2.93099976
+      Yaw: 6.843
+      Roll: 1.316
     }
     Scale {
       X: 0.644847751
@@ -71,7 +77,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -100,21 +106,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 875916110901061003
+    SubobjectId: 5083474350286569384
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 8914570072865150239
+  Id: 15676766297398307735
   Name: "LLegKey"
   Transform {
     Location {
-      X: 11.344
-      Y: -0.138000488
-      Z: 56.356
+      X: 46.638
+      Y: -38.167
+      Z: 2.21
     }
     Rotation {
-      Pitch: -61.3399963
-      Yaw: -2.759
-      Roll: -13.473999
+      Pitch: -1.95498657
+      Yaw: -21.504
+      Roll: 2.55
     }
     Scale {
       X: 0.644847751
@@ -122,7 +134,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -151,21 +163,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 15676766297398307735
+    SubobjectId: 10602825992828531124
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 2648089508159814951
+  Id: 8611690403131262232
   Name: "LLegKey"
   Transform {
     Location {
-      X: -29.122
-      Y: 1.81299973
-      Z: 54.505
+      X: 47.929
+      Y: 37.0079956
+      Z: 531.849
     }
     Rotation {
-      Pitch: -68.3640137
-      Yaw: 177.237
-      Roll: 180
+      Pitch: 22.096
+      Yaw: 163.765
+      Roll: 137.954
     }
     Scale {
       X: 0.644847751
@@ -173,7 +191,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -202,20 +220,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 8611690403131262232
+    SubobjectId: 4407088038298574651
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 12699217890230794426
+  Id: 15180609388727973513
   Name: "LLegKey"
   Transform {
     Location {
-      X: -72.555
-      Y: 3.90399933
-      Z: 53.08
+      X: -18.036
+      Y: -7.47399902
+      Z: 559.635
     }
     Rotation {
-      Pitch: -86.977
-      Yaw: -2.75900269
+      Pitch: 19.116
+      Yaw: -165.96
+      Roll: 175.56
     }
     Scale {
       X: 0.644847751
@@ -223,7 +248,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -252,20 +277,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 15180609388727973513
+    SubobjectId: 10954894201425783978
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 18312385706920879790
+  Id: 16846318527620446458
   Name: "LLegKey"
   Transform {
     Location {
-      X: -86.586
-      Y: 4.58099937
-      Z: 44.884
+      X: -134.682
+      Y: -0.0909996
+      Z: 422.261
     }
     Rotation {
-      Pitch: -59.9400024
-      Yaw: -2.759
+      Pitch: 30.634
+      Yaw: 179
+      Roll: 164.786
     }
     Scale {
       X: 0.644847751
@@ -273,7 +305,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -302,20 +334,27 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 16846318527620446458
+    SubobjectId: 11772942151695639257
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
 Objects {
-  Id: 1921426705862750623
+  Id: 1770996365409025240
   Name: "LLegKey"
   Transform {
     Location {
-      X: -50.558
-      Y: 2.84399986
-      Z: 31.2870026
+      X: 38.828
+      Y: 4.531
+      Z: 27.489
     }
     Rotation {
-      Pitch: -59.274
-      Yaw: -2.75900269
+      Pitch: -20.9599915
+      Yaw: 61.556
+      Roll: -13.444
     }
     Scale {
       X: 0.644847751
@@ -323,7 +362,7 @@ Objects {
       Z: 0.0728249475
     }
   }
-  ParentId: 9487049766135318404
+  ParentId: 396553070842163687
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -353,54 +392,10 @@ Objects {
       BoundsScale: 1
     }
   }
-}
-Objects {
-  Id: 4622449736411933203
-  Name: "LLegKey"
-  Transform {
-    Location {
-      X: -4.107
-      Y: 0.6060009
-      Z: -0.896
-    }
-    Rotation {
-      Pitch: -13.605
-      Yaw: -2.75799561
-    }
-    Scale {
-      X: 0.644847751
-      Y: 0.211656779
-      Z: 0.0728249475
-    }
-  }
-  ParentId: 9487049766135318404
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 896875555958293030
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
+  InstanceHistory {
+    SelfId: 1770996365409025240
+    SubobjectId: 5924509759718369019
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }

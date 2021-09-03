@@ -1,69 +1,18 @@
 Name: "RHandKeys_1"
-RootId: 17911501588176382320
+RootId: 5698403987813586253
 Objects {
-  Id: 5771963993981288122
+  Id: 15518355864612115194
   Name: "RHandKey"
   Transform {
     Location {
-      X: 48.7109947
-      Y: -20.597
-      Z: 15.052
+      X: 9.59499931
+      Y: -6.77899933
+      Z: -99.386
     }
     Rotation {
-      Pitch: 20.862
-      Yaw: -33.484
-      Roll: -22.2590027
-    }
-    Scale {
-      X: 0.382817805
-      Y: 0.047
-      Z: 0.211656734
-    }
-  }
-  ParentId: 17911501588176382320
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 896875555958293030
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 11502055346474323626
-  Name: "RHandKey"
-  Transform {
-    Location {
-      X: 57.617
-      Y: -23.824
-      Z: 10.445
-    }
-    Rotation {
-      Pitch: 32.26
-      Yaw: -39.515
-      Roll: -14.2000122
+      Pitch: -23.9779968
+      Yaw: 48.97
+      Roll: -54.457
     }
     Scale {
       X: 0.382817805
@@ -71,7 +20,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -101,20 +50,26 @@ Objects {
       BoundsScale: 1
     }
   }
+  InstanceHistory {
+    SelfId: 15518355864612115194
+    SubobjectId: 11382715581835856089
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
+  }
 }
 Objects {
-  Id: 16786902527686238497
+  Id: 6083113631408454522
   Name: "RHandKey"
   Transform {
     Location {
-      X: 48.131
-      Y: -17.5929985
-      Z: 6.846
+      X: 9.59499931
+      Y: -6.77899933
+      Z: -99.386
     }
     Rotation {
-      Pitch: 16.976
-      Yaw: -39.923
-      Roll: -25.2059937
+      Pitch: -23.9779968
+      Yaw: 48.97
+      Roll: -54.457
     }
     Scale {
       X: 0.382817805
@@ -122,7 +77,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -152,20 +107,26 @@ Objects {
       BoundsScale: 1
     }
   }
+  InstanceHistory {
+    SelfId: 6083113631408454522
+    SubobjectId: 2215857247303541081
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
+  }
 }
 Objects {
-  Id: 1395942563821866564
+  Id: 5017901263128291699
   Name: "RHandKey"
   Transform {
     Location {
-      X: 8.396
-      Y: -13.618
-      Z: -2.551
+      X: 9.59499931
+      Y: -6.77899933
+      Z: -99.386
     }
     Rotation {
-      Pitch: -60.0709839
-      Yaw: -18.454
-      Roll: 17.106
+      Pitch: -23.9779968
+      Yaw: 48.97
+      Roll: -54.457
     }
     Scale {
       X: 0.382817805
@@ -173,7 +134,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -203,20 +164,26 @@ Objects {
       BoundsScale: 1
     }
   }
+  InstanceHistory {
+    SelfId: 5017901263128291699
+    SubobjectId: 1083374576522605392
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
+  }
 }
 Objects {
-  Id: 491613658366438134
+  Id: 16548224538809563102
   Name: "RHandKey"
   Transform {
     Location {
-      X: -13.138
-      Y: -17.4620018
-      Z: 32.553
+      X: -44.659
+      Y: 0.47600174
+      Z: 369.504
     }
     Rotation {
-      Pitch: -60.3519897
-      Yaw: -177.925
-      Roll: 178.036
+      Pitch: 49.901
+      Yaw: -179.756
+      Roll: -165.877
     }
     Scale {
       X: 0.382817805
@@ -224,7 +191,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -254,20 +221,26 @@ Objects {
       BoundsScale: 1
     }
   }
+  InstanceHistory {
+    SelfId: 16548224538809563102
+    SubobjectId: 12613697971944041981
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
+  }
 }
 Objects {
-  Id: 3423755705203728806
+  Id: 2025981662680304858
   Name: "RHandKey"
   Transform {
     Location {
-      X: -17.125
-      Y: -17.4409981
-      Z: 35.337
+      X: -68.373
+      Y: 6.25
+      Z: 333.361
     }
     Rotation {
-      Pitch: -42.4859924
-      Yaw: -178.742
-      Roll: 178.684
+      Pitch: 31.217
+      Yaw: 161.557
+      Roll: 155.231
     }
     Scale {
       X: 0.382817805
@@ -275,7 +248,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -305,20 +278,26 @@ Objects {
       BoundsScale: 1
     }
   }
+  InstanceHistory {
+    SelfId: 2025981662680304858
+    SubobjectId: 6248316109773903609
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
+  }
 }
 Objects {
-  Id: 7059112288828084267
+  Id: 5745837634500830989
   Name: "RHandKey"
   Transform {
     Location {
-      X: -2.131
-      Y: -12.2670021
-      Z: 6.30899811
+      X: -125.734
+      Y: -38.045
+      Z: 328.066
     }
     Rotation {
-      Pitch: -81.159
-      Yaw: -76.045
-      Roll: 72.72
+      Pitch: 36.26
+      Yaw: -177.746
+      Roll: -159.225
     }
     Scale {
       X: 0.382817805
@@ -326,7 +305,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -356,20 +335,26 @@ Objects {
       BoundsScale: 1
     }
   }
+  InstanceHistory {
+    SelfId: 5745837634500830989
+    SubobjectId: 366639925628599598
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
+  }
 }
 Objects {
-  Id: 10598353321046688427
+  Id: 1246739019034628749
   Name: "RHandKey"
   Transform {
     Location {
-      X: 16.8430023
-      Y: -15.666
-      Z: -8.704
+      X: -15.334
+      Y: -20.712
+      Z: 2.454
     }
     Rotation {
-      Pitch: -31.4509888
-      Yaw: -8.728
-      Roll: 22.636
+      Pitch: -52.3399963
+      Yaw: 43.271
+      Roll: -29.7569885
     }
     Scale {
       X: 0.382817805
@@ -377,7 +362,7 @@ Objects {
       Z: 0.211656734
     }
   }
-  ParentId: 17911501588176382320
+  ParentId: 5698403987813586253
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -406,5 +391,11 @@ Objects {
       }
       BoundsScale: 1
     }
+  }
+  InstanceHistory {
+    SelfId: 1246739019034628749
+    SubobjectId: 6622138062145243310
+    InstanceId: 1940869072043098611
+    TemplateId: 1865911534509973337
   }
 }
