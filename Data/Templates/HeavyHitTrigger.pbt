@@ -30,6 +30,10 @@ Assets {
             Int: 5
           }
           Overrides {
+            Name: "cs:Damage"
+            Int: 0
+          }
+          Overrides {
             Name: "cs:Owner:isrep"
             Bool: true
           }
@@ -39,6 +43,10 @@ Assets {
           }
           Overrides {
             Name: "cs:Power:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Damage:isrep"
             Bool: true
           }
         }

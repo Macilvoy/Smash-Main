@@ -1,3 +1,4 @@
+if false then
 --___________________________________________________________________________________________
 
 --####################################### SYSTEM LOGIC ######################################
@@ -468,3 +469,5 @@ end
 -- end
 AnimationSystem.equippedEvent:Connect(SystemInit)
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
+
+end

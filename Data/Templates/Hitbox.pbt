@@ -1,40 +1,21 @@
 Assets {
-  Id: 8721495182304896721
-  Name: "HitTrigger"
+  Id: 16152258705038385639
+  Name: "Hitbox"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 15672183246913687160
+      RootId: 3631438583996457848
       Objects {
-        Id: 15672183246913687160
-        Name: "HitTrigger"
+        Id: 3631438583996457848
+        Name: "Hitbox"
         Transform {
           Scale {
             X: 1
             Y: 1
-            Z: 1
+            Z: 2
           }
         }
         ParentId: 4781671109827199097
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Owner"
-            String: ""
-          }
-          Overrides {
-            Name: "cs:Damage"
-            Int: 0
-          }
-          Overrides {
-            Name: "cs:Owner:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Damage:isrep"
-            Bool: true
-          }
-        }
-        Lifespan: 0.2
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -46,7 +27,7 @@ Assets {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:alwaysvisible"
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Trigger {
           TeamSettings {
