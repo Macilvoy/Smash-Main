@@ -373,7 +373,7 @@ Assets {
           }
         }
         ParentId: 8451864637532887032
-        ChildIds: 8574671232284325954
+        ChildIds: 13370155385740031620
         ChildIds: 5516735323739400511
         ChildIds: 4978499763662792088
         ChildIds: 10538811647315804146
@@ -400,6 +400,10 @@ Assets {
         ChildIds: 5732562909546768397
         ChildIds: 17488592311856962260
         ChildIds: 5542834209475940961
+        ChildIds: 8574671232284325954
+        ChildIds: 8558831427419544516
+        ChildIds: 8676284188005127107
+        ChildIds: 5054933841631908342
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -418,8 +422,8 @@ Assets {
         }
       }
       Objects {
-        Id: 8574671232284325954
-        Name: "J+SPACE+A/D"
+        Id: 13370155385740031620
+        Name: "K+S"
         Transform {
           Location {
           }
@@ -432,11 +436,11 @@ Assets {
           }
         }
         ParentId: 3969989180669891573
-        ChildIds: 18350774025276358059
-        ChildIds: 302736589330434488
-        ChildIds: 14759335753094063823
-        ChildIds: 14223373613608935229
-        ChildIds: 11525150283968722101
+        ChildIds: 1366524492009282397
+        ChildIds: 16665442367804382676
+        ChildIds: 8460815079082066599
+        ChildIds: 3771036404264365964
+        ChildIds: 7199552989675176884
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -455,7 +459,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18350774025276358059
+        Id: 1366524492009282397
         Name: "PelvisKeys"
         Transform {
           Location {
@@ -468,12 +472,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8574671232284325954
-        ChildIds: 3171763939418400350
-        ChildIds: 3612357670509126313
-        ChildIds: 16133838674444178034
-        ChildIds: 3099170276346571813
-        ChildIds: 15055401805153552598
+        ParentId: 13370155385740031620
+        ChildIds: 7035099426650818354
+        ChildIds: 9507032748023922528
+        ChildIds: 16905801854089366562
+        ChildIds: 7996751237865300457
+        ChildIds: 5627304255562957099
+        ChildIds: 12449020324126824357
+        ChildIds: 2600605939044975720
+        ChildIds: 15823842710249883610
+        ChildIds: 14658725893016853694
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -493,16 +501,64 @@ Assets {
         }
       }
       Objects {
-        Id: 3171763939418400350
+        Id: 7035099426650818354
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            Z: -8.04
+          }
+          Rotation {
+            Yaw: 2.046
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 1366524492009282397
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9507032748023922528
         Name: "PelvisKey"
         Transform {
           Location {
             X: -0.001
             Y: -0.001
-            Z: -21.837
+            Z: -21.075
           }
           Rotation {
-            Yaw: -0.829
+            Pitch: -22.394989
+            Yaw: -36.155
           }
           Scale {
             X: 0.211656734
@@ -510,7 +566,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 18350774025276358059
+        ParentId: 1366524492009282397
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -542,17 +598,17 @@ Assets {
         }
       }
       Objects {
-        Id: 3612357670509126313
+        Id: 16905801854089366562
         Name: "PelvisKey"
         Transform {
           Location {
-            X: -12.195
-            Y: -0.002
-            Z: -38.584
+            X: -0.001
+            Y: -0.001
+            Z: -21.0750046
           }
           Rotation {
-            Pitch: -33.8599854
-            Yaw: -0.829
+            Pitch: -22.394989
+            Yaw: -36.155
           }
           Scale {
             X: 0.211656734
@@ -560,7 +616,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 18350774025276358059
+        ParentId: 1366524492009282397
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -592,18 +648,17 @@ Assets {
         }
       }
       Objects {
-        Id: 16133838674444178034
+        Id: 7996751237865300457
         Name: "PelvisKey"
         Transform {
           Location {
-            X: 20.822
-            Y: -0.0039999485
-            Z: -38.586
+            X: -0.001
+            Y: -0.001
+            Z: -21.0750046
           }
           Rotation {
-            Pitch: -27.6830139
-            Yaw: 37.735
-            Roll: 17.538
+            Pitch: -22.394989
+            Yaw: -36.155
           }
           Scale {
             X: 0.211656734
@@ -611,7 +666,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 18350774025276358059
+        ParentId: 1366524492009282397
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -643,17 +698,18 @@ Assets {
         }
       }
       Objects {
-        Id: 3099170276346571813
+        Id: 5627304255562957099
         Name: "PelvisKey"
         Transform {
           Location {
-            X: 3.004
-            Y: -0.00300002098
-            Z: -38.585
+            X: 7.585
+            Y: -0.000999927521
+            Z: -14.357
           }
           Rotation {
-            Pitch: -33.8599854
-            Yaw: -0.829
+            Pitch: -33.7980042
+            Yaw: -40.503
+            Roll: 8.301
           }
           Scale {
             X: 0.211656734
@@ -661,7 +717,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 18350774025276358059
+        ParentId: 1366524492009282397
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -693,17 +749,15 @@ Assets {
         }
       }
       Objects {
-        Id: 15055401805153552598
+        Id: 12449020324126824357
         Name: "PelvisKey"
         Transform {
           Location {
-            X: 0.031
-            Y: -0.002
-            Z: -28.673
           }
           Rotation {
-            Pitch: -33.8599854
-            Yaw: -0.829
+            Pitch: -16.8089905
+            Yaw: 23.567
+            Roll: 20.285
           }
           Scale {
             X: 0.211656734
@@ -711,7 +765,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 18350774025276358059
+        ParentId: 1366524492009282397
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -743,7 +797,154 @@ Assets {
         }
       }
       Objects {
-        Id: 302736589330434488
+        Id: 2600605939044975720
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -16.8089905
+            Yaw: 23.567
+            Roll: 20.285
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 1366524492009282397
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15823842710249883610
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -16.8089905
+            Yaw: 23.567
+            Roll: 20.285
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 1366524492009282397
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14658725893016853694
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -8.388
+          }
+          Rotation {
+            Pitch: -25.8800049
+            Yaw: 43.739
+            Roll: 7.057
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 1366524492009282397
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16665442367804382676
         Name: "LLegKeys"
         Transform {
           Location {
@@ -759,12 +960,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8574671232284325954
-        ChildIds: 6121512151442780474
-        ChildIds: 14735732841568050033
-        ChildIds: 8191979913203193077
-        ChildIds: 13572252385495342789
-        ChildIds: 7758797664982708723
+        ParentId: 13370155385740031620
+        ChildIds: 13422184949016400621
+        ChildIds: 11491494421852412236
+        ChildIds: 16615742607353506262
+        ChildIds: 6354317455490776938
+        ChildIds: 1190408394357401321
+        ChildIds: 1130709042274686233
+        ChildIds: 9416722468530339008
+        ChildIds: 4721618952275940321
+        ChildIds: 1438822116197807183
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -784,18 +989,17 @@ Assets {
         }
       }
       Objects {
-        Id: 6121512151442780474
+        Id: 13422184949016400621
         Name: "LLegKey"
         Transform {
           Location {
-            X: 49.182
-            Y: 1.23600006
-            Z: 5.904
+            X: -9.303
+            Y: 0.739999771
+            Z: 7.116
           }
           Rotation {
-            Pitch: -8.93499756
-            Yaw: -4.073
-            Roll: -5.5329895
+            Pitch: -1.1960144
+            Yaw: -1.946
           }
           Scale {
             X: 0.644847751
@@ -803,7 +1007,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 302736589330434488
+        ParentId: 16665442367804382676
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -835,18 +1039,18 @@ Assets {
         }
       }
       Objects {
-        Id: 14735732841568050033
+        Id: 11491494421852412236
         Name: "LLegKey"
         Transform {
           Location {
-            X: 49.182
-            Y: 1.23600006
-            Z: 5.904
+            X: -25.6189976
+            Y: 4.639
+            Z: 9.323
           }
           Rotation {
-            Pitch: -8.93499756
-            Yaw: -4.073
-            Roll: -5.5329895
+            Pitch: -17.1820068
+            Yaw: -55.481
+            Roll: -6.66400146
           }
           Scale {
             X: 0.644847751
@@ -854,7 +1058,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 302736589330434488
+        ParentId: 16665442367804382676
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -886,18 +1090,18 @@ Assets {
         }
       }
       Objects {
-        Id: 8191979913203193077
+        Id: 16615742607353506262
         Name: "LLegKey"
         Transform {
           Location {
-            X: 49.182
-            Y: 1.23600006
-            Z: 5.904
+            X: -25.6189976
+            Y: 4.639
+            Z: 9.323
           }
           Rotation {
-            Pitch: -8.93499756
-            Yaw: -4.073
-            Roll: -5.5329895
+            Pitch: -17.1820068
+            Yaw: -55.481
+            Roll: -6.66400146
           }
           Scale {
             X: 0.644847751
@@ -905,7 +1109,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 302736589330434488
+        ParentId: 16665442367804382676
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -937,18 +1141,18 @@ Assets {
         }
       }
       Objects {
-        Id: 13572252385495342789
+        Id: 6354317455490776938
         Name: "LLegKey"
         Transform {
           Location {
-            X: 49.182
-            Y: 1.23600006
-            Z: 5.904
+            X: -25.6189976
+            Y: 4.639
+            Z: 9.323
           }
           Rotation {
-            Pitch: -8.93499756
-            Yaw: -4.073
-            Roll: -5.5329895
+            Pitch: -17.1820068
+            Yaw: -55.481
+            Roll: -6.66400146
           }
           Scale {
             X: 0.644847751
@@ -956,7 +1160,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 302736589330434488
+        ParentId: 16665442367804382676
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -988,18 +1192,17 @@ Assets {
         }
       }
       Objects {
-        Id: 7758797664982708723
+        Id: 1190408394357401321
         Name: "LLegKey"
         Transform {
           Location {
-            X: 49.182
-            Y: 1.23600006
-            Z: 5.904
+            X: -9.008
+            Y: 0.63699913
+            Z: 9.323
           }
           Rotation {
-            Pitch: -8.93499756
-            Yaw: -4.073
-            Roll: -5.5329895
+            Pitch: -1.1960144
+            Yaw: -1.306
           }
           Scale {
             X: 0.644847751
@@ -1007,7 +1210,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 302736589330434488
+        ParentId: 16665442367804382676
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1039,7 +1242,211 @@ Assets {
         }
       }
       Objects {
-        Id: 14759335753094063823
+        Id: 1130709042274686233
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 1.598
+            Y: -0.562999725
+            Z: 20.789
+          }
+          Rotation {
+            Pitch: -49.151
+            Yaw: -4.242
+            Roll: 0.893
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16665442367804382676
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9416722468530339008
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 1.598
+            Y: -0.562999725
+            Z: 20.789
+          }
+          Rotation {
+            Pitch: -49.151
+            Yaw: -4.242
+            Roll: 0.893
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16665442367804382676
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4721618952275940321
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 1.598
+            Y: -0.562999725
+            Z: 20.789
+          }
+          Rotation {
+            Pitch: -49.151
+            Yaw: -4.242
+            Roll: 0.893
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16665442367804382676
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1438822116197807183
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 4.357
+            Y: 0.0229988098
+            Z: 8.419
+          }
+          Rotation {
+            Pitch: -21.3519897
+            Yaw: 13.774
+            Roll: 2.233
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16665442367804382676
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8460815079082066599
         Name: "RLegKeys"
         Transform {
           Location {
@@ -1055,12 +1462,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8574671232284325954
-        ChildIds: 8820121251038116842
-        ChildIds: 15306691231648610373
-        ChildIds: 3067174826064361359
-        ChildIds: 3723580142801842151
-        ChildIds: 4687320103047532601
+        ParentId: 13370155385740031620
+        ChildIds: 12645752193848411095
+        ChildIds: 4434962581038483522
+        ChildIds: 3171758091559886041
+        ChildIds: 17594359351055687427
+        ChildIds: 8251381407965896433
+        ChildIds: 12921528849720311262
+        ChildIds: 8733423672690179068
+        ChildIds: 9728321199112160667
+        ChildIds: 367560885017132244
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1080,18 +1491,17 @@ Assets {
         }
       }
       Objects {
-        Id: 8820121251038116842
+        Id: 12645752193848411095
         Name: "RLegKey"
         Transform {
           Location {
-            X: -33.426
-            Y: 1.04999924
-            Z: 6.394
+            X: -7.464
+            Y: 0.708000183
+            Z: 7.116
           }
           Rotation {
-            Pitch: -18.6199951
-            Yaw: 46.086
-            Roll: 2.308
+            Pitch: -5.66799927
+            Yaw: -1.946
           }
           Scale {
             X: 0.644847751
@@ -1099,7 +1509,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 14759335753094063823
+        ParentId: 8460815079082066599
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1131,18 +1541,18 @@ Assets {
         }
       }
       Objects {
-        Id: 15306691231648610373
+        Id: 4434962581038483522
         Name: "RLegKey"
         Transform {
           Location {
-            X: -33.426
-            Y: 1.04999924
-            Z: 6.394
+            X: 33.598
+            Y: -10.1439991
+            Z: 9.32
           }
           Rotation {
-            Pitch: -18.6199951
-            Yaw: 46.086
-            Roll: 2.308
+            Pitch: -16.2680054
+            Yaw: -42.556
+            Roll: 12.827
           }
           Scale {
             X: 0.644847751
@@ -1150,7 +1560,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 14759335753094063823
+        ParentId: 8460815079082066599
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1182,18 +1592,18 @@ Assets {
         }
       }
       Objects {
-        Id: 3067174826064361359
+        Id: 3171758091559886041
         Name: "RLegKey"
         Transform {
           Location {
-            X: -33.426
-            Y: 1.04999924
-            Z: 6.394
+            X: 33.598
+            Y: -10.1439991
+            Z: 9.32
           }
           Rotation {
-            Pitch: -18.6199951
-            Yaw: 46.086
-            Roll: 2.308
+            Pitch: -16.2680054
+            Yaw: -42.556
+            Roll: 12.827
           }
           Scale {
             X: 0.644847751
@@ -1201,7 +1611,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 14759335753094063823
+        ParentId: 8460815079082066599
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1233,18 +1643,18 @@ Assets {
         }
       }
       Objects {
-        Id: 3723580142801842151
+        Id: 17594359351055687427
         Name: "RLegKey"
         Transform {
           Location {
-            X: -33.426
-            Y: 1.04999924
-            Z: 6.394
+            X: 33.598
+            Y: -10.1439991
+            Z: 9.32
           }
           Rotation {
-            Pitch: -18.6199951
-            Yaw: 46.086
-            Roll: 2.308
+            Pitch: -16.2680054
+            Yaw: -42.556
+            Roll: 12.827
           }
           Scale {
             X: 0.644847751
@@ -1252,7 +1662,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 14759335753094063823
+        ParentId: 8460815079082066599
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1284,18 +1694,17 @@ Assets {
         }
       }
       Objects {
-        Id: 4687320103047532601
+        Id: 8251381407965896433
         Name: "RLegKey"
         Transform {
           Location {
-            X: -33.426
-            Y: 1.04999924
-            Z: 6.394
+            X: -7.77399969
+            Y: 0.622999191
+            Z: 9.32
           }
           Rotation {
-            Pitch: -18.6199951
-            Yaw: 46.086
-            Roll: 2.308
+            Pitch: -5.66799927
+            Yaw: -1.307
           }
           Scale {
             X: 0.644847751
@@ -1303,7 +1712,7 @@ Assets {
             Z: 0.0728249475
           }
         }
-        ParentId: 14759335753094063823
+        ParentId: 8460815079082066599
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1335,7 +1744,211 @@ Assets {
         }
       }
       Objects {
-        Id: 14223373613608935229
+        Id: 12921528849720311262
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.996
+            Y: -15.845
+            Z: 0.001
+          }
+          Rotation {
+            Pitch: -4.10198975
+            Yaw: 69.41
+            Roll: -3.91500854
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 8460815079082066599
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8733423672690179068
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.996
+            Y: -15.845
+            Z: 0.001
+          }
+          Rotation {
+            Pitch: -4.10198975
+            Yaw: 69.41
+            Roll: -3.91500854
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 8460815079082066599
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9728321199112160667
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.996
+            Y: -15.845
+            Z: 0.001
+          }
+          Rotation {
+            Pitch: -4.10198975
+            Yaw: 69.41
+            Roll: -3.91500854
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 8460815079082066599
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 367560885017132244
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -23.011
+            Y: -9.21999931
+            Z: 4.461
+          }
+          Rotation {
+            Pitch: -9.98999
+            Yaw: 33.591
+            Roll: -2.88299561
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 8460815079082066599
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3771036404264365964
         Name: "RHandKeys"
         Transform {
           Location {
@@ -1351,12 +1964,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8574671232284325954
-        ChildIds: 15945499669983311745
-        ChildIds: 3972051788882466932
-        ChildIds: 15361407373491804231
-        ChildIds: 4549870677397729098
-        ChildIds: 10054979502274197110
+        ParentId: 13370155385740031620
+        ChildIds: 6076393946864027595
+        ChildIds: 11359373975931974746
+        ChildIds: 7262278201789520555
+        ChildIds: 16662717167273537050
+        ChildIds: 9100267793935608228
+        ChildIds: 3533670478454017297
+        ChildIds: 12898223545707397337
+        ChildIds: 604493410521036768
+        ChildIds: 7526497946872117762
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1376,18 +1993,18 @@ Assets {
         }
       }
       Objects {
-        Id: 15945499669983311745
+        Id: 6076393946864027595
         Name: "RHandKey"
         Transform {
           Location {
-            X: -18.577
-            Y: -11.4179993
-            Z: -20.117
+            X: -1.48
+            Y: -11.4420013
+            Z: -2.289
           }
           Rotation {
-            Pitch: -44.2640076
-            Yaw: 13.925
-            Roll: -4.20401
+            Pitch: -51.789
+            Yaw: -6.589
+            Roll: -4.86599731
           }
           Scale {
             X: 0.382817805
@@ -1395,7 +2012,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 14223373613608935229
+        ParentId: 3771036404264365964
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1427,18 +2044,18 @@ Assets {
         }
       }
       Objects {
-        Id: 3972051788882466932
+        Id: 11359373975931974746
         Name: "RHandKey"
         Transform {
           Location {
-            X: -22.542
-            Y: -11.417
-            Z: -20.116
+            X: 42.448
+            Y: -70.674
+            Z: -2.287
           }
           Rotation {
-            Pitch: -70.8349915
-            Yaw: 12.587
-            Roll: 14.389
+            Pitch: 13.291
+            Yaw: -158.769
+            Roll: -7.01001
           }
           Scale {
             X: 0.382817805
@@ -1446,7 +2063,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 14223373613608935229
+        ParentId: 3771036404264365964
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1478,18 +2095,18 @@ Assets {
         }
       }
       Objects {
-        Id: 15361407373491804231
+        Id: 7262278201789520555
         Name: "RHandKey"
         Transform {
           Location {
-            X: -25.923
-            Y: -11.4179993
-            Z: -31.102
+            X: 42.448
+            Y: -70.674
+            Z: -2.287
           }
           Rotation {
-            Pitch: -72.254
-            Yaw: 69.653
-            Roll: -22.194
+            Pitch: 13.291
+            Yaw: -158.769
+            Roll: -7.01001
           }
           Scale {
             X: 0.382817805
@@ -1497,7 +2114,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 14223373613608935229
+        ParentId: 3771036404264365964
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1529,18 +2146,18 @@ Assets {
         }
       }
       Objects {
-        Id: 4549870677397729098
+        Id: 16662717167273537050
         Name: "RHandKey"
         Transform {
           Location {
-            X: -6.18499947
-            Y: -11.4179993
-            Z: -19.905
+            X: 42.448
+            Y: -70.674
+            Z: -2.287
           }
           Rotation {
-            Pitch: -58.697998
-            Yaw: 0.044
-            Roll: -2.8380127
+            Pitch: 13.291
+            Yaw: -158.769
+            Roll: -7.01001
           }
           Scale {
             X: 0.382817805
@@ -1548,7 +2165,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 14223373613608935229
+        ParentId: 3771036404264365964
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1580,18 +2197,18 @@ Assets {
         }
       }
       Objects {
-        Id: 10054979502274197110
+        Id: 9100267793935608228
         Name: "RHandKey"
         Transform {
           Location {
-            X: -18.577
-            Y: -11.4179993
-            Z: -20.117
+            X: -1.92900097
+            Y: -11.4599991
+            Z: -2.289
           }
           Rotation {
-            Pitch: -44.2640076
-            Yaw: 13.925
-            Roll: -4.20401
+            Pitch: -51.7879944
+            Yaw: -5.949
+            Roll: -4.86599731
           }
           Scale {
             X: 0.382817805
@@ -1599,7 +2216,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 14223373613608935229
+        ParentId: 3771036404264365964
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1631,7 +2248,211 @@ Assets {
         }
       }
       Objects {
-        Id: 11525150283968722101
+        Id: 3533670478454017297
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -36.486
+            Y: -22.864
+            Z: 3.96
+          }
+          Rotation {
+            Pitch: -61.888
+            Yaw: -46.418
+            Roll: 82.496
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 3771036404264365964
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 12898223545707397337
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -36.486
+            Y: -22.864
+            Z: 3.96
+          }
+          Rotation {
+            Pitch: -61.888
+            Yaw: -46.418
+            Roll: 82.496
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 3771036404264365964
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 604493410521036768
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -36.486
+            Y: -22.864
+            Z: 3.96
+          }
+          Rotation {
+            Pitch: -61.888
+            Yaw: -46.418
+            Roll: 82.496
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 3771036404264365964
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7526497946872117762
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -36.486
+            Y: -22.864
+            Z: 3.96
+          }
+          Rotation {
+            Pitch: -61.888
+            Yaw: -46.418
+            Roll: 82.496
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 3771036404264365964
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7199552989675176884
         Name: "LHandKeys"
         Transform {
           Location {
@@ -1647,12 +2468,16 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 8574671232284325954
-        ChildIds: 2183571822776617588
-        ChildIds: 7109766902522067673
-        ChildIds: 5121283307329052765
-        ChildIds: 6836688609741392901
-        ChildIds: 1027263839265838477
+        ParentId: 13370155385740031620
+        ChildIds: 4854951379589163734
+        ChildIds: 7561644076514890481
+        ChildIds: 17007128991253838317
+        ChildIds: 7269140287123990565
+        ChildIds: 11798394208461514170
+        ChildIds: 17939293763691925957
+        ChildIds: 18370807493359245410
+        ChildIds: 14718959006896399229
+        ChildIds: 5234387050505807632
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1672,18 +2497,18 @@ Assets {
         }
       }
       Objects {
-        Id: 2183571822776617588
+        Id: 4854951379589163734
         Name: "LHandKey"
         Transform {
           Location {
-            X: -27.5250015
-            Y: 9.95999908
-            Z: -24.03
+            X: -29.585
+            Y: -2.479
+            Z: 14.872
           }
           Rotation {
-            Pitch: -68.1239929
-            Yaw: -168.008
-            Roll: 176.342
+            Pitch: -16.4509888
+            Yaw: -177.507
+            Roll: -177.531
           }
           Scale {
             X: 0.382817805
@@ -1691,7 +2516,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 11525150283968722101
+        ParentId: 7199552989675176884
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1723,18 +2548,18 @@ Assets {
         }
       }
       Objects {
-        Id: 7109766902522067673
+        Id: 7561644076514890481
         Name: "LHandKey"
         Transform {
           Location {
-            X: -36.472
-            Y: 9.96100235
-            Z: -14.418
+            X: -46.6210022
+            Y: 28.064
+            Z: -2.965
           }
           Rotation {
-            Pitch: -73.7749939
-            Yaw: -166.716
-            Roll: 175.118
+            Pitch: -55.6329956
+            Yaw: 113.932
+            Roll: -65.0839844
           }
           Scale {
             X: 0.382817805
@@ -1742,7 +2567,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 11525150283968722101
+        ParentId: 7199552989675176884
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1774,18 +2599,18 @@ Assets {
         }
       }
       Objects {
-        Id: 5121283307329052765
+        Id: 17007128991253838317
         Name: "LHandKey"
         Transform {
           Location {
-            X: 112.74
-            Y: 31.464
-            Z: -58.115
+            X: -46.6210022
+            Y: 28.064
+            Z: -2.965
           }
           Rotation {
-            Pitch: -73.7749939
-            Yaw: -166.716
-            Roll: 175.118
+            Pitch: -55.6329956
+            Yaw: 113.932
+            Roll: -65.0839844
           }
           Scale {
             X: 0.382817805
@@ -1793,7 +2618,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 11525150283968722101
+        ParentId: 7199552989675176884
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1825,18 +2650,18 @@ Assets {
         }
       }
       Objects {
-        Id: 6836688609741392901
+        Id: 7269140287123990565
         Name: "LHandKey"
         Transform {
           Location {
-            X: -36.472
-            Y: 9.96100235
-            Z: -14.418
+            X: -46.6210022
+            Y: 28.064
+            Z: -2.965
           }
           Rotation {
-            Pitch: -73.7749939
-            Yaw: -166.717
-            Roll: 175.118
+            Pitch: -55.6329956
+            Yaw: 113.932
+            Roll: -65.0839844
           }
           Scale {
             X: 0.382817805
@@ -1844,7 +2669,7 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 11525150283968722101
+        ParentId: 7199552989675176884
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -1876,18 +2701,18 @@ Assets {
         }
       }
       Objects {
-        Id: 1027263839265838477
+        Id: 11798394208461514170
         Name: "LHandKey"
         Transform {
           Location {
-            X: -36.472
-            Y: 9.96100235
-            Z: -14.418
+            X: -0.451000094
+            Y: 10.527
+            Z: -20.861
           }
           Rotation {
-            Pitch: -73.7749939
-            Yaw: -166.717
-            Roll: 175.118
+            Pitch: -39.6239929
+            Yaw: -175.821
+            Roll: 172.604
           }
           Scale {
             X: 0.382817805
@@ -1895,7 +2720,211 @@ Assets {
             Z: 0.211656734
           }
         }
-        ParentId: 11525150283968722101
+        ParentId: 7199552989675176884
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 17939293763691925957
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 102.329
+            Y: 19.1349983
+            Z: 116.592
+          }
+          Rotation {
+            Pitch: 34.948
+            Yaw: 5.422
+            Roll: 5.839
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 7199552989675176884
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18370807493359245410
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -21.5110016
+            Y: 19.14
+            Z: 84.098
+          }
+          Rotation {
+            Pitch: 34.491
+            Yaw: 178.773
+            Roll: 174.193
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 7199552989675176884
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14718959006896399229
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -5.30099869
+            Y: 19.1369972
+            Z: 81.74
+          }
+          Rotation {
+            Pitch: 40.626
+            Yaw: 6.186
+            Roll: 6.308
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 7199552989675176884
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 5234387050505807632
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 23.744
+            Y: 19.132
+            Z: 20.174
+          }
+          Rotation {
+            Pitch: -35.2250061
+            Yaw: -1.319
+            Roll: 5.861
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 7199552989675176884
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -38723,6 +39752,8093 @@ Assets {
           }
         }
         ParentId: 2444841342426025534
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8574671232284325954
+        Name: "J+SPACE+A/D"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3969989180669891573
+        ChildIds: 18350774025276358059
+        ChildIds: 302736589330434488
+        ChildIds: 14759335753094063823
+        ChildIds: 14223373613608935229
+        ChildIds: 11525150283968722101
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 18350774025276358059
+        Name: "PelvisKeys"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8574671232284325954
+        ChildIds: 3171763939418400350
+        ChildIds: 3612357670509126313
+        ChildIds: 16133838674444178034
+        ChildIds: 3099170276346571813
+        ChildIds: 15055401805153552598
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "PelvisKeys_36"
+        }
+      }
+      Objects {
+        Id: 3171763939418400350
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -21.837
+          }
+          Rotation {
+            Yaw: -0.829
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 18350774025276358059
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3612357670509126313
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.00100040436
+            Y: -0.001
+            Z: -21.837
+          }
+          Rotation {
+            Pitch: -33.86
+            Yaw: -0.82901
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 18350774025276358059
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16133838674444178034
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.000999450684
+            Y: -0.00100000016
+            Z: -21.837
+          }
+          Rotation {
+            Pitch: -27.6830139
+            Yaw: 37.735
+            Roll: 17.538
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 18350774025276358059
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3099170276346571813
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.000999927521
+            Y: -0.00100000016
+            Z: -21.837
+          }
+          Rotation {
+            Pitch: -33.8599854
+            Yaw: -0.829
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 18350774025276358059
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15055401805153552598
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.000999998301
+            Y: -0.001
+            Z: -21.837
+          }
+          Rotation {
+            Pitch: -33.8599854
+            Yaw: -0.829
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 18350774025276358059
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 302736589330434488
+        Name: "LLegKeys"
+        Transform {
+          Location {
+            X: -2.91262586e-05
+            Y: -27.147644
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8574671232284325954
+        ChildIds: 6121512151442780474
+        ChildIds: 14735732841568050033
+        ChildIds: 8191979913203193077
+        ChildIds: 13572252385495342789
+        ChildIds: 7758797664982708723
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LLegKeys_36"
+        }
+      }
+      Objects {
+        Id: 6121512151442780474
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -2.48399878
+            Y: 1.23999977
+            Z: 24.174
+          }
+          Rotation {
+            Pitch: -61.7250061
+            Yaw: -8.521
+            Roll: 1.346
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 302736589330434488
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14735732841568050033
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -2.48399878
+            Y: 1.23999977
+            Z: 24.174
+          }
+          Rotation {
+            Pitch: -61.7250061
+            Yaw: -8.521
+            Roll: 1.346
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 302736589330434488
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8191979913203193077
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -2.48399878
+            Y: 1.23999977
+            Z: 24.174
+          }
+          Rotation {
+            Pitch: -61.7250061
+            Yaw: -8.521
+            Roll: 1.346
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 302736589330434488
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13572252385495342789
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -2.48399878
+            Y: 1.23999977
+            Z: 24.174
+          }
+          Rotation {
+            Pitch: -61.7250061
+            Yaw: -8.521
+            Roll: 1.346
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 302736589330434488
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7758797664982708723
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -2.48399878
+            Y: 1.23999977
+            Z: 24.174
+          }
+          Rotation {
+            Pitch: -61.7250061
+            Yaw: -8.521
+            Roll: 1.346
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 302736589330434488
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14759335753094063823
+        Name: "RLegKeys"
+        Transform {
+          Location {
+            X: -2.90474945e-05
+            Y: 27.148
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8574671232284325954
+        ChildIds: 8820121251038116842
+        ChildIds: 15306691231648610373
+        ChildIds: 3067174826064361359
+        ChildIds: 3723580142801842151
+        ChildIds: 4687320103047532601
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RLegKeys_36"
+        }
+      }
+      Objects {
+        Id: 8820121251038116842
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -59.514
+            Y: -3.65500069
+            Z: 15.816
+          }
+          Rotation {
+            Pitch: -51.0310059
+            Yaw: 18.351
+            Roll: 3.652
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 14759335753094063823
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15306691231648610373
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -59.514
+            Y: -3.65500069
+            Z: 15.816
+          }
+          Rotation {
+            Pitch: -51.0310059
+            Yaw: 18.351
+            Roll: 3.652
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 14759335753094063823
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3067174826064361359
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -59.514
+            Y: -3.65500069
+            Z: 15.816
+          }
+          Rotation {
+            Pitch: -51.0310059
+            Yaw: 18.351
+            Roll: 3.652
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 14759335753094063823
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3723580142801842151
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -59.514
+            Y: -3.65500069
+            Z: 15.816
+          }
+          Rotation {
+            Pitch: -51.0310059
+            Yaw: 18.351
+            Roll: 3.652
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 14759335753094063823
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4687320103047532601
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -59.514
+            Y: -3.65500069
+            Z: 15.816
+          }
+          Rotation {
+            Pitch: -51.0310059
+            Yaw: 18.351
+            Roll: 3.652
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 14759335753094063823
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14223373613608935229
+        Name: "RHandKeys"
+        Transform {
+          Location {
+            X: 5.54429389e-05
+            Y: 51.6765709
+            Z: -0.361572266
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8574671232284325954
+        ChildIds: 15945499669983311745
+        ChildIds: 3972051788882466932
+        ChildIds: 15361407373491804231
+        ChildIds: 4549870677397729098
+        ChildIds: 10054979502274197110
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RHandKeys_36"
+        }
+      }
+      Objects {
+        Id: 15945499669983311745
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -18.577
+            Y: -11.4179993
+            Z: -20.117
+          }
+          Rotation {
+            Pitch: -44.2640076
+            Yaw: 13.925
+            Roll: -4.204
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 14223373613608935229
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3972051788882466932
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -22.542
+            Y: -11.417
+            Z: -20.116
+          }
+          Rotation {
+            Pitch: -70.8349915
+            Yaw: 12.587
+            Roll: 14.389
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 14223373613608935229
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15361407373491804231
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -25.923
+            Y: -11.4179993
+            Z: -31.102
+          }
+          Rotation {
+            Pitch: -72.254
+            Yaw: 69.653
+            Roll: -22.194
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 14223373613608935229
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4549870677397729098
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -6.185
+            Y: -11.4179993
+            Z: -19.9049988
+          }
+          Rotation {
+            Pitch: -58.697998
+            Yaw: 0.044
+            Roll: -2.838
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 14223373613608935229
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 10054979502274197110
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -18.577
+            Y: -11.4179993
+            Z: -20.117
+          }
+          Rotation {
+            Pitch: -44.2640076
+            Yaw: 13.925
+            Roll: -4.204
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 14223373613608935229
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11525150283968722101
+        Name: "LHandKeys"
+        Transform {
+          Location {
+            X: 0.000133396
+            Y: -46.332592
+            Z: 3.82495117
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8574671232284325954
+        ChildIds: 2183571822776617588
+        ChildIds: 7109766902522067673
+        ChildIds: 5121283307329052765
+        ChildIds: 6836688609741392901
+        ChildIds: 1027263839265838477
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LHandKeys_36"
+        }
+      }
+      Objects {
+        Id: 2183571822776617588
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -27.525
+            Y: 9.95999908
+            Z: -24.0299988
+          }
+          Rotation {
+            Pitch: -68.1239929
+            Yaw: -168.008
+            Roll: 176.342
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11525150283968722101
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7109766902522067673
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -36.472
+            Y: 9.96100235
+            Z: -14.418
+          }
+          Rotation {
+            Pitch: -73.7749939
+            Yaw: -166.716
+            Roll: 175.118
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11525150283968722101
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 5121283307329052765
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 112.743
+            Y: 31.467
+            Z: 4.8
+          }
+          Rotation {
+            Pitch: -83.922
+            Yaw: -37.346
+            Roll: 45.082
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11525150283968722101
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6836688609741392901
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -36.472
+            Y: 9.96100235
+            Z: -14.418
+          }
+          Rotation {
+            Pitch: -73.7749939
+            Yaw: -166.717
+            Roll: 175.118
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11525150283968722101
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1027263839265838477
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -36.472
+            Y: 9.96100235
+            Z: -14.418
+          }
+          Rotation {
+            Pitch: -73.7749939
+            Yaw: -166.717
+            Roll: 175.118
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11525150283968722101
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8558831427419544516
+        Name: "K"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3969989180669891573
+        ChildIds: 9708363248837340076
+        ChildIds: 7919957414631713227
+        ChildIds: 6610502053596003573
+        ChildIds: 12526636925500473420
+        ChildIds: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 9708363248837340076
+        Name: "PelvisKeys"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8558831427419544516
+        ChildIds: 2009670833788437035
+        ChildIds: 13850395824698873153
+        ChildIds: 2845937386492460414
+        ChildIds: 591265069339783381
+        ChildIds: 9809442866410455404
+        ChildIds: 18056562608304436516
+        ChildIds: 11406882649973263973
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "PelvisKeys_36"
+        }
+      }
+      Objects {
+        Id: 2009670833788437035
+        Name: "PelvisKey5"
+        Transform {
+          Location {
+            X: -83.255
+            Y: -15.201
+            Z: -15.896
+          }
+          Rotation {
+            Pitch: -13.5780029
+            Yaw: -21.61
+            Roll: -4.94198608
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13850395824698873153
+        Name: "PelvisKey5"
+        Transform {
+          Location {
+            X: -71.694
+            Y: 85.2619934
+            Z: -20.096
+          }
+          Rotation {
+            Pitch: 2.878
+            Yaw: -111.507
+            Roll: 0.724
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 2845937386492460414
+        Name: "PelvisKey5"
+        Transform {
+          Location {
+            X: -0.928
+            Y: 38.711
+            Z: -9.303
+          }
+          Rotation {
+            Pitch: -4.48800659
+            Yaw: 148.881
+            Roll: 9.351
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 591265069339783381
+        Name: "PelvisKey4"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.265
+          }
+          Rotation {
+            Pitch: -19.7780151
+            Yaw: 79.768
+            Roll: 8.735
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9809442866410455404
+        Name: "PelvisKey3"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.265
+          }
+          Rotation {
+            Pitch: -30.677002
+            Yaw: 30.811
+            Roll: 17.656
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18056562608304436516
+        Name: "PelvisKey1"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.265
+          }
+          Rotation {
+            Pitch: -4.61898804
+            Yaw: -56.455
+            Roll: 13.868
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11406882649973263973
+        Name: "PelvisKey2"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.265
+          }
+          Rotation {
+            Pitch: -17.9549866
+            Yaw: -6.648
+            Roll: 11.516
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 9708363248837340076
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7919957414631713227
+        Name: "LLegKeys"
+        Transform {
+          Location {
+            X: -2.91262586e-05
+            Y: -27.147644
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8558831427419544516
+        ChildIds: 6455370316291256496
+        ChildIds: 6797647553009099350
+        ChildIds: 6571577791012817113
+        ChildIds: 7938828491138728398
+        ChildIds: 11756980445127100729
+        ChildIds: 8626192107515103306
+        ChildIds: 18138828233777723562
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LLegKeys_36"
+        }
+      }
+      Objects {
+        Id: 6455370316291256496
+        Name: "LLegKey5"
+        Transform {
+          Location {
+            X: -94.6
+            Y: -2.97599983
+            Z: 4.052
+          }
+          Rotation {
+            Pitch: -3.73300171
+            Yaw: -47.648
+            Roll: -6.60699463
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6797647553009099350
+        Name: "LLegKey5"
+        Transform {
+          Location {
+            X: -105.281
+            Y: 101.669006
+            Z: 4.606
+          }
+          Rotation {
+            Pitch: 13.533
+            Yaw: -137.19
+            Roll: -8.68600464
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6571577791012817113
+        Name: "LLegKey5"
+        Transform {
+          Location {
+            X: 10.96
+            Y: 106.437988
+            Z: 18.424
+          }
+          Rotation {
+            Pitch: 10.407
+            Yaw: 125.639
+            Roll: 2.459
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7938828491138728398
+        Name: "LLegKey4"
+        Transform {
+          Location {
+            X: 26.967
+            Y: 3.205
+            Z: 8.481
+          }
+          Rotation {
+            Pitch: -9.00698853
+            Yaw: 57.196
+            Roll: -5.2539978
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11756980445127100729
+        Name: "LLegKey3"
+        Transform {
+          Location {
+            X: 26.967
+            Y: 3.205
+            Z: 8.481
+          }
+          Rotation {
+            Pitch: -17.7109985
+            Yaw: 2.343
+            Roll: -16.0660095
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8626192107515103306
+        Name: "LLegKey1"
+        Transform {
+          Location {
+            X: 7.676
+            Y: 3.20600128
+            Z: 8.482
+          }
+          Rotation {
+            Pitch: -17.7109985
+            Yaw: 2.343
+            Roll: -16.0660095
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18138828233777723562
+        Name: "LLegKey2"
+        Transform {
+          Location {
+            X: 7.676
+            Y: 3.20600128
+            Z: 8.482
+          }
+          Rotation {
+            Pitch: -16.0660095
+            Yaw: -17.711
+            Roll: 8.482
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 7919957414631713227
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6610502053596003573
+        Name: "RLegKeys"
+        Transform {
+          Location {
+            X: -2.90474945e-05
+            Y: 27.148
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8558831427419544516
+        ChildIds: 18079798152185116010
+        ChildIds: 13228662773938142113
+        ChildIds: 531291431600121991
+        ChildIds: 15631266560289946229
+        ChildIds: 6390117709552086798
+        ChildIds: 401088316556599576
+        ChildIds: 3330848268098762500
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RLegKeys_36"
+        }
+      }
+      Objects {
+        Id: 18079798152185116010
+        Name: "RLegKey5"
+        Transform {
+          Location {
+            X: -45.264
+            Y: 0.593999863
+            Z: 12.4929962
+          }
+          Rotation {
+            Pitch: -25.5599976
+            Yaw: -68.21
+            Roll: -4.87799072
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13228662773938142113
+        Name: "RLegKey5"
+        Transform {
+          Location {
+            X: -45.264
+            Y: 0.593999863
+            Z: 12.4929962
+          }
+          Rotation {
+            Pitch: -9.91900635
+            Yaw: -155.109
+            Roll: -12.8869934
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 531291431600121991
+        Name: "RLegKey5"
+        Transform {
+          Location {
+            X: -45.264
+            Y: 0.593999863
+            Z: 12.4929962
+          }
+          Rotation {
+            Pitch: -9.10998535
+            Yaw: 103.5
+            Roll: -1.41799927
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15631266560289946229
+        Name: "RLegKey4"
+        Transform {
+          Location {
+            X: -67.162
+            Y: 0.594999313
+            Z: 12.494
+          }
+          Rotation {
+            Pitch: -24.5190125
+            Yaw: 59.174
+            Roll: -17.8850098
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6390117709552086798
+        Name: "RLegKey3"
+        Transform {
+          Location {
+            X: -67.162
+            Y: 0.594999313
+            Z: 12.494
+          }
+          Rotation {
+            Pitch: -28.1159973
+            Yaw: -1.068
+            Roll: 10.978
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 401088316556599576
+        Name: "RLegKey1"
+        Transform {
+          Location {
+            X: -39.494
+            Y: 0.593000412
+            Z: 12.492
+          }
+          Rotation {
+            Pitch: -28.1159973
+            Yaw: -1.068
+            Roll: 10.978
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3330848268098762500
+        Name: "RLegKey2"
+        Transform {
+          Location {
+            X: -39.494
+            Y: 0.593000412
+            Z: 12.492
+          }
+          Rotation {
+            Pitch: -28.1159973
+            Yaw: -1.068
+            Roll: 10.978
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 6610502053596003573
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 12526636925500473420
+        Name: "RHandKeys"
+        Transform {
+          Location {
+            X: 5.54429389e-05
+            Y: 51.6765709
+            Z: -0.361572266
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8558831427419544516
+        ChildIds: 4754761881600199961
+        ChildIds: 16730654404105703788
+        ChildIds: 1689757480354793184
+        ChildIds: 12483263570887435834
+        ChildIds: 15973300721461573360
+        ChildIds: 16560307765334634026
+        ChildIds: 10964314950194154415
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RHandKeys_36"
+        }
+      }
+      Objects {
+        Id: 4754761881600199961
+        Name: "RHandKey5"
+        Transform {
+          Location {
+            X: -45.835
+            Y: -34.953
+            Z: -2.769
+          }
+          Rotation {
+            Pitch: -32.2229919
+            Yaw: -59.212
+            Roll: -18.8299866
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16730654404105703788
+        Name: "RHandKey5"
+        Transform {
+          Location {
+            X: -36.676
+            Y: -0.301998138
+            Z: -5.341
+          }
+          Rotation {
+            Pitch: -15.5969849
+            Yaw: -146.277
+            Roll: -24.4370117
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1689757480354793184
+        Name: "RHandKey5"
+        Transform {
+          Location {
+            X: -41.956
+            Y: -42.528
+            Z: -3.944
+          }
+          Rotation {
+            Pitch: -16.4070129
+            Yaw: 110.977
+            Roll: -12.6660156
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 12483263570887435834
+        Name: "RHandKey4"
+        Transform {
+          Location {
+            X: -55.161
+            Y: -39.326
+            Z: -3.96
+          }
+          Rotation {
+            Pitch: -43.293
+            Yaw: 72.311
+            Roll: -11.625
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15973300721461573360
+        Name: "RHandKey3"
+        Transform {
+          Location {
+            X: -41.1
+            Y: 10.2609978
+            Z: -3.963
+          }
+          Rotation {
+            Pitch: -59.29599
+            Yaw: 46.855
+            Roll: -24.4330139
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16560307765334634026
+        Name: "RHandKey1"
+        Transform {
+          Location {
+            X: 44.2749977
+            Y: -17.952
+            Z: -3.967
+          }
+          Rotation {
+            Pitch: -9.5249939
+            Yaw: -48.87
+            Roll: 0.56
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 10964314950194154415
+        Name: "RHandKey2"
+        Transform {
+          Location {
+            X: 15.552002
+            Y: 12.812
+            Z: -3.967
+          }
+          Rotation {
+            Pitch: -7.96798706
+            Yaw: -11.879
+            Roll: -5.26501465
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 12526636925500473420
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 924208820196799207
+        Name: "LHandKeys"
+        Transform {
+          Location {
+            X: 0.000133396
+            Y: -46.332592
+            Z: 3.82495117
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8558831427419544516
+        ChildIds: 1478325507771666370
+        ChildIds: 8848235230282019416
+        ChildIds: 3769730190161262968
+        ChildIds: 4548590355497043264
+        ChildIds: 5153646860707991903
+        ChildIds: 11258284766533708558
+        ChildIds: 13193951432897149109
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LHandKeys_36"
+        }
+      }
+      Objects {
+        Id: 1478325507771666370
+        Name: "LHandKey5"
+        Transform {
+          Location {
+            X: -58.4020042
+            Y: -3.85900116
+            Z: -10.156
+          }
+          Rotation {
+            Pitch: -17.3599854
+            Yaw: 35.478
+            Roll: 8.117
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.212
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8848235230282019416
+        Name: "LHandKey5"
+        Transform {
+          Location {
+            X: -103.325005
+            Y: 109.990005
+            Z: -2.333
+          }
+          Rotation {
+            Pitch: -12.5570068
+            Yaw: -58.387
+            Roll: 25.426
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.212
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3769730190161262968
+        Name: "LHandKey5"
+        Transform {
+          Location {
+            X: -20.968998
+            Y: 118.48201
+            Z: 7.21
+          }
+          Rotation {
+            Pitch: -23.8739929
+            Yaw: -157.635
+            Roll: 24.653
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.212
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4548590355497043264
+        Name: "LHandKey4"
+        Transform {
+          Location {
+            X: 15.509
+            Y: 86.503006
+            Z: -11.992
+          }
+          Rotation {
+            Pitch: -0.341003418
+            Yaw: -171.429
+            Roll: -150.499
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.212
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 5153646860707991903
+        Name: "LHandKey3"
+        Transform {
+          Location {
+            X: 79.104
+            Y: 6.02099609
+            Z: -2.512
+          }
+          Rotation {
+            Pitch: -1.13198853
+            Yaw: 25.677
+            Roll: -43.3460083
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11258284766533708558
+        Name: "LHandKey1"
+        Transform {
+          Location {
+            X: -56.312
+            Y: 15.902
+            Z: 12.62
+          }
+          Rotation {
+            Pitch: -30.3410034
+            Yaw: -150.148
+            Roll: 7.833
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13193951432897149109
+        Name: "LHandKey2"
+        Transform {
+          Location {
+            X: -40.5500031
+            Y: 15.9
+            Z: 18.05
+          }
+          Rotation {
+            Pitch: -30.3359985
+            Yaw: -94.481
+            Roll: -46.8129883
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 924208820196799207
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8676284188005127107
+        Name: "K+W"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3969989180669891573
+        ChildIds: 10772714251856059012
+        ChildIds: 13417611916794846073
+        ChildIds: 16153286376368160549
+        ChildIds: 8762393552804780163
+        ChildIds: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 10772714251856059012
+        Name: "PelvisKeys"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8676284188005127107
+        ChildIds: 10910787208084931744
+        ChildIds: 4685198767352020119
+        ChildIds: 6838621787384807686
+        ChildIds: 10941532936641994271
+        ChildIds: 9366204462963326694
+        ChildIds: 11606172409901877029
+        ChildIds: 2206388337128034089
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "PelvisKeys_34"
+        }
+      }
+      Objects {
+        Id: 10910787208084931744
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -31.529
+            Yaw: 1.094
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4685198767352020119
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 13.9709873
+            Yaw: 1.09399974
+            Roll: 1.37468721e-08
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6838621787384807686
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 13.9709873
+            Yaw: 1.09399974
+            Roll: 1.37468721e-08
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 10941532936641994271
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.427
+          }
+          Rotation {
+            Pitch: -60.7749939
+            Yaw: 7.753
+            Roll: 18.568
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9366204462963326694
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.427
+          }
+          Rotation {
+            Pitch: -60.7749939
+            Yaw: 7.753
+            Roll: 18.568
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11606172409901877029
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.427
+          }
+          Rotation {
+            Pitch: -60.7749939
+            Yaw: 7.753
+            Roll: 18.568
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 2206388337128034089
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -0.001
+            Y: -0.001
+            Z: -13.427
+          }
+          Rotation {
+            Pitch: -60.7749939
+            Yaw: 7.753
+            Roll: 18.568
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 10772714251856059012
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13417611916794846073
+        Name: "LLegKeys"
+        Transform {
+          Location {
+            X: -2.91262586e-05
+            Y: -27.147644
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8676284188005127107
+        ChildIds: 842755260942339576
+        ChildIds: 2733310705404459722
+        ChildIds: 463037468315364754
+        ChildIds: 12291763180126276348
+        ChildIds: 3082253261763472627
+        ChildIds: 4935423100206279303
+        ChildIds: 888911909322238529
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LLegKeys_34"
+        }
+      }
+      Objects {
+        Id: 842755260942339576
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 13.9509993
+            Y: 0.895000458
+            Z: 59.316
+          }
+          Rotation {
+            Pitch: -12.7120056
+            Yaw: -2.899
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 2733310705404459722
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 5.31500101
+            Y: 0.895000458
+            Z: 43.774
+          }
+          Rotation {
+            Pitch: -59.2869873
+            Yaw: -2.899
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 463037468315364754
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 5.31500101
+            Y: 0.895000458
+            Z: 43.774
+          }
+          Rotation {
+            Pitch: -59.2869873
+            Yaw: -2.899
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 12291763180126276348
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -12.584
+            Y: 1.8010006
+            Z: 75.624
+          }
+          Rotation {
+            Pitch: -83.558
+            Yaw: 177.101
+            Roll: 180
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3082253261763472627
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -12.584
+            Y: 1.8010006
+            Z: 75.624
+          }
+          Rotation {
+            Pitch: -83.557
+            Yaw: 177.101
+            Roll: 179.998
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4935423100206279303
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -12.584
+            Y: 1.8010006
+            Z: 75.624
+          }
+          Rotation {
+            Pitch: -83.5570068
+            Yaw: 177.102
+            Roll: 179.997
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 888911909322238529
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -12.584
+            Y: 1.8010006
+            Z: 75.624
+          }
+          Rotation {
+            Pitch: -83.5570068
+            Yaw: 177.102
+            Roll: 179.997
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 13417611916794846073
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16153286376368160549
+        Name: "RLegKeys"
+        Transform {
+          Location {
+            X: -2.90474945e-05
+            Y: 27.148
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8676284188005127107
+        ChildIds: 2329927726452024576
+        ChildIds: 10300601962110286337
+        ChildIds: 11744235122991009878
+        ChildIds: 7803216490557816532
+        ChildIds: 9919587497971806047
+        ChildIds: 4004060881310050744
+        ChildIds: 1169830092797255617
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RLegKeys_34"
+        }
+      }
+      Objects {
+        Id: 2329927726452024576
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -15.107
+            Y: 0.826999664
+            Z: 51.219
+          }
+          Rotation {
+            Pitch: -16.8789978
+            Yaw: -2.898
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 10300601962110286337
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -17.9930019
+            Y: 0.823999405
+            Z: 1.896
+          }
+          Rotation {
+            Pitch: -81.2770081
+            Yaw: 177.102
+            Roll: 180
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11744235122991009878
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -17.9930019
+            Y: 0.823999405
+            Z: 1.896
+          }
+          Rotation {
+            Pitch: -81.2770081
+            Yaw: 177.102
+            Roll: 180
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7803216490557816532
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.706
+            Y: -24.74
+            Z: 75.966
+          }
+          Rotation {
+            Pitch: -78.672
+            Yaw: 173.796
+            Roll: -84.965
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9919587497971806047
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.706
+            Y: -24.74
+            Z: 75.966
+          }
+          Rotation {
+            Pitch: -78.672
+            Yaw: 173.796
+            Roll: -84.965
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4004060881310050744
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.706
+            Y: -24.74
+            Z: 75.966
+          }
+          Rotation {
+            Pitch: -78.672
+            Yaw: 173.796
+            Roll: -84.965
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1169830092797255617
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -32.706
+            Y: -24.74
+            Z: 75.966
+          }
+          Rotation {
+            Pitch: -78.672
+            Yaw: 173.796
+            Roll: -84.965
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16153286376368160549
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8762393552804780163
+        Name: "RHandKeys"
+        Transform {
+          Location {
+            X: 5.54429389e-05
+            Y: 51.6765709
+            Z: -0.361572266
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8676284188005127107
+        ChildIds: 953409394569700734
+        ChildIds: 521560438575595204
+        ChildIds: 17678242201579665359
+        ChildIds: 11638619634927157214
+        ChildIds: 3337014185142022908
+        ChildIds: 14136039823622653285
+        ChildIds: 14186713211040577468
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RHandKeys_34"
+        }
+      }
+      Objects {
+        Id: 953409394569700734
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 6.84899902
+            Y: -17.791
+            Z: 14.506
+          }
+          Rotation {
+            Pitch: -19.9140015
+            Yaw: -39.606
+            Roll: -7.06799316
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 521560438575595204
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -49.658
+            Y: -17.7869987
+            Z: 12.491
+          }
+          Rotation {
+            Pitch: -68.17099
+            Yaw: 87.808
+            Roll: -37.9689941
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 17678242201579665359
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -49.658
+            Y: -17.7869987
+            Z: 12.491
+          }
+          Rotation {
+            Pitch: -68.17099
+            Yaw: 87.808
+            Roll: -37.9689941
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11638619634927157214
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -25.084
+            Y: -26.041
+            Z: 31.696
+          }
+          Rotation {
+            Pitch: -37.5220032
+            Yaw: -152.725
+            Roll: -154.172
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3337014185142022908
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -25.084
+            Y: -26.041
+            Z: 31.696
+          }
+          Rotation {
+            Pitch: -37.5220032
+            Yaw: -152.725
+            Roll: -154.172
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14136039823622653285
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -25.084
+            Y: -26.041
+            Z: 31.696
+          }
+          Rotation {
+            Pitch: -37.5220032
+            Yaw: -152.725
+            Roll: -154.172
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14186713211040577468
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -25.084
+            Y: -26.041
+            Z: 31.696
+          }
+          Rotation {
+            Pitch: -37.5220032
+            Yaw: -152.725
+            Roll: -154.172
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8762393552804780163
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 17874809251274606392
+        Name: "LHandKeys"
+        Transform {
+          Location {
+            X: 0.000133396
+            Y: -46.332592
+            Z: 3.82495117
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 8676284188005127107
+        ChildIds: 18166671346706684014
+        ChildIds: 11074323753659297984
+        ChildIds: 12527611801813109520
+        ChildIds: 1127798550754895930
+        ChildIds: 13729348218204790459
+        ChildIds: 831932566110050116
+        ChildIds: 18371035654274393926
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LHandKeys_34"
+        }
+      }
+      Objects {
+        Id: 18166671346706684014
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -69.212
+            Y: 13.1479988
+            Z: 12.555
+          }
+          Rotation {
+            Pitch: -17.519989
+            Yaw: -175.663
+            Roll: -177.042
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11074323753659297984
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 46.747
+            Y: 13.1439934
+            Z: 63.617
+          }
+          Rotation {
+            Pitch: 6.117
+            Yaw: 4.926
+            Roll: -2.83599854
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 12527611801813109520
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 19.87
+            Y: 13.145
+            Z: 63.618
+          }
+          Rotation {
+            Pitch: 46.388
+            Yaw: 2.265
+            Roll: -4.09100342
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1127798550754895930
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 34.657
+            Y: 20.201
+            Z: -27.782
+          }
+          Rotation {
+            Pitch: -8.92001343
+            Yaw: 6.086
+            Roll: 175.971
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13729348218204790459
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 34.657
+            Y: 20.201
+            Z: -27.782
+          }
+          Rotation {
+            Pitch: -8.92001343
+            Yaw: 6.086
+            Roll: 175.971
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 831932566110050116
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 34.657
+            Y: 20.201
+            Z: -27.782
+          }
+          Rotation {
+            Pitch: -8.92001343
+            Yaw: 6.086
+            Roll: 175.971
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18371035654274393926
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 34.657
+            Y: 20.201
+            Z: -27.782
+          }
+          Rotation {
+            Pitch: -8.92001343
+            Yaw: 6.086
+            Roll: 175.971
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 17874809251274606392
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 5054933841631908342
+        Name: "K+A/D"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3969989180669891573
+        ChildIds: 11824310184995688911
+        ChildIds: 15502636599655321517
+        ChildIds: 16417992472190560435
+        ChildIds: 8588466079629785831
+        ChildIds: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 11824310184995688911
+        Name: "PelvisKeys"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5054933841631908342
+        ChildIds: 10217434074903789941
+        ChildIds: 16474372158287760166
+        ChildIds: 16575610726269044754
+        ChildIds: 13434042751254937643
+        ChildIds: 11136174537724307353
+        ChildIds: 3694921827908279592
+        ChildIds: 8992549395064351997
+        ChildIds: 11637421030184585658
+        ChildIds: 10755940374629267931
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "PelvisKeys_36"
+        }
+      }
+      Objects {
+        Id: 10217434074903789941
+        Name: "PelvisKey"
+        Transform {
+          Location {
+            X: -12.218
+            Y: 0.335000038
+            Z: -32.923
+          }
+          Rotation {
+            Pitch: -30.9200134
+            Yaw: -1.571
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16474372158287760166
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -68.0620117
+            Yaw: -1.571
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16575610726269044754
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -170.773
+            Yaw: -1.571
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13434042751254937643
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 88.017
+            Yaw: -1.572
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11136174537724307353
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 5.69
+            Yaw: -1.572
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3694921827908279592
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -67.5549927
+            Yaw: -1.583
+            Roll: 0.011
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8992549395064351997
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: -169.95
+            Yaw: -1.572
+            Roll: -0.00500488281
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11637421030184585658
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 129.564
+            Yaw: -1.579
+            Roll: -0.00799560547
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 10755940374629267931
+        Name: "PelvisKey"
+        Transform {
+          Location {
+          }
+          Rotation {
+            Pitch: 56.32
+            Yaw: -1.566
+            Roll: 0.009
+          }
+          Scale {
+            X: 0.211656734
+            Y: 0.211656734
+            Z: 0.211656734
+          }
+        }
+        ParentId: 11824310184995688911
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 15502636599655321517
+        Name: "LLegKeys"
+        Transform {
+          Location {
+            X: -2.91262586e-05
+            Y: -27.147644
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5054933841631908342
+        ChildIds: 5016179079388563920
+        ChildIds: 2942398560469067151
+        ChildIds: 6561878951431548206
+        ChildIds: 1185325689205103319
+        ChildIds: 4909780257389186096
+        ChildIds: 11706143204697108189
+        ChildIds: 4934908242461832730
+        ChildIds: 3187242131802539615
+        ChildIds: 9224422614798434523
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LLegKeys_36"
+        }
+      }
+      Objects {
+        Id: 5016179079388563920
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 17.188
+            Y: -1.36199951
+            Z: -0.59
+          }
+          Rotation {
+            Pitch: -1.1960144
+            Yaw: -5.563
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 2942398560469067151
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -10.947
+            Y: 1.38299942
+            Z: 60.968
+          }
+          Rotation {
+            Pitch: -62.336
+            Yaw: 134.584
+            Roll: -171.381
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 6561878951431548206
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -52.315
+            Y: 2.5170002
+            Z: 138.335
+          }
+          Rotation {
+            Pitch: 31.437
+            Yaw: 156.285
+            Roll: 136.248
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.212
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1185325689205103319
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 31.026
+            Y: 0.2310009
+            Z: 162.527
+          }
+          Rotation {
+            Pitch: 42.361
+            Yaw: 24.229
+            Roll: -13.7250061
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4909780257389186096
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 49.423
+            Y: -0.274000168
+            Z: 90.913
+          }
+          Rotation {
+            Pitch: -34.7030029
+            Yaw: 21.457
+            Roll: -45.3710022
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.212
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11706143204697108189
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -10.4619989
+            Y: 1.368
+            Z: 60.881
+          }
+          Rotation {
+            Pitch: -62.7000122
+            Yaw: 133.906
+            Roll: -170.623
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 4934908242461832730
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: -52.629
+            Y: 2.53100014
+            Z: 137.594
+          }
+          Rotation {
+            Pitch: 30.67
+            Yaw: 156.465
+            Roll: 136.601
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3187242131802539615
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 65.991
+            Y: 5.57299805
+            Z: 160.812
+          }
+          Rotation {
+            Pitch: 79.94
+            Yaw: 176.559
+            Roll: 151.774
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9224422614798434523
+        Name: "LLegKey"
+        Transform {
+          Location {
+            X: 61.342
+            Y: 5.69200134
+            Z: 65.327
+          }
+          Rotation {
+            Pitch: 26.81
+            Yaw: -1.21
+            Roll: -26.2179871
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 15502636599655321517
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16417992472190560435
+        Name: "RLegKeys"
+        Transform {
+          Location {
+            X: -2.90474945e-05
+            Y: 27.148
+            Z: -116.195312
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5054933841631908342
+        ChildIds: 15517044019192018854
+        ChildIds: 11456649013405066005
+        ChildIds: 11311459050909512531
+        ChildIds: 11153306397966866168
+        ChildIds: 2622167201323644164
+        ChildIds: 626887051622422168
+        ChildIds: 16061731447527110378
+        ChildIds: 1148041401220805722
+        ChildIds: 3491682471307459150
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RLegKeys_36"
+        }
+      }
+      Objects {
+        Id: 15517044019192018854
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -89.8350067
+            Y: 9.31900215
+            Z: -2.187
+          }
+          Rotation {
+            Pitch: -3.62399292
+            Yaw: 44.784
+            Roll: -4.36099243
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11456649013405066005
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -5.68800116
+            Y: 1.12700081
+            Z: 52.537
+          }
+          Rotation {
+            Pitch: -58.2919922
+            Yaw: -164.923
+            Roll: -164.203
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11311459050909512531
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -59.882
+            Y: 2.61300087
+            Z: 136.508
+          }
+          Rotation {
+            Pitch: 42.722
+            Yaw: -169.743
+            Roll: -141.843
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11153306397966866168
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: 32.48
+            Y: 0.079000473
+            Z: 171.764
+          }
+          Rotation {
+            Pitch: 34.991
+            Yaw: -12.165
+            Roll: 23.949
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 2622167201323644164
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: 60.0560036
+            Y: -0.677000046
+            Z: 92.178
+          }
+          Rotation {
+            Pitch: -46.178009
+            Yaw: -14.136
+            Roll: 39.204
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 626887051622422168
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -5.12499952
+            Y: 1.10899925
+            Z: 52.481
+          }
+          Rotation {
+            Pitch: -58.7749939
+            Yaw: -164.68
+            Roll: -164.493
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16061731447527110378
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: -60.167
+            Y: 2.62599945
+            Z: 135.629
+          }
+          Rotation {
+            Pitch: 41.916
+            Yaw: -169.901
+            Roll: -142.079
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1148041401220805722
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: 88.7939911
+            Y: -13.024
+            Z: 164.073
+          }
+          Rotation {
+            Pitch: 67.982
+            Yaw: 35.674
+            Roll: 63.723
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 3491682471307459150
+        Name: "RLegKey"
+        Transform {
+          Location {
+            X: 71.75
+            Y: -12.566
+            Z: 45.377
+          }
+          Rotation {
+            Pitch: -1.06100464
+            Yaw: 11.54
+            Roll: 28.3
+          }
+          Scale {
+            X: 0.644847751
+            Y: 0.211656779
+            Z: 0.0728249475
+          }
+        }
+        ParentId: 16417992472190560435
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8588466079629785831
+        Name: "RHandKeys"
+        Transform {
+          Location {
+            X: 5.54429389e-05
+            Y: 51.6765709
+            Z: -0.361572266
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5054933841631908342
+        ChildIds: 15895721230475876173
+        ChildIds: 11671436161640289813
+        ChildIds: 18165402062318347594
+        ChildIds: 1532892591041556606
+        ChildIds: 14086946985777608102
+        ChildIds: 8694586085641927089
+        ChildIds: 1701145570529582057
+        ChildIds: 9953505942439027848
+        ChildIds: 18406503301032273245
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RHandKeys_36"
+        }
+      }
+      Objects {
+        Id: 15895721230475876173
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 27.7529984
+            Y: -11.4280014
+            Z: 28.356
+          }
+          Rotation {
+            Pitch: 54.851
+            Yaw: -18.314
+            Roll: -5.23001099
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11671436161640289813
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 4.08799934
+            Y: -11.4280014
+            Z: 6.567
+          }
+          Rotation {
+            Pitch: -51.789
+            Yaw: -10.206
+            Roll: 2.767
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18165402062318347594
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 6.50099945
+            Y: -11.4939995
+            Z: -3.914
+          }
+          Rotation {
+            Pitch: -25.0639954
+            Yaw: -175.686
+            Roll: 173.462
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1532892591041556606
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -4.13399887
+            Y: -11.202
+            Z: -4.102
+          }
+          Rotation {
+            Pitch: 75.066
+            Yaw: -160.445
+            Roll: -163.564
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 14086946985777608102
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -4.01499939
+            Y: -11.204998
+            Z: 4.961
+          }
+          Rotation {
+            Pitch: 21.545
+            Yaw: -7.304
+            Roll: -6.14801025
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 8694586085641927089
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 4.0359993
+            Y: -11.4249992
+            Z: 6.592
+          }
+          Rotation {
+            Pitch: -51.289
+            Yaw: -10.123
+            Roll: 2.653
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 1701145570529582057
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 6.56399918
+            Y: -11.4949989
+            Z: -3.841
+          }
+          Rotation {
+            Pitch: -25.8829956
+            Yaw: -175.641
+            Roll: 173.358
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 9953505942439027848
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: 0.142999515
+            Y: -11.319
+            Z: -6.461
+          }
+          Rotation {
+            Pitch: 34.311
+            Yaw: -175.115
+            Roll: 179.605
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18406503301032273245
+        Name: "RHandKey"
+        Transform {
+          Location {
+            X: -5.6970005
+            Y: -11.1580009
+            Z: -0.683
+          }
+          Rotation {
+            Pitch: 71.516
+            Yaw: -18.607
+            Roll: -20.2430115
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.0467151888
+            Z: 0.211656734
+          }
+        }
+        ParentId: 8588466079629785831
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 854676659887396746
+        Name: "LHandKeys"
+        Transform {
+          Location {
+            X: 0.000133396
+            Y: -46.332592
+            Z: 3.82495117
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5054933841631908342
+        ChildIds: 12906175793238496369
+        ChildIds: 11419552050099958763
+        ChildIds: 5877285414621293114
+        ChildIds: 7726729774289714013
+        ChildIds: 16854003314813816379
+        ChildIds: 12423566278614645790
+        ChildIds: 10035093141487474075
+        ChildIds: 7933918323461529938
+        ChildIds: 18268989863139628753
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LHandKeys_36"
+        }
+      }
+      Objects {
+        Id: 12906175793238496369
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 45.448
+            Y: 9.855
+            Z: 10.859
+          }
+          Rotation {
+            Pitch: 38.85
+            Yaw: -6.976
+            Roll: -24.418
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 11419552050099958763
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 35.504
+            Y: 9.855
+            Z: -4.426
+          }
+          Rotation {
+            Pitch: -37.3089905
+            Yaw: 13.56
+            Roll: -14.5289917
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 5877285414621293114
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -9.58699799
+            Y: 11.091
+            Z: -39.289
+          }
+          Rotation {
+            Pitch: -37.993988
+            Yaw: 163.154
+            Roll: -175.678
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7726729774289714013
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -34.0740051
+            Y: 11.7630005
+            Z: 11.522
+          }
+          Rotation {
+            Pitch: 59.928
+            Yaw: 153.948
+            Roll: 153.273
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 16854003314813816379
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 9.81000137
+            Y: 10.5579948
+            Z: 31.04
+          }
+          Rotation {
+            Pitch: 34.576
+            Yaw: 13.035
+            Roll: 3.192
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 12423566278614645790
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: 35.505
+            Y: 9.85000229
+            Z: -4.102
+          }
+          Rotation {
+            Pitch: -36.821991
+            Yaw: 13.457
+            Roll: -14.3640137
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 10035093141487474075
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -9.077
+            Y: 11.0709991
+            Z: -39.404
+          }
+          Rotation {
+            Pitch: -38.7900085
+            Yaw: 162.981
+            Roll: -175.407
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 7933918323461529938
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -35.92
+            Y: 11.8100014
+            Z: -14.298
+          }
+          Rotation {
+            Pitch: 20.191
+            Yaw: 165.642
+            Roll: 170.292
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 18268989863139628753
+        Name: "LHandKey"
+        Transform {
+          Location {
+            X: -21.076
+            Y: 11.406002
+            Z: 26.632
+          }
+          Rotation {
+            Pitch: 77.398
+            Yaw: 70.64
+            Roll: 66.578
+          }
+          Scale {
+            X: 0.382817805
+            Y: 0.047
+            Z: 0.211656734
+          }
+        }
+        ParentId: 854676659887396746
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
