@@ -82,6 +82,14 @@ Objects {
         SelfId: 4278545400334003955
       }
     }
+    Overrides {
+      Name: "cs:YLimit"
+      Int: 5000
+    }
+    Overrides {
+      Name: "cs:ZLimit"
+      Int: 1500
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

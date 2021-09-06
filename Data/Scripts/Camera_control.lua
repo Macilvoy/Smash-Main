@@ -1,7 +1,17 @@
 local GlobalCamera = script:GetCustomProperty("GlobalCamera"):WaitForObject()
 local CameraCube = script:GetCustomProperty("CameraCube"):WaitForObject()
+local YLimit = script:GetCustomProperty("YLimit")
+local ZLimit = script:GetCustomProperty("ZLimit")
 
 local cutscene=false
+
+function InRange(player)
+	if player:GetWorldPosition().y<YLimit and player:GetWorldPosition().y>YLimit*-1 and player:GetWorldPosition().z<ZLimit and player:GetWorldPosition().z>ZLimit*-1 then
+		return true
+	else
+		return false
+	end
+end
 
 function Tick()
 	Task.Wait(0.1)
@@ -14,11 +24,14 @@ function Tick()
 		Dist=nil
 		players=Game.GetPlayers()
 		speed=nil
-		if players[1]~=nil and players[1].isDead==false then
-			Centr= players[1]:GetWorldPosition()
+		for _,player in ipairs(players) do
+			if player~=nil and player.isDead==false and InRange(player) then
+				Centr= player:GetWorldPosition()
+				break
+			end
 		end
 		for _,player in ipairs(players) do
-			if player.isDead==false then
+			if player.isDead==false and InRange(player) then
 				if MinY==nil or player:GetWorldPosition().y<MinY then
 					MinY=player:GetWorldPosition().y
 				end
@@ -28,7 +41,7 @@ function Tick()
 				if MaxY==nil or player:GetWorldPosition().y>MaxY then
 					MaxY=player:GetWorldPosition().y
 				end
-				if MaxZ==nil or player:GetWorldPosition().y>MaxZ then
+				if MaxZ==nil or player:GetWorldPosition().z>MaxZ then
 					MaxZ=player:GetWorldPosition().z
 				end
 				Centr= (Centr+player:GetWorldPosition())/2

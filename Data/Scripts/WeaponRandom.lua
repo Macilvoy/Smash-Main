@@ -1,3 +1,5 @@
+--local propIsEquipped = script:GetCustomProperty("isEquipped")
+
 local RPW1 = script:GetCustomProperty("RPW1")
 local LPW1 = script:GetCustomProperty("LPW1")
 local DHW2 = script:GetCustomProperty("DHW2")

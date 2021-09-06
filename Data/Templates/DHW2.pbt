@@ -48,6 +48,7 @@ Assets {
         Name: "Geo"
         Transform {
           Location {
+            Z: -15
           }
           Rotation {
           }
@@ -1689,7 +1690,7 @@ Assets {
         Name: "RocketVFX"
         Transform {
           Location {
-            Z: -20
+            Z: -35
           }
           Rotation {
             Roll: 180
@@ -1858,4 +1859,5 @@ Assets {
     }
   }
   SerializationVersion: 97
+  VirtualFolderPath: "Weapons"
 }

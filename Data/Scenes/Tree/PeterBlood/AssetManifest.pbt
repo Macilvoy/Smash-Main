@@ -17,12 +17,30 @@ Assets {
   }
 }
 Assets {
+  Id: 17244032316402108170
+  Name: "Military Corners 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Military_Corners_002"
+  }
+}
+Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_SunLight"
+  }
+}
+Assets {
+  Id: 16877512551996484295
+  Name: "BG Flat 009"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_26"
   }
 }
 Assets {
@@ -59,6 +77,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Skylight"
+  }
+}
+Assets {
+  Id: 11197706215082041372
+  Name: "Frame Line 007a Corner"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameLine_007aHalf"
   }
 }
 Assets {
@@ -143,6 +170,15 @@ Assets {
   }
 }
 Assets {
+  Id: 4413877134732510690
+  Name: "Alien Symbol 3"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_051"
+  }
+}
+Assets {
   Id: 4106671878504668241
   Name: "Frame Ring 036"
   PlatformAssetType: 9
@@ -167,6 +203,24 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameRing_015"
+  }
+}
+Assets {
+  Id: 1442066036829016164
+  Name: "Alien Symbol 2"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Scifi_Icon_050"
+  }
+}
+Assets {
+  Id: 1396875024029104453
+  Name: "BG Flat 012"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundNoOutline_29"
   }
 }
 Assets {

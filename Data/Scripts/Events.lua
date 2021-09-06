@@ -16,6 +16,7 @@ local propVFXS = script:GetCustomProperty("VFXS")
 local propHitbox = script:GetCustomProperty("Hitbox")
 
 --local propTrigger = script:GetCustomProperty("Trigger"):WaitForObject()
+local Flash = script:GetCustomProperty("Flash")
 local HitTrigger = script:GetCustomProperty("HitTrigger")
 local HeavyHitTrigger = script:GetCustomProperty("HeavyHitTrigger")
 local StunTrigger = script:GetCustomProperty("StunTrigger")
@@ -47,7 +48,7 @@ for a=1,5 do
 end
 local PlayerStats={}
 for a=1,5 do
-	PlayerStats[a]={}	--0- Deaths
+	PlayerStats[a]={}	--0- Deaths	/ 1- Damage dealt
 end
 
 function Stun(player)
@@ -208,7 +209,8 @@ function RoundEndCutscene()
 		end
 		for a=1, 4 do
 			if KeyState[Top[a]][0]~=nil and KeyState[Top[a]][0]~="" then
-				print(a.."- "..KeyState[Top[a]][0])
+				--print(a.."- "..KeyState[Top[a]][0])
+				Events.BroadcastToAllPlayers("UpdateResult",a,KeyState[Top[a]][0],PlayerStats[Top[a]][0],PlayerStats[Top[a]][1])
 			end
 		end
 
@@ -216,8 +218,11 @@ function RoundEndCutscene()
 end
 
 function EquipWeapon(player,theTrigger)
+	ResetWeapon(player)
+	Task.Wait(0.1)
 	for b=1,5 do
     	if KeyState[b][0]==player.name then
+			theTrigger:SetNetworkedCustomProperty("isEquipped",true)
 			theTrigger.parent:AttachToPlayer(player, "nameplate")
 			theTrigger.parent:SetWorldPosition(player:GetWorldPosition())
 			theTrigger.parent:SetWorldRotation(player:GetWorldRotation())
@@ -343,10 +348,21 @@ function ForwardOverlap(theTrigger)
 	end
 end
 
-function HitOverlap(theTrigger)
+function HitOverlap(theTrigger)--
 	list=theTrigger:GetOverlappingObjects()
 	for _,player in pairs(list) do
 		if player and player:IsA("Player") and Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Owner")~=player.name then
+			
+			for _,pl in pairs(Game.GetPlayers()) do
+				if pl.name==theTrigger:GetCustomProperty("Owner") then
+					for b=1,5 do
+						if KeyState[b][0]==pl.name then
+							PlayerStats[b][1]=PlayerStats[b][1]+theTrigger:GetCustomProperty("Damage")
+						end
+					end
+				end
+			end
+			
 			for b=1,5 do
 			    if KeyState[b][0]==player.name then
 					PlayerState[b][5]=PlayerState[b][5]+theTrigger:GetCustomProperty("Damage")
@@ -382,6 +398,17 @@ function HeavyHitOverlap(theTrigger)
 	list=theTrigger:GetOverlappingObjects()
 	for _,player in pairs(list) do
 		if player and player:IsA("Player") and Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Owner")~=player.name then
+			
+			for _,pl in pairs(Game.GetPlayers()) do
+				if pl.name==theTrigger:GetCustomProperty("Owner") then
+					for b=1,5 do
+						if KeyState[b][0]==pl.name then
+							PlayerStats[b][1]=PlayerStats[b][1]+theTrigger:GetCustomProperty("Damage")
+						end
+					end
+				end
+			end
+
 			for b=1,5 do
 			    if KeyState[b][0]==player.name then
 					playerId=b
@@ -424,6 +451,8 @@ function DeathOverlap(theTrigger)
 				end
 			end
 			if time()>=PlayerState[playerId][8]+5 then
+				local obj=World.SpawnAsset(Flash)
+				obj:SetWorldPosition(player:GetWorldPosition())
 				player:ResetVelocity()
 				PlayerState[playerId][8]=time()
 				PlayerState[playerId][6]=0
@@ -442,9 +471,14 @@ function DeathOverlap(theTrigger)
 				PlayerState[playerId][5]=0 
 				PlayerStats[playerId][0]=PlayerStats[playerId][0]+1
 				script:SetNetworkedCustomProperty("Player"..playerId.."Deaths",PlayerStats[playerId][0])
+				script:SetNetworkedCustomProperty("Player"..playerId.."HP",PlayerState[playerId][5])
 				Task.Wait(2)
 				player:ResetVelocity()
-				player:SetWorldPosition(Vector3.ZERO)
+				for a,obj in pairs(Game.GetPlayers()) do
+					if obj==player then
+						player:SetWorldPosition(script:GetCustomProperty("Spawn"..a):WaitForObject():GetWorldPosition())
+					end
+				end
 			end
 		end
 	end
@@ -752,34 +786,6 @@ function SE1(player)
 				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
-				trigger:SetNetworkedCustomProperty("Direction",1)
-				trigger:SetNetworkedCustomProperty("Damage",10)
-				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
-				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[1]/2)
-				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(2,2,2)) end
-				for _,equip in pairs(player:GetAttachedObjects()) do
-					if equip.name=="LPW1" then
-						equip:GetCustomProperty("FlashVFX"):WaitForObject():Play()
-						break
-					end
-				end
-				for _,equip in pairs(player:GetEquipment()) do
-					if equip.name=="VFXS" then
-						equip:GetCustomProperty("SE1_VFX"):WaitForObject():Play()
-					end
-				end
-				Task.Wait(0.2)
-				--	|Check for hit reset|	--
-				for b=1,5 do
-				    if KeyState[b][0]==player.name and PlayerState[b][0] then
-				    	return
-					end
-				end
-				--	=====================	--
-				PlayWeaponAnim(player,1,"SE",2)
-				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
-				trigger=World.SpawnAsset(HeavyHitTrigger)
-				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",5)
 				trigger:SetNetworkedCustomProperty("Damage",10)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
@@ -794,6 +800,34 @@ function SE1(player)
 				for _,equip in pairs(player:GetEquipment()) do
 					if equip.name=="VFXS" then
 						equip:GetCustomProperty("SE1_VFX2"):WaitForObject():Play()
+					end
+				end
+				Task.Wait(0.2)
+				--	|Check for hit reset|	--
+				for b=1,5 do
+				    if KeyState[b][0]==player.name and PlayerState[b][0] then
+				    	return
+					end
+				end
+				--	=====================	--
+				PlayWeaponAnim(player,1,"SE",2)
+				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
+				trigger=World.SpawnAsset(HeavyHitTrigger)
+				trigger:SetNetworkedCustomProperty("Owner",player.name)
+				trigger:SetNetworkedCustomProperty("Direction",1)
+				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
+				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[1]/2)
+				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(2,2,2)) end
+				for _,equip in pairs(player:GetAttachedObjects()) do
+					if equip.name=="LPW1" then
+						equip:GetCustomProperty("FlashVFX"):WaitForObject():Play()
+						break
+					end
+				end
+				for _,equip in pairs(player:GetEquipment()) do
+					if equip.name=="VFXS" then
+						equip:GetCustomProperty("SE1_VFX"):WaitForObject():Play()
 					end
 				end
 				Task.Wait(0.2)
@@ -1176,9 +1210,9 @@ function OnBindingPressed(player, binding)
         			BasicDownHit(player,7)
         		elseif KeyState[a][1] and PlayerState[a][3]==false then
         			BasicUpHit(player,3)
-				elseif PlayerState[a][6]==0 then
+				else--if PlayerState[a][6]==0 then
 					for _,obj in pairs(PlayerState[a][7]:GetOverlappingObjects()) do
-						if obj.name=="Weapon" then	-- check for overlapping weapons !(Done, need to check)
+						if obj.name=="Weapon" and obj:IsA("Trigger") and obj:GetCustomProperty("isEquipped")==false then	-- check for overlapping weapons !(Done, need to check)
 							EquipWeapon(player,obj)
 							break
 						end
@@ -1410,6 +1444,7 @@ function OnRoundStart()
 				PlayerState[a][7]:SetWorldPosition(pl:GetWorldPosition())
 				PlayerState[a][8]=0
 				PlayerStats[a][0]=0
+				PlayerStats[a][1]=0
 				script:SetNetworkedCustomProperty("Player"..a.."Deaths",PlayerStats[a][0])
 				break 
 			end

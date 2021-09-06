@@ -166,6 +166,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:Flash"
+      AssetReference {
+        Id: 2844105990442122524
+      }
+    }
+    Overrides {
       Name: "cs:Player1Deaths"
       Int: -1
     }

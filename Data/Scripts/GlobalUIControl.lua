@@ -1,3 +1,18 @@
+--[[
+local Name1 = script:GetCustomProperty("Name1"):WaitForObject()
+local Deaths1 = script:GetCustomProperty("Deaths1"):WaitForObject()
+local Damage1 = script:GetCustomProperty("Damage1"):WaitForObject()
+local Name2 = script:GetCustomProperty("Name2"):WaitForObject()
+local Deaths2 = script:GetCustomProperty("Deaths2"):WaitForObject()
+local Damage2 = script:GetCustomProperty("Damage2"):WaitForObject()
+local Name3 = script:GetCustomProperty("Name3"):WaitForObject()
+local Deaths3 = script:GetCustomProperty("Deaths3"):WaitForObject()
+local Damage3 = script:GetCustomProperty("Damage3"):WaitForObject()
+local Name4 = script:GetCustomProperty("Name4"):WaitForObject()
+local Deaths4 = script:GetCustomProperty("Deaths4"):WaitForObject()
+local Damage4 = script:GetCustomProperty("Damage4"):WaitForObject()
+]]
+
 local PlayerPanel1 = script:GetCustomProperty("PlayerPanel1"):WaitForObject()
 local PlayerPanel2 = script:GetCustomProperty("PlayerPanel2"):WaitForObject()
 local PlayerPanel3 = script:GetCustomProperty("PlayerPanel3"):WaitForObject()
@@ -9,6 +24,7 @@ local PlayerPanel4 = script:GetCustomProperty("PlayerPanel4"):WaitForObject()
 local TimerPanel = script:GetCustomProperty("TimerPanel"):WaitForObject()
 local TimerText = script:GetCustomProperty("TimerText"):WaitForObject()
 local BlackPanel = script:GetCustomProperty("BlackPanel"):WaitForObject()
+local ResultPanel = script:GetCustomProperty("ResultPanel"):WaitForObject()
 
 local MainScript = script:GetCustomProperty("MainScript"):WaitForObject()
 
@@ -89,4 +105,16 @@ function RoundStartCutscene()
     fadeTime=time()
 end
 
+function RoundEndCutscene()
+    ResultPanel.visibility=Visibility.FORCE_ON
+end
+
+function UpdateResult(id,name,d,dmg)
+    script:GetCustomProperty("Name"..id):WaitForObject().text=name
+    script:GetCustomProperty("Deaths"..id):WaitForObject().text=tostring(d)
+    script:GetCustomProperty("Damage"..id):WaitForObject().text=tostring(dmg)
+end
+
 Events.Connect("RoundStartCutsceneClient",RoundStartCutscene)
+Events.Connect("RoundEndCutsceneClient",RoundEndCutscene)
+Events.Connect("UpdateResult",UpdateResult)

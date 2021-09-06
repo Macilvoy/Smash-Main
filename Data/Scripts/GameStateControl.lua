@@ -31,7 +31,7 @@ function GameEnd()
     end
 
     --if playersAmount>1 then
---        Events.BroadcastToAllPlayers("RoundStartCutsceneClient")
+        Events.BroadcastToAllPlayers("RoundEndCutsceneClient")
         Events.Broadcast("RoundEndCutsceneNetworked")
         --Game.StopAcceptingPlayers()
         Task.Wait(1+playersAmount*4)
@@ -71,7 +71,7 @@ function OnPlayerJoined(player)
         end
         if playersAmount==4 then
             GameStart()
-        elseif playersAmount==1 then
+        elseif playersAmount==2 then
             LobbyTime=time()
             GameState=false
         end
