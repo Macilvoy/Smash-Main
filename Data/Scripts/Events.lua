@@ -10,6 +10,7 @@
 
 local propInvWall = script:GetCustomProperty("InvWall"):WaitForObject()	-- need to prevent player access to death triggers during lobby time (turn off collision on round start)
 
+local ANIM_API = require(script:GetCustomProperty("ANIM_API"))
 local propANIMS = script:GetCustomProperty("ANIMS")
 local propVFXS = script:GetCustomProperty("VFXS")
 local propHitbox = script:GetCustomProperty("Hitbox")
@@ -113,6 +114,20 @@ function ResetWeapon(player)
 end
 
 function ResetAnim(player)
+	for _,obj in pairs(player:GetEquipment()) do
+		if obj.name=="VFXS" then
+			local LHA=obj:GetCustomProperty("LHAnchor"):WaitForObject()
+			local RHA=obj:GetCustomProperty("RHAnchor"):WaitForObject()
+			local LFA=obj:GetCustomProperty("LFAnchor"):WaitForObject()
+			local RFA=obj:GetCustomProperty("RFAnchor"):WaitForObject()
+			local PA=obj:GetCustomProperty("PAnchor"):WaitForObject()
+			LHA:Deactivate()
+			RHA:Deactivate()
+			LFA:Deactivate()
+			RFA:Deactivate()
+			PA:Deactivate()
+		end
+	end
 	for b=1,5 do
     	if KeyState[b][0]==player.name then
     		if PlayerState[b][6]==0 then
@@ -224,7 +239,7 @@ function EquipWeapon(player,theTrigger)
 			if theTrigger:GetCustomProperty("ID")==2 then
 				for _,obj in pairs(theTrigger.parent:GetChildren()) do
 					if obj.name=="DHW2" then
-						obj:AttachToPlayer(player, "left_prop")
+						obj:AttachToPlayer(player, "right_prop")
 						obj:SetPosition(Vector3.ZERO)
 						obj:SetRotation(Rotation.ZERO)
 					end
@@ -251,6 +266,54 @@ function EquipWeapon(player,theTrigger)
 			PlayerState[b][6]=theTrigger:GetCustomProperty("ID")
 			ResetAnim(player)
 			break
+		end
+	end
+end
+
+function PlayWeaponAnim(player,weaponID,anim,frameID)
+	for _,obj in pairs(player:GetEquipment()) do
+		if obj.name=="VFXS" then
+			local LHA=obj:GetCustomProperty("LHAnchor"):WaitForObject()
+			local RHA=obj:GetCustomProperty("RHAnchor"):WaitForObject()
+			local LFA=obj:GetCustomProperty("LFAnchor"):WaitForObject()
+			local RFA=obj:GetCustomProperty("RFAnchor"):WaitForObject()
+			local PA=obj:GetCustomProperty("PAnchor"):WaitForObject()
+			if frameID==1 then
+				LHA:SetPosition(ANIM_API.WEAPONS[weaponID][anim][frameID]["LHAnchor"]["Position"])
+				LHA:SetRotation(ANIM_API.WEAPONS[weaponID][anim][frameID]["LHAnchor"]["Rotation"])
+				LHA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["LHAnchor"]["Offset"])
+				RHA:SetPosition(ANIM_API.WEAPONS[weaponID][anim][frameID]["RHAnchor"]["Position"])
+				RHA:SetRotation(ANIM_API.WEAPONS[weaponID][anim][frameID]["RHAnchor"]["Rotation"])
+				RHA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["RHAnchor"]["Offset"])
+				LFA:SetPosition(ANIM_API.WEAPONS[weaponID][anim][frameID]["LFAnchor"]["Position"])
+				LFA:SetRotation(ANIM_API.WEAPONS[weaponID][anim][frameID]["LFAnchor"]["Rotation"])
+				LFA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["LFAnchor"]["Offset"])
+				RFA:SetPosition(ANIM_API.WEAPONS[weaponID][anim][frameID]["RFAnchor"]["Position"])
+				RFA:SetRotation(ANIM_API.WEAPONS[weaponID][anim][frameID]["RFAnchor"]["Rotation"])
+				RFA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["RFAnchor"]["Offset"])
+				PA:SetPosition(ANIM_API.WEAPONS[weaponID][anim][frameID]["PAnchor"]["Position"])
+				PA:SetRotation(ANIM_API.WEAPONS[weaponID][anim][frameID]["PAnchor"]["Rotation"])
+				LHA:Activate(player)
+				RHA:Activate(player)
+				LFA:Activate(player)
+				RFA:Activate(player)
+				PA:Activate(player)
+			else
+				LHA:MoveTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["LHAnchor"]["Position"],0.2,true)
+				LHA:RotateTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["LHAnchor"]["Rotation"],0.2,true)
+				LHA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["LHAnchor"]["Offset"])
+				RHA:MoveTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["RHAnchor"]["Position"],0.2,true)
+				RHA:RotateTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["RHAnchor"]["Rotation"],0.2,true)
+				RHA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["RHAnchor"]["Offset"])
+				LFA:MoveTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["LFAnchor"]["Position"],0.2,true)
+				LFA:RotateTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["LFAnchor"]["Rotation"],0.2,true)
+				LFA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["LFAnchor"]["Offset"])
+				RFA:MoveTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["RFAnchor"]["Position"],0.2,true)
+				RFA:RotateTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["RFAnchor"]["Rotation"],0.2,true)
+				RFA:SetAimOffset(ANIM_API.WEAPONS[weaponID][anim][frameID]["RFAnchor"]["Offset"])
+				PA:MoveTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["PAnchor"]["Position"],0.2,true)
+				PA:RotateTo(ANIM_API.WEAPONS[weaponID][anim][frameID]["PAnchor"]["Rotation"],0.2,true)
+			end
 		end
 	end
 end
@@ -602,6 +665,7 @@ function ADE1(player,direction)
 				--	=====================	--
 				obj:GetCustomProperty("ADE1_Skill"):WaitForObject():Activate()
 				Stun(player)
+				PlayWeaponAnim(player,1,"ADE",1)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -610,7 +674,7 @@ function ADE1(player,direction)
 					end
 				end
 				--	=====================	--
-				player.animationStance="2hand_staff_idle_ready"
+				--player.animationStance="2hand_staff_idle_ready"
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -619,7 +683,8 @@ function ADE1(player,direction)
 					end
 				end
 				--	=====================	--
-				player.animationStance="2hand_rifle_aim_shoulder"
+				PlayWeaponAnim(player,1,"ADE",2)
+				--player.animationStance="2hand_rifle_aim_shoulder"
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
@@ -675,6 +740,7 @@ function SE1(player)
 				--	=====================	--
 				obj:GetCustomProperty("SE1_Skill"):WaitForObject():Activate()
 				Stun(player)
+				PlayWeaponAnim(player,1,"SE",1)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -683,7 +749,7 @@ function SE1(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
+				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",1)
@@ -710,7 +776,8 @@ function SE1(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
+				PlayWeaponAnim(player,1,"SE",2)
+				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",5)
@@ -753,6 +820,7 @@ function WE1(player)
 				--	=====================	--
 				obj:GetCustomProperty("WE1_Skill"):WaitForObject():Activate()
 				Stun(player)
+				PlayWeaponAnim(player,1,"WE",1)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -761,7 +829,7 @@ function WE1(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("WE1_Anim"):WaitForObject():Activate()
+				--obj:GetCustomProperty("WE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",7)
@@ -789,7 +857,8 @@ function WE1(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("WE1_Anim"):WaitForObject():Activate()
+				PlayWeaponAnim(player,1,"WE",2)
+				--obj:GetCustomProperty("WE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",7)
@@ -841,7 +910,8 @@ function ADE2(player,direction)
 					end
 				end
 				--	=====================	--
-				player.animationStance="2hand_staff_idle_ready"
+				PlayWeaponAnim(player,2,"ADE",1)
+				--player.animationStance="2hand_staff_idle_ready"
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -920,7 +990,8 @@ function SE2(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("SE2_Anim"):WaitForObject():Activate()
+				--obj:GetCustomProperty("SE2_Anim"):WaitForObject():Activate()
+				PlayWeaponAnim(player,2,"SE",1)
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -947,6 +1018,7 @@ function SE2(player)
 						equip:GetCustomProperty("SE2_VFX"):WaitForObject():Play()
 					end
 				end
+				PlayWeaponAnim(player,2,"SE",2)
 				Task.Wait(0.2)
 				player:ResetVelocity()
 				ResetMovement(player)
@@ -979,7 +1051,8 @@ function WE2(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("WE2_Anim"):WaitForObject():Activate()
+				PlayWeaponAnim(player,2,"WE",1)
+				--obj:GetCustomProperty("WE2_Anim"):WaitForObject():Activate()
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -988,7 +1061,8 @@ function WE2(player)
 					end
 				end
 				--	=====================	--
-				obj:GetCustomProperty("WE2_Anim"):WaitForObject():Activate()
+				PlayWeaponAnim(player,2,"WE",2)
+				--obj:GetCustomProperty("WE2_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",3)

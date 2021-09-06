@@ -17,9 +17,14 @@ Objects {
   ParentId: 1837261677212754514
   UnregisteredParameters {
     Overrides {
+      Name: "cs:ANIM_API"
+      AssetReference {
+        Id: 8918415439625362970
+      }
+    }
+    Overrides {
       Name: "cs:Trigger"
       ObjectReference {
-        SelfId: 841534158063459245
       }
     }
     Overrides {
