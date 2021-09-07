@@ -18,9 +18,9 @@ function Overlap(_,theTrigger)
         DirtVFX:Play()
         HeavyHitTrigger.collision=Collision.FORCE_ON
         Task.Wait(2)
-        if Object.IsValid(HeavyHitTrigger) then
-            HeavyHitTrigger:Destroy()
-        end
+        --if Object.IsValid(HeavyHitTrigger) then
+        --    HeavyHitTrigger:Destroy()
+        --end
         Task.Wait(2)
         Bomb:Destroy()
     end

@@ -453,10 +453,10 @@ function DeathOverlap(theTrigger)
 			if time()>=PlayerState[playerId][8]+5 then
 				local obj=World.SpawnAsset(Flash)
 				obj:SetWorldPosition(player:GetWorldPosition())
-				player:ResetVelocity()
+				--player:ResetVelocity()
 				PlayerState[playerId][8]=time()
 				PlayerState[playerId][6]=0
-				ResetWeapon(player)-- Put player disarm script here! (Done, need to check)
+				ResetWeapon(player)
 				ResetMovement(player)
 				ResetVFX(player)
 				ResetAnim(player)
@@ -708,7 +708,6 @@ function ADE1(player,direction)
 					end
 				end
 				--	=====================	--
-				--player.animationStance="2hand_staff_idle_ready"
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -718,7 +717,6 @@ function ADE1(player,direction)
 				end
 				--	=====================	--
 				PlayWeaponAnim(player,1,"ADE",2)
-				--player.animationStance="2hand_rifle_aim_shoulder"
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
@@ -783,7 +781,6 @@ function SE1(player)
 					end
 				end
 				--	=====================	--
-				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",5)
@@ -811,7 +808,6 @@ function SE1(player)
 				end
 				--	=====================	--
 				PlayWeaponAnim(player,1,"SE",2)
-				--obj:GetCustomProperty("SE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",1)
@@ -863,7 +859,6 @@ function WE1(player)
 					end
 				end
 				--	=====================	--
-				--obj:GetCustomProperty("WE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",7)
@@ -892,7 +887,6 @@ function WE1(player)
 				end
 				--	=====================	--
 				PlayWeaponAnim(player,1,"WE",2)
-				--obj:GetCustomProperty("WE1_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",7)
@@ -945,7 +939,6 @@ function ADE2(player,direction)
 				end
 				--	=====================	--
 				PlayWeaponAnim(player,2,"ADE",1)
-				--player.animationStance="2hand_staff_idle_ready"
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -961,6 +954,7 @@ function ADE2(player,direction)
 					end
 				end
 				--	=====================	--
+				PlayWeaponAnim(player,2,"ADE",2)
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
@@ -993,7 +987,6 @@ function ADE2(player,direction)
 				end
 				Task.Wait(0.2)
 				if Object.IsValid(trigger) then trigger:Destroy() end
-				--player:ResetVelocity()
 				ResetMovement(player)
 				ResetAnim(player)
 			end
@@ -1024,7 +1017,6 @@ function SE2(player)
 					end
 				end
 				--	=====================	--
-				--obj:GetCustomProperty("SE2_Anim"):WaitForObject():Activate()
 				PlayWeaponAnim(player,2,"SE",1)
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
@@ -1086,7 +1078,6 @@ function WE2(player)
 				end
 				--	=====================	--
 				PlayWeaponAnim(player,2,"WE",1)
-				--obj:GetCustomProperty("WE2_Anim"):WaitForObject():Activate()
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
 				for b=1,5 do
@@ -1096,7 +1087,6 @@ function WE2(player)
 				end
 				--	=====================	--
 				PlayWeaponAnim(player,2,"WE",2)
-				--obj:GetCustomProperty("WE2_Anim"):WaitForObject():Activate()
 				trigger=World.SpawnAsset(HeavyHitTrigger)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",3)
@@ -1212,7 +1202,7 @@ function OnBindingPressed(player, binding)
         			BasicUpHit(player,3)
 				else--if PlayerState[a][6]==0 then
 					for _,obj in pairs(PlayerState[a][7]:GetOverlappingObjects()) do
-						if obj.name=="Weapon" and obj:IsA("Trigger") and obj:GetCustomProperty("isEquipped")==false then	-- check for overlapping weapons !(Done, need to check)
+						if obj.name=="Weapon" and obj:IsA("Trigger") and obj:GetCustomProperty("isEquipped")==false then
 							EquipWeapon(player,obj)
 							break
 						end
@@ -1238,7 +1228,7 @@ function OnBindingPressed(player, binding)
 		        		ADE2(player,5)
 					end
 					if PlayerState[a][6]==4 then
-		        		ADE4(player,4)
+		        		ADE4(player,5)
 					end
 
         		elseif KeyState[a][4] then
@@ -1253,7 +1243,7 @@ function OnBindingPressed(player, binding)
 		        		ADE2(player,1)
 					end
 					if PlayerState[a][6]==4 then
-		        		ADE4(player,2)
+		        		ADE4(player,1)
 					end
 
         		elseif KeyState[a][3] and player.isJumping==false then
@@ -1310,7 +1300,7 @@ function OnBindingPressed(player, binding)
 					elseif PlayerState[a][6]==2 then
 						ADE2(player,5)
 					elseif PlayerState[a][6]==4 then
-						ADE4(player,4)
+						ADE4(player,5)
 					end
 
         		elseif KeyState[a][6] then
@@ -1348,7 +1338,7 @@ function OnBindingPressed(player, binding)
 					elseif PlayerState[a][6]==2 then
 						ADE2(player,1)
 					elseif PlayerState[a][6]==4 then
-						ADE4(player,2)
+						ADE4(player,1)
 					end
 
         		elseif KeyState[a][6] then
@@ -1456,3 +1446,9 @@ Game.roundStartEvent:Connect(OnRoundStart)
 
 Events.Connect("RoundStartCutsceneNetworked",RoundStartCutscene)
 Events.Connect("RoundEndCutsceneNetworked",RoundEndCutscene)
+
+function ConnectHeavyTrigger(trigger)
+	trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
+end
+
+Events.Connect("ConnectHeavyTrigger",ConnectHeavyTrigger)
