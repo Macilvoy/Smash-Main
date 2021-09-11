@@ -2486,12 +2486,18 @@ Objects {
       HeadVisibleToSelf: true
       IsSlideEnabled: true
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       IsCrouchEnabled: true
       IsJumpEnabled: true
       CanMoveLeft: true
       CanMoveRight: true
 >>>>>>> parent of 1d69faa ( two steps from hell)
+=======
+      IsJumpEnabled: true
+      CanMoveLeft: true
+      CanMoveRight: true
+>>>>>>> parent of 8332333 (everything fucked up)
       AbilityAimMode {
         Value: "mc:eabilityaimmode:viewrelative"
       }

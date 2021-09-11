@@ -67,7 +67,6 @@ local LShiftkey = "ability_extra_12"
 
 <<<<<<< HEAD
 local AnimationSystem = script:GetCustomProperty("AnimationSystem")
-local ROOT = script:GetCustomProperty("ROOT")
 
 local p1Weapons = {}
 local p1Animations = {}
@@ -269,7 +268,6 @@ end
     end
     EquipWeapon(player)
     SpawnIKRig(player)
-    Events.Broadcast("Movement",player)
     player.bindingPressedEvent:Connect(OnBindingPressed)
     player.bindingReleasedEvent:Connect(OnBindingReleased)
 end
@@ -297,11 +295,15 @@ end
 <<<<<<< HEAD
 function SpawnIKRig(player)
     if player:GetResource(PNum) == 1 then
-            p1AnimFolder = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()})
-            p1AnimFolder:AttachToPlayer(player, "root")
+            p1AnimFolder = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()-Vector3.New(0,0,900)})
             p1SystemChildren = p1AnimFolder:GetChildren()
          for _, Clientfolder in ipairs(p1SystemChildren) do
-
+          if Clientfolder.name=="Equip Trigger" then
+              EquipTrigger1 = Clientfolder
+          end
+         if Clientfolder.name=="Animations" then
+             p1Animations_Root = Clientfolder
+         end
          if Clientfolder.name =="Anchor" then
              p1AnchorFolder = Clientfolder
              p1AnchorFolderBones = p1AnchorFolder:GetChildren()
@@ -325,13 +327,19 @@ function SpawnIKRig(player)
      
          end
         end
-        ResyncAnimation(player)
-        LocateIK(player)
+        if EquipTrigger1 ~= nil then
+            EquipTrigger1.beginOverlapEvent:Connect(EquipingTrigger)
+        end
     else
         p2AnimFolder = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()-Vector3.New(0,0,900)})
         p2SystemChildren = p2AnimFolder:GetChildren()
      for _, Clientfolder in ipairs(p2SystemChildren) do
-
+      if Clientfolder.name=="Equip Trigger" then
+          EquipTrigger2 = Clientfolder
+      end
+     if Clientfolder.name=="Animations" then
+         p2Animations_Root = Clientfolder
+     end
      if Clientfolder.name =="Anchor" then
          p2AnchorFolder = Clientfolder
          p2AnchorFolderBones = p2AnchorFolder:GetChildren()
@@ -355,6 +363,28 @@ function SpawnIKRig(player)
  
      end
     end
+    if EquipTrigger2 ~= nil then
+        EquipTrigger2.beginOverlapEvent:Connect(EquipingTrigger)
+    end
+end
+end
+
+function EquipingTrigger(trigger, player)
+    if player and player:IsA("Player") then
+if player:GetResource(isAttached) == 0 then
+    if trigger == EquipTrigger1 then
+        p1AnimFolder:AttachToPlayer(player, "root")
+        Events.Broadcast("Movement",player)
+    else
+        p2AnimFolder:AttachToPlayer(player, "root")
+        Events.Broadcast("Movement",player)
+    end
+    player.animationStance = "unarmed_bind_pose"
+    trigger:Destroy()
+    player:AddResource(isAttached,1)
+    else
+        return
+end
 end
 end
 =======
@@ -424,12 +454,14 @@ ability_extra_38 = L
                     player:SetResource(KeyActive, 1)
                     p1AnimLenth = p1Length + 10
                     ResyncAnimation(player)
+                    GetAnimation(player)
                     LocateIK(player)
                     else
                     player:SetResource(StateId,4)
                     player:SetResource(KeyActive, 1)
                     p1AnimLenth = p1Length
                     ResyncAnimation(player)
+                    GetAnimation(player)
                     LocateIK(player)
                     end
                 p1TimerBasic = 0
@@ -442,12 +474,10 @@ ability_extra_38 = L
                     if player:GetResource(Zpos) == 0 then
                     player:SetResource(StateId,3)
                     ResyncAnimation(player)
-                    LocateIK(player)
                     p2AnimLenth = p2Length + 10
                     else
                     player:SetResource(StateId,4)
                     ResyncAnimation(player)
-                    LocateIK(player)
                     p2AnimLenth = p2Length
                     end
                 p2TimerBasic = 0
@@ -549,29 +579,22 @@ function Tick()
     AllPlayers = Game.GetPlayers()
     for _,player in ipairs(AllPlayers) do
 if player:GetResource(PNum) == 1 then
-    --if player:GetResource(isAttached) == 1 then
+    if player:GetResource(isAttached) == 1 then
         if player:GetVelocity().z ~= 0 then
         player:SetResource(Zpos,1)
         else
         player:SetResource(Zpos,0)
         end
-        ResyncAnimation(player)
-        LocateIK(player)
-        p1Keyframe = p1Keyframe + 1
- -- CHANGED POSITION CAN CAUSE LAG
+       -- print(player:GetResource(StateId))
+    ResyncAnimation(player)
+    GetAnimation(player)
+    LocateIK(player) -- CHANGED POSITION CAN CAUSE LAG
+    p1Keyframe = p1Keyframe + 1
        if(p1Keyframe*KeyframeInterval > p1Length) and player:GetResource(KeyActive) == 0 and p1AnimLenth == 0 then
         if player:GetResource(Zpos) == 0 then
-            if player:GetResource(StateId) ~= 1 then
             player:SetResource(StateId,1)
-            ResyncAnimation(player)
-            LocateIK(player)
-            end
         else
-            if player:GetResource(StateId) ~= 5 then
             player:SetResource(StateId,5)
-            ResyncAnimation(player)
-            LocateIK(player)
-            end
         end
             p1Keyframe = 1
        elseif (p1Keyframe*KeyframeInterval > p1Length) and player:GetResource(KeyActive) == 1 and p1AnimLenth > 0 then
@@ -592,7 +615,7 @@ if player:GetResource(PNum) == 1 then
     if p1AnimLenth > 0 then
         p1AnimLenth = p1AnimLenth - 1
     end
-    --end
+    end
 else
     if player:GetResource(isAttached) == 1 then
         ResyncAnimation(player)
@@ -624,14 +647,6 @@ end
 
 function ResyncAnimation(player)
     if player:GetResource(PNum) == 1 then
-        local RubbishToWipe = player:GetAttachedObjects()
-        for _, trash in ipairs(RubbishToWipe) do
-            if trash.name == "Animations" then
-        trash:Destroy()
-        end
-        end
-        p1Animations_Root = World.SpawnAsset(ROOT, {position = player:GetWorldPosition()})
-        p1Animations_Root:AttachToPlayer(player, "pelvis")
     --############################# getting list of animations #############################
     p1Weapons = p1Animations_Root:GetChildren()
 for weaponIndex, weapon in ipairs(p1Weapons) do
@@ -658,10 +673,13 @@ function DebugIK()
 
 <<<<<<< HEAD
 p1animationLength = #p1PelvisKeys
+<<<<<<< HEAD
 p1Length = p1animationLength*KeyframeInterval
 =======
 end
 >>>>>>> parent of 1d69faa ( two steps from hell)
+=======
+>>>>>>> parent of 8332333 (everything fucked up)
 
 function OnPlayerJoined(player)
 
@@ -701,8 +719,6 @@ function OnPlayerJoined(player)
     end
 <<<<<<< HEAD
     --####################################################################################
-else
-    animation:Destroy()
 end
 =======
    end
@@ -723,7 +739,10 @@ if isAttached == 0 then
 end
 end
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- LocateIK(player)
+=======
+>>>>>>> parent of 8332333 (everything fucked up)
 else
 =======
 
@@ -806,13 +825,64 @@ end
 end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+function GetAnimation(player)
+    if player:GetResource(PNum) == 1 then
+    p1rightHIK = p1rightHIKs
+    -- p1rightHIK:SetWorldPosition(Vector3.New(p1rightHIKsPos))
+    -- p1rightHIK:SetWorldRotation(Rotation.New(p1rightHIKsRot))
+
+    p1leftHIK = p1leftHIKs
+    -- p1leftHIK:SetWorldPosition(Vector3.New(p1leftHIKsPos))
+    -- p1leftHIK:SetWorldRotation(Rotation.New(p1leftHIKsRot))
+
+    p1leftLIK = p1leftLIKs
+    -- p1leftLIK:SetWorldPosition(Vector3.New(p1leftLIKsPos))
+    -- p1leftLIK:SetWorldRotation(Rotation.New(p1leftLIKsRot))
+
+    p1rightLIK = p1rightLIKs
+    -- p1rightLIK:SetWorldPosition(Vector3.New(p1rightLIKsPos))
+    -- p1rightLIK:SetWorldRotation(Rotation.New(p1rightLIKsRot))
+
+    p1pelvisIK = p1pelvisIKs
+    -- p1pelvisIK:SetWorldPosition(Vector3.New(p1pelvisIKsPos))
+    -- p1pelvisIK:SetWorldRotation(Rotation.New(p1pelvisIKsRot))
+
+    p1Length = p1animationLength*KeyframeInterval
+    else
+    p2rightHIK = p2rightHIKs
+    -- p2rightHIK:SetWorldPosition(Vector3.New(p2rightHIKsPos))
+    -- p2rightHIK:SetWorldRotation(Rotation.New(p2rightHIKsRot))
+
+    p2leftHIK = p2leftHIKs
+    -- p2leftHIK:SetWorldPosition(Vector3.New(p2leftHIKsPos))
+    -- p2leftHIK:SetWorldRotation(Rotation.New(p2leftHIKsRot))
+
+    p2leftLIK = p2leftLIKs
+    -- p2leftLIK:SetWorldPosition(Vector3.New(p2leftLIKsPos))
+    -- p2leftLIK:SetWorldRotation(Rotation.New(p2leftLIKsRot))
+
+    p2rightLIK = p2rightLIKs
+    -- p2rightLIK:SetWorldPosition(Vector3.New(p2rightLIKsPos))
+    -- p2rightLIK:SetWorldRotation(Rotation.New(p2rightLIKsRot))
+
+    p2pelvisIK = p2pelvisIKs
+    -- p2pelvisIK:SetWorldPosition(Vector3.New(p2pelvisIKsPos))
+    -- p2pelvisIK:SetWorldRotation(Rotation.New(p2pelvisIKsRot))
+
+    p2Length = p2animationLength*KeyframeInterval
+    end
+end
+
+>>>>>>> parent of 8332333 (everything fucked up)
 function LocateIK(player)
     if player:GetResource(PNum) == 1 then
-    SetIK(p1Pelvis, player, p1pelvisIKs)
-    SetIK(p1LHand, player, p1leftHIKs)
-    SetIK(p1RHand, player, p1rightHIKs)
-    SetIK(p1LFoot, player, p1leftLIKs)
-    SetIK(p1RFoot, player, p1rightLIKs)
+    SetIK(p1Pelvis, player, p1pelvisIK)
+    SetIK(p1LHand, player, p1leftHIK)
+    SetIK(p1RHand, player, p1rightHIK)
+    SetIK(p1LFoot, player, p1leftLIK)
+    SetIK(p1RFoot, player, p1rightLIK)
     else
     SetIK(p2Pelvis, player, p2pelvisIK)
     SetIK(p2LHand, player, p2leftHIK)
@@ -823,7 +893,6 @@ function LocateIK(player)
 end
 
 function SetIK(anchor, player, IK)
-    if Object.IsValid(IK) then
     anchor:MoveTo(Vector3.New(IK:GetWorldPosition()),KeyframeInterval/10,false)
     anchor:RotateTo(Rotation.New (IK:GetWorldRotation()),KeyframeInterval/10,false)
     if not anchor.serverUserData.isActivated then
@@ -831,6 +900,7 @@ function SetIK(anchor, player, IK)
     anchor.serverUserData.isActivated = true
     end
 end
+<<<<<<< HEAD
 end
 =======
 function Tick()
@@ -857,5 +927,17 @@ DebugIK()
 end
 end
 >>>>>>> parent of 1d69faa ( two steps from hell)
+=======
+
+--function DebugIK()
+
+    -- CoreDebug.DrawLine(pelvisIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{duration = KeyframeInterval, thickness = 10})
+	 --CoreDebug.DrawLine(rightHIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{duration = KeyframeInterval, thickness = 10})
+	-- CoreDebug.DrawLine(leftHIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+    -- CoreDebug.DrawLine(rightLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+	-- CoreDebug.DrawLine(leftLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
+
+--end
+>>>>>>> parent of 8332333 (everything fucked up)
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)

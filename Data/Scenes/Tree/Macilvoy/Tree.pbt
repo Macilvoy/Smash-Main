@@ -8061,6 +8061,7 @@ Objects {
       Name: "cs:MovingSpeed"
       Float: 150
     }
+<<<<<<< HEAD
     Overrides {
       Name: "cs:ROOT"
       AssetReference {
@@ -8069,6 +8070,8 @@ Objects {
     }
 =======
 >>>>>>> parent of 1d69faa ( two steps from hell)
+=======
+>>>>>>> parent of 8332333 (everything fucked up)
   }
   WantsNetworking: true
   Collidable_v2 {
