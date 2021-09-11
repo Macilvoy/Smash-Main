@@ -1,12 +1,128 @@
 Name: "map3"
 RootId: 14640336009924561496
 Objects {
+  Id: 13089230254578590274
+  Name: "Ground"
+  Transform {
+    Location {
+      X: -727.931641
+      Y: 2694.33984
+    }
+    Rotation {
+    }
+    Scale {
+      X: 8.20548
+      Y: 11.5405884
+      Z: 1
+    }
+  }
+  ParentId: 14640336009924561496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 13977944285455904776
+  Name: "Ground"
+  Transform {
+    Location {
+      X: -727.931641
+      Y: -2806.43652
+    }
+    Rotation {
+    }
+    Scale {
+      X: 8.20548
+      Y: 11.5405884
+      Z: 1
+    }
+  }
+  ParentId: 14640336009924561496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
+  Id: 16429739052184306180
+  Name: "Ground"
+  Transform {
+    Location {
+      X: -727.931641
+    }
+    Rotation {
+    }
+    Scale {
+      X: 8.20548
+      Y: 15.4741774
+      Z: 1
+    }
+  }
+  ParentId: 14640336009924561496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 7952323415868651895
   Name: "island"
   Transform {
     Location {
       X: -764.936768
-      Y: -2686.63818
+      Y: -2686.63794
       Z: -621.928162
     }
     Rotation {

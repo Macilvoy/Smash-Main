@@ -1,15 +1,16 @@
-GameId: "b7927816987e42b190250dcd2f7b230f"
-ClientVersion: "1.0.202-prod-s"
-Name: "Smack"
-Description: "smack"
-MaxPlayers: 8
+GameId: "cb43f54fca5a4e1493476f8e3617661b"
+ClientVersion: "1.0.212-prod-s"
+Name: "Smash"
+Description: "asd"
+MaxPlayers: 2
 Tags: "Action"
-ScreenshotPaths: "C:/Users/Glados/Documents/My Games/CORE/Saved/Maps/Smack/Screenshots/Screenshot0001.png"
-OwnerId: "183f0b6855c042e1b78a1cc84a1b5815"
+Tags: "SideScroller"
+Tags: "Multiplayer"
+Tags: "Competitive"
+Tags: "Platformer"
+ScreenshotPaths: "C:\\XV\\Peter\\Core\\Smash\\map3_1.png"
+OwnerId: "93f7f0bea0bb4d06a91d2803b4ca08df"
 SerializationVersion: 1
-AllowDirectJoinAsChild: true
-IsQueued: true
-MinPlayersToStart: 2
 SceneNameToSceneIdMap {
   key: "Main"
   value: "d0c346e0482efa6deed1f8ba52a53846"

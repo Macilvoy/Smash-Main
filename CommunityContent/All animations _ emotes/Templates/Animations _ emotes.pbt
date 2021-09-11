@@ -10587,6 +10587,6 @@ Assets {
   Marketplace {
     Description: "All animations & emotes in action, only press play button"
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
   DirectlyPublished: true
 }

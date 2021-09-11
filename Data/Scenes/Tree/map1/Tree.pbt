@@ -1,6 +1,44 @@
 Name: "map1"
 RootId: 17875764271824315431
 Objects {
+  Id: 18195854397044797196
+  Name: "Ground"
+  Transform {
+    Location {
+      X: -727.931641
+    }
+    Rotation {
+    }
+    Scale {
+      X: 8.20548
+      Y: 97.4405746
+      Z: 1
+    }
+  }
+  ParentId: 17875764271824315431
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+}
+Objects {
   Id: 3438408349335454987
   Name: "fx"
   Transform {

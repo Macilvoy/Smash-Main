@@ -44,28 +44,43 @@
 --###########################################################################################
 --###########################################################################################
 
--- local LHand = script:GetCustomProperty("LHand"):WaitForObject()
--- local RHand = script:GetCustomProperty("RHand"):WaitForObject()
--- local Pelvis = script:GetCustomProperty("Pelvis"):WaitForObject()
--- local LFoot = script:GetCustomProperty("LFoot"):WaitForObject()
--- local RFoot = script:GetCustomProperty("RFoot"):WaitForObject()
--- local Animations_Root = nil
-local AnimationSystem = script:GetCustomProperty("AnimationSystem")
---local EquipTrigger = script:GetCustomProperty("EquipTrigger"):WaitForObject()
---local AnimSystem = nil
+--[[
+ability_extra_21 = W
+ability_extra_30 = A
+ability_extra_31 = S
+ability_extra_32 = D
+
+ability_extra_20 = Q
+ability_extra_22 = E
+
+ability_extra_36 = J
+ability_extra_37 = K
+
+ability_extra_23 = R
+
+ability_extra_33 = F
+
+ability_extra_40 = X
+
+ability_extra_38 = L
+
+ability_extra_17 = Space
+ability_extra_19 = TAB
+ability_extra_12 = LShift
+
+]]
 
 local Wkey = "ability_extra_21"
 local Akey = "ability_extra_30"
 local Skey = "ability_extra_31"
 local Dkey = "ability_extra_32"
-local Qkey = "ability_extra_20"
-local Ekey = "ability_extra_22"
+local Jkey = "ability_extra_36"
+local Kkey = "ability_extra_37"
 local Rkey = "ability_extra_23"
 local Spacekey = "ability_extra_17"
 local TABkey = "ability_extra_19"
 local LShiftkey = "ability_extra_12"
 
-<<<<<<< HEAD
 local AnimationSystem = script:GetCustomProperty("AnimationSystem")
 
 local p1Weapons = {}
@@ -154,55 +169,10 @@ local p2Keyframe = 1
 local p2animationLength = 0
 local p2Length = 1
 
-=======
-local Weapons = {}
-local Animations = {}
-local Bones = {}
-local RHandKeys = {}
-local LHandKeys = {}
-local LLegKeys = {}
-local RLegKeys = {}
-local PelvisKeys = {}
-local rightHIK = nil
-local leftHIK = nil
-local rightLIK = nil
-local leftLIK = nil
-local pelvisIK = nil
-local rightHIKs = nil
-local leftHIKs = {}
-local rightLIKs = {}
-local leftLIKs = {}
-local pelvisIKs = {}
-local rightHIKsPos = 0
-local rightHIKsRot = 0
-local leftHIKsPos = {}
-local leftHIKsRot = {}
-local rightLIKsPos = {}
-local rightLIKsRot = {}
-local leftLIKsPos = {}
-local leftLIKsRot = {}
-local pelvisIKsPos = {}
-local pelvisIKsRot = {}
-
-local Aniplayer = nil
-
-
-local Animating = 1
-local isAttached = 0
-local KeyPressed = 0 -- TEMP CHECK
-local pressedBefore = false
-
-local WeaponId = 1 -- ############################# GET RESOURCE FROM MENU
-local AnimId = 1
-local Keyframe = 1
-local animationLength = 0
-local Length = 1
->>>>>>> parent of 1d69faa ( two steps from hell)
 local KeyframeInterval = script:GetCustomProperty("KeyframeInterval")
 
 local WeaponAssets = script:GetCustomProperty("weapon")
 
-<<<<<<< HEAD
 local p1WeaponAssetsSpawned = nil
 local p1AssetsChildren = {}
 local p1HandsFolders = {}
@@ -271,28 +241,45 @@ end
     player.bindingPressedEvent:Connect(OnBindingPressed)
     player.bindingReleasedEvent:Connect(OnBindingReleased)
 end
-=======
-local weaponId = 0
->>>>>>> parent of 1d69faa ( two steps from hell)
 
 function EquipWeapon(player)
-    WeaponAssetsSpawned = World.SpawnAsset(WeaponAssets, {position = player:GetWorldPosition()-Vector3.New(0,0,1000)})
-    local AssetsChildren = WeaponAssetsSpawned:GetChildren()
-     for folderIndex, Weaponfolder in ipairs(AssetsChildren) do
-      if folderIndex == weaponId then
-       local HandsFolders = Weaponfolder:GetChildren()
-       for handIndex, Handfolder in ipairs(HandsFolders) do
+    if player:GetResource(PNum) == 1 then
+    p1WeaponAssetsSpawned = World.SpawnAsset(WeaponAssets, {position = player:GetWorldPosition()-Vector3.New(0,0,1000)})
+    p1AssetsChildren = p1WeaponAssetsSpawned:GetChildren()
+     for folderIndex, Weaponfolder in ipairs(p1AssetsChildren) do
+      if folderIndex == player:GetResource(WeaponId) then
+       p1HandsFolders = Weaponfolder:GetChildren()
+       for handIndex, Handfolder in ipairs(p1HandsFolders) do
         if handIndex == 1 then
             Handfolder:AttachToPlayer(player, "right_prop")
         else
             Handfolder:AttachToPlayer(player, "left_prop")
         end
     end
-    end
+else
+    Weaponfolder:Destroy()
     end
 end
+else
+    p2WeaponAssetsSpawned = World.SpawnAsset(WeaponAssets, {position = player:GetWorldPosition()-Vector3.New(0,0,1000)})
+    p2AssetsChildren = p2WeaponAssetsSpawned:GetChildren()
+     for folderIndex, Weaponfolder in ipairs(p2AssetsChildren) do
+      if folderIndex == player:GetResource(WeaponId) then
+       p2HandsFolders = Weaponfolder:GetChildren()
+       for handIndex, Handfolder in ipairs(p2HandsFolders) do
+        if handIndex == 1 then
+            Handfolder:AttachToPlayer(player, "right_prop")
+        else
+            Handfolder:AttachToPlayer(player, "left_prop")
+        end
+    end
+else
+    Weaponfolder:Destroy()
+    end
+end
+end
+end
 
-<<<<<<< HEAD
 function SpawnIKRig(player)
     if player:GetResource(PNum) == 1 then
             p1AnimFolder = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()-Vector3.New(0,0,900)})
@@ -387,29 +374,32 @@ if player:GetResource(isAttached) == 0 then
 end
 end
 end
-=======
---[[
-ability_extra_21 = W
-ability_extra_30 = A
-ability_extra_31 = S
-ability_extra_32 = D
->>>>>>> parent of 1d69faa ( two steps from hell)
 
-ability_extra_20 = Q
-ability_extra_22 = E
+function OnBindingPressed(player, binding)
 
-ability_extra_36 = J
-ability_extra_37 = K
+    --            D E B A G
+    ----------------------------------------------
+        if binding == "ability_extra_16" then -- ENTER
 
-ability_extra_23 = R
+        end
+        if binding == "ability_extra_1" then
 
-ability_extra_33 = F
+        end
+        if binding == "ability_extra_2" then
 
-ability_extra_40 = X
+        end
+        if binding == "ability_extra_3" then
+    
+        end
+        if binding == "ability_extra_4" then
+    
+        end
+    -----------------------------------------------
+        if binding == Wkey then -- W
 
-ability_extra_38 = L
+        end
+        if binding == Skey then -- S
 
-<<<<<<< HEAD
         end
         if binding == Akey then -- A
                 if player:GetResource(PNum) == 1 then
@@ -491,89 +481,61 @@ ability_extra_38 = L
     
         end
 end
-=======
-ability_extra_17 = Space
-ability_extra_19 = TAB
-ability_extra_12 = LShift
->>>>>>> parent of 1d69faa ( two steps from hell)
-
-]]
-
-function OnBindingPressed(player, binding)
-
-    if binding == "ability_extra_30" or binding == "ability_extra_32" then
-        AnimId = 2
-        Keyframe = 1
-        Animating = 1
-        KeyPressed = 1
-        pressedBefore = true
-    end
-    if binding == "ability_extra_5" then
-        weaponId = 1
-        EquipWeapon(player)
-    end
-    if binding == "ability_extra_6" then
-        weaponId = 2
-        EquipWeapon(player)
-    end
-    if binding == "ability_extra_7" then
-        weaponId = 3
-        EquipWeapon(player)
-    end
-
-end
 
 function OnBindingReleased(player, binding)
- if not pressedBefore then
-     return
- end
-    if binding == "ability_extra_30" or binding == "ability_extra_32" then
-        AnimId = 1
-        Keyframe = 1
-        Animating = 1
-        KeyPressed = 0
+
+    --            D E B A G
+    ----------------------------------------------
+    if binding == "ability_extra_16" then -- ENTER
+
+    end
+    if binding == "ability_extra_1" then
+
+    end
+    if binding == "ability_extra_2" then
+
+    end
+    if binding == "ability_extra_3" then
+
+    end
+    if binding == "ability_extra_4" then
+
+    end
+-----------------------------------------------
+    if binding == Wkey then -- W
+
+    end
+    if binding == Skey then -- S
+
+    end
+    if binding == Akey then -- A
+            if player:GetResource(PNum) == 1 then
+
+            end
+    end
+    if binding == Dkey then -- D
+
+    end
+    if binding == Jkey then -- J
+
+    end
+    if binding == Kkey then -- K
+
+    end
+    if binding == Rkey then -- R
+
+    end
+    if binding == Spacekey then -- SPACE
+        player:SetResource(KeyActive, 0)
+    end
+    if binding == LShiftkey then -- LSHIFT
+
     end
 
 end
 
-function SetIK(anchor, animatedPlayer, IK)
-    anchor:MoveTo(Vector3.New(IK:GetWorldPosition()),KeyframeInterval/10,false)
-    anchor:RotateTo(Rotation.New (IK:GetWorldRotation()),KeyframeInterval/10,false)
-    if not anchor.serverUserData.isActivated then
-    anchor:Activate(animatedPlayer)
-    anchor.serverUserData.isActivated = true
-    end
-end
-
-function LocateIK()
-     SetIK(Pelvis, Aniplayer, pelvisIK)
-     SetIK(LHand, Aniplayer, leftHIK)
-    SetIK(RHand, Aniplayer, rightHIK)
-     SetIK(LFoot, Aniplayer, leftLIK)
-     SetIK(RFoot, Aniplayer, rightLIK)
-end
-
-function GetAnimation()
-
-    rightHIK = rightHIKs
-    rightHIK:SetWorldPosition(Vector3.New(rightHIKsPos))
-    rightHIK:SetWorldRotation(Rotation.New(rightHIKsRot))
-
-     leftHIK = leftHIKs
-     leftHIK:SetWorldPosition(Vector3.New(leftHIKsPos))
-     leftHIK:SetWorldRotation(Rotation.New(leftHIKsRot))
-
-     leftLIK = leftLIKs
-     leftLIK:SetWorldPosition(Vector3.New(leftLIKsPos))
-     leftLIK:SetWorldRotation(Rotation.New(leftLIKsRot))
-
-     rightLIK = rightLIKs
-     rightLIK:SetWorldPosition(Vector3.New(rightLIKsPos))
-     rightLIK:SetWorldRotation(Rotation.New(rightLIKsRot))
-
-<<<<<<< HEAD
 function Tick()
-    --Task.Wait(KeyframeInterval/50)
+    Task.Wait(KeyframeInterval/5)
     p1TimerBasic = p1TimerBasic + 1
     p2TimerBasic = p2TimerBasic + 1
     AllPlayers = Game.GetPlayers()
@@ -653,180 +615,156 @@ for weaponIndex, weapon in ipairs(p1Weapons) do
     if weaponIndex == player:GetResource(WeaponId) then
         p1Animations = weapon:GetChildren()
 for animIndex, animation in ipairs(p1Animations) do
-=======
-     pelvisIK = pelvisIKs
-     pelvisIK:SetWorldPosition(Vector3.New(pelvisIKsPos))
-     pelvisIK:SetRotation(Rotation.New(pelvisIKsRot))
-
-    Length = animationLength*KeyframeInterval
-end
-
->>>>>>> parent of 1d69faa ( two steps from hell)
-
-function DebugIK()
-
-    -- CoreDebug.DrawLine(pelvisIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{duration = KeyframeInterval, thickness = 10})
-	 --CoreDebug.DrawLine(rightHIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{duration = KeyframeInterval, thickness = 10})
-	-- CoreDebug.DrawLine(leftHIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
-    -- CoreDebug.DrawLine(rightLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
-	-- CoreDebug.DrawLine(leftLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
-
-<<<<<<< HEAD
-p1animationLength = #p1PelvisKeys
-<<<<<<< HEAD
-p1Length = p1animationLength*KeyframeInterval
-=======
-end
->>>>>>> parent of 1d69faa ( two steps from hell)
-=======
->>>>>>> parent of 8332333 (everything fucked up)
-
-function OnPlayerJoined(player)
-
-   Aniplayer = player
-   AnimSystem = World.SpawnAsset(AnimationSystem, {position = player:GetWorldPosition()-Vector3.New(0,0,118.557)})
-   print(AnimSystem)
-   local SystemChildren = AnimSystem:GetChildren()
-    for _, Clientfolder in ipairs(SystemChildren) do
-     if Clientfolder.name=="Equip Trigger" then
-         EquipTrigger = Clientfolder
-         print(EquipTrigger)
-     end
-    if Clientfolder.name=="Animations" then
-        Animations_Root = Clientfolder
-    end
-    if Clientfolder.name =="Anchor" then
-        AnchorFolder = Clientfolder
-        AnchorFolderBones = AnchorFolder:GetChildren()
-        for _, anchors in ipairs(AnchorFolderBones) do
-            if anchors.name == "RHand" then
-                RHand = anchors
-            end
-            if anchors.name == "LHand" then
-                LHand = anchors
-            end
-            if anchors.name == "RFoot" then
-                RFoot = anchors
-            end
-            if anchors.name == "LFoot" then
-                LFoot = anchors
-            end
-            if anchors.name == "Pelvis" then
-                Pelvis = anchors
-            end
-        end
-
-    end
-<<<<<<< HEAD
-    --####################################################################################
-end
-=======
-   end
-EquipTrigger.beginOverlapEvent:Connect(SystemInit)
-    player.bindingPressedEvent:Connect(OnBindingPressed)
-    player.bindingReleasedEvent:Connect(OnBindingReleased)
->>>>>>> parent of 1d69faa ( two steps from hell)
-end
-
-
-function SystemInit(System, player)
-if isAttached == 0 then
-    player.animationStance = "unarmed_bind_pose"
-    AnimSystem:AttachToPlayer(player, "root")
-                isAttached = 1
-    else
-        return
-end
-end
-<<<<<<< HEAD
-<<<<<<< HEAD
--- LocateIK(player)
-=======
->>>>>>> parent of 8332333 (everything fucked up)
-else
-=======
-
-function ResyncAnimation()
->>>>>>> parent of 1d69faa ( two steps from hell)
-    --############################# getting list of animations #############################
-    Weapons = Animations_Root:GetChildren()
-for weaponIndex, weapon in ipairs(Weapons) do
-    if weaponIndex == WeaponId then
-        Animations = weapon:GetChildren()
-for animIndex, animation in ipairs(Animations) do
 
     --############################# getting bones from animation #######################
-if animIndex == AnimId then
-    Bones = animation:GetChildren()
-    for _, Bone in pairs(Bones) do
+if animIndex == player:GetResource(StateId) then
+    p1Bones = animation:GetChildren()
+    for _, Bone in pairs(p1Bones) do
         if Bone.name=="RHandKeys" then
-        RHandKeys = Bone:GetChildren()
+        p1RHandKeys = Bone:GetChildren()
         end
         if Bone.name=="LHandKeys" then
-        LHandKeys = Bone:GetChildren()
+        p1LHandKeys = Bone:GetChildren()
         end
         if Bone.name=="LLegKeys" then
-        LLegKeys = Bone:GetChildren()
+        p1LLegKeys = Bone:GetChildren()
         end
         if Bone.name=="RLegKeys" then
-        RLegKeys = Bone:GetChildren()
+        p1RLegKeys = Bone:GetChildren()
         end
         if Bone.name=="PelvisKeys" then
-        PelvisKeys = Bone:GetChildren()
+        p1PelvisKeys = Bone:GetChildren()
         end
     end
 
     --############################# getting animation length ############################
 
-animationLength = #RHandKeys
+p1animationLength = #p1PelvisKeys
 
     --############################# getting keys for IKs ################################
 
-    for keyIndex, Key in ipairs(RHandKeys) do
-        if keyIndex == Keyframe then
-        rightHIKs = Key--[animIndex][keyIndex]
-        rightHIKsPos = Key:GetWorldPosition()
-        rightHIKsRot = Key:GetWorldRotation()
+    for keyIndex, Key in ipairs(p1RHandKeys) do
+        if keyIndex == p1Keyframe then
+        p1rightHIKs = Key--[animIndex][keyIndex]
+        -- p1rightHIKsPos = Key:GetWorldPosition()
+        -- p1rightHIKsRot = Key:GetWorldRotation()
         end
     end
-    for keyIndex, Key in ipairs(LHandKeys) do
-        if keyIndex == Keyframe then
-        leftHIKs = Key
-        leftHIKsPos = Key:GetWorldPosition()
-        leftHIKsRot = Key:GetWorldRotation()
+    for keyIndex, Key in ipairs(p1LHandKeys) do
+        if keyIndex == p1Keyframe then
+        p1leftHIKs = Key
+        -- p1leftHIKsPos = Key:GetWorldPosition()
+        -- p1leftHIKsRot = Key:GetWorldRotation()
         end
     end
-    for keyIndex, Key in ipairs(LLegKeys) do
-        if keyIndex == Keyframe then
-        leftLIKs = Key
-        leftLIKsPos = Key:GetWorldPosition()
-        leftLIKsRot = Key:GetWorldRotation()
+    for keyIndex, Key in ipairs(p1LLegKeys) do
+        if keyIndex == p1Keyframe then
+        p1leftLIKs = Key
+        -- p1leftLIKsPos = Key:GetWorldPosition()
+        -- p1leftLIKsRot = Key:GetWorldRotation()
         end
     end
-    for keyIndex, Key in ipairs(RLegKeys) do
-        if keyIndex == Keyframe then
-        rightLIKs = Key
-        rightLIKsPos = Key:GetWorldPosition()
-        rightLIKsRot = Key:GetWorldRotation()
+    for keyIndex, Key in ipairs(p1RLegKeys) do
+        if keyIndex == p1Keyframe then
+        p1rightLIKs = Key
+        -- p1rightLIKsPos = Key:GetWorldPosition()
+        -- p1rightLIKsRot = Key:GetWorldRotation()
         end
     end
-    for keyIndex, Key in ipairs(PelvisKeys) do
-        if keyIndex == Keyframe then
-        pelvisIKs = Key
-        pelvisIKsPos = Key:GetWorldPosition()
-        pelvisIKsRot = Key:GetRotation()
+    for keyIndex, Key in ipairs(p1PelvisKeys) do
+        if keyIndex == p1Keyframe then
+        p1pelvisIKs = Key
+        -- p1pelvisIKsPos = Key:GetWorldPosition()
+        -- p1pelvisIKsRot = Key:GetWorldRotation()
         end
     end
     --####################################################################################
 end
 end
+else
+    weapon:Destroy()
+end
+end
+else
+    --############################# getting list of animations #############################
+    p2Weapons = p2Animations_Root:GetChildren()
+for weaponIndex, weapon in ipairs(p2Weapons) do
+    if weaponIndex == player:GetResource(WeaponId) then
+        p2Animations = weapon:GetChildren()
+for animIndex, animation in ipairs(p2Animations) do
+
+    --############################# getting bones from animation #######################
+if animIndex == player:GetResource(StateId) then
+    p2Bones = animation:GetChildren()
+    for _, Bone in pairs(p2Bones) do
+        if Bone.name=="RHandKeys" then
+        p2RHandKeys = Bone:GetChildren()
+        end
+        if Bone.name=="LHandKeys" then
+        p2LHandKeys = Bone:GetChildren()
+        end
+        if Bone.name=="LLegKeys" then
+        p2LLegKeys = Bone:GetChildren()
+        end
+        if Bone.name=="RLegKeys" then
+        p2RLegKeys = Bone:GetChildren()
+        end
+        if Bone.name=="PelvisKeys" then
+        p2PelvisKeys = Bone:GetChildren()
+        end
+    end
+
+    --############################# getting animation length ############################
+
+p2animationLength = #p2PelvisKeys
+
+    --############################# getting keys for IKs ################################
+
+    for keyIndex, Key in ipairs(p2RHandKeys) do
+        if keyIndex == p2Keyframe then
+        p2rightHIKs = Key--[animIndex][keyIndex]
+        -- p2rightHIKsPos = Key:GetWorldPosition()
+        -- p2rightHIKsRot = Key:GetWorldRotation()
+        end
+    end
+    for keyIndex, Key in ipairs(p2LHandKeys) do
+        if keyIndex == p2Keyframe then
+        p2leftHIKs = Key
+        -- p2leftHIKsPos = Key:GetWorldPosition()
+        -- p2leftHIKsRot = Key:GetWorldRotation()
+        end
+    end
+    for keyIndex, Key in ipairs(p2LLegKeys) do
+        if keyIndex == p2Keyframe then
+        p2leftLIKs = Key
+        -- p2leftLIKsPos = Key:GetWorldPosition()
+        -- p2leftLIKsRot = Key:GetWorldRotation()
+        end
+    end
+    for keyIndex, Key in ipairs(p2RLegKeys) do
+        if keyIndex == p2Keyframe then
+        p2rightLIKs = Key
+        -- p2rightLIKsPos = Key:GetWorldPosition()
+        -- p2rightLIKsRot = Key:GetWorldRotation()
+        end
+    end
+    for keyIndex, Key in ipairs(p2PelvisKeys) do
+        if keyIndex == p2Keyframe then
+        p2pelvisIKs = Key
+        -- p2pelvisIKsPos = Key:GetWorldPosition()
+        -- p2pelvisIKsRot = Key:GetWorldRotation()
+        end
+    end
+    --####################################################################################
+end
+end
+else
+    weapon:Destroy()
+end
 end
 end
 end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 function GetAnimation(player)
     if player:GetResource(PNum) == 1 then
     p1rightHIK = p1rightHIKs
@@ -875,7 +813,6 @@ function GetAnimation(player)
     end
 end
 
->>>>>>> parent of 8332333 (everything fucked up)
 function LocateIK(player)
     if player:GetResource(PNum) == 1 then
     SetIK(p1Pelvis, player, p1pelvisIK)
@@ -900,34 +837,6 @@ function SetIK(anchor, player, IK)
     anchor.serverUserData.isActivated = true
     end
 end
-<<<<<<< HEAD
-end
-=======
-function Tick()
-    Task.Wait(KeyframeInterval/10)
-if isAttached == 1 then
-ResyncAnimation()
-GetAnimation()
-DebugIK()
-    if Animating == 1 then
-
-     Keyframe = Keyframe + 1
-     LocateIK()
-        if(Keyframe*KeyframeInterval > Length) and KeyPressed == 0 then
-             AnimId = 1
-             Keyframe = 1
-             Animating = 1
-            -- LocateIK()
-        elseif (Keyframe*KeyframeInterval > Length) and KeyPressed == 1 then
-            Keyframe = 1
-        --    LocateIK()
-       -- else LocateIK()
-         end
-    end
-end
-end
->>>>>>> parent of 1d69faa ( two steps from hell)
-=======
 
 --function DebugIK()
 
@@ -938,6 +847,5 @@ end
 	-- CoreDebug.DrawLine(leftLIK:GetWorldPosition(), Aniplayer:GetWorldPosition(),{thickness = 10})
 
 --end
->>>>>>> parent of 8332333 (everything fucked up)
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
