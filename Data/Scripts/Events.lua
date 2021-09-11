@@ -9,6 +9,7 @@
 --local propSE2_VFX = script:GetCustomProperty("SE2_VFX"):WaitForObject()
 
 local propInvWall = script:GetCustomProperty("InvWall"):WaitForObject()	-- need to prevent player access to death triggers during lobby time (turn off collision on round start)
+local StorageKey = script:GetCustomProperty("StorageKey")
 
 local ANIM_API = require(script:GetCustomProperty("ANIM_API"))
 local propANIMS = script:GetCustomProperty("ANIMS")
@@ -21,16 +22,17 @@ local HitTrigger = script:GetCustomProperty("HitTrigger")
 local HeavyHitTrigger = script:GetCustomProperty("HeavyHitTrigger")
 local StunTrigger = script:GetCustomProperty("StunTrigger")
 local PhysicGranade = script:GetCustomProperty("PhysicGranade")
+local PhysicMine = script:GetCustomProperty("PhysicMine")
 local Flare = script:GetCustomProperty("Flare")
 
 local directionVector3={}
-directionVector3[1]=Vector3.New(0,300,0)--(0,50000,0)
+directionVector3[1]=Vector3.New(0,295,50)--(0,50000,0)
 directionVector3[2]=Vector3.New(0,200,200)
-directionVector3[3]=Vector3.New(0,0,300)
+directionVector3[3]=Vector3.New(0,50,295)
 directionVector3[4]=Vector3.New(0,-200,200)
-directionVector3[5]=Vector3.New(0,-300,0)
+directionVector3[5]=Vector3.New(0,-295,50)
 directionVector3[6]=Vector3.New(0,-200,-200)
-directionVector3[7]=Vector3.New(0,0,-300)
+directionVector3[7]=Vector3.New(0,50,-295)
 directionVector3[8]=Vector3.New(0,200,-200)
 
 local ImpactID={}
@@ -67,13 +69,13 @@ end
 function ResetMovement(player)
 	player.isCrouchEnabled=true
 	if player:GetResource("armour")==1 then
-		player.maxWalkSpeed=1400
+		player.maxWalkSpeed=1100
 		player.maxJumpCount=3
 	elseif player:GetResource("armour")==2 then
-		player.maxWalkSpeed=1200
+		player.maxWalkSpeed=1000
 		player.maxJumpCount=3
 	else
-		player.maxWalkSpeed=1000
+		player.maxWalkSpeed=900
 		player.maxJumpCount=2
 	end
 end
@@ -109,6 +111,8 @@ function ResetWeapon(player)
 		elseif obj.name=="RPW3" then
 			obj:Destroy()
 		elseif obj.name=="RPW4" then
+			obj:Destroy()
+		elseif obj.name=="RPW5" then
 			obj:Destroy()
 		end
 	end
@@ -190,6 +194,22 @@ function RoundEndCutscene()
 	local playersAmount=0
 	for a,player in pairs(Game.GetPlayers()) do
 		Stun(player)
+
+		local Table = Storage.GetSharedPlayerData(StorageKey, player)
+		--for _,res in pairs(Table) do
+		--	print(res)
+		--end
+		if Table["PlayedGames"]~=nil then
+			Table["PlayedGames"]=Table["PlayedGames"]+1
+			Table["TotalDeath"]=Table["TotalDeath"]+PlayerStats[a][0]
+			Table["TotalDamage"]=Table["TotalDamage"]+PlayerStats[a][1]
+		else
+			Table["PlayedGames"]=0
+			Table["TotalDeath"]=0
+			Table["TotalDamage"]=0
+		end
+		Storage.SetSharedPlayerData(StorageKey, player, Table)
+		
 		local string="Spawn"..a
 		player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
 		local Top={}
@@ -262,6 +282,15 @@ function EquipWeapon(player,theTrigger)
 			if theTrigger:GetCustomProperty("ID")==4 then
 				for _,obj in pairs(theTrigger.parent:GetChildren()) do
 					if obj.name=="RPW4" then
+						obj:AttachToPlayer(player, "right_prop")
+						obj:SetPosition(Vector3.ZERO)
+						obj:SetRotation(Rotation.ZERO)
+					end
+				end
+			end
+			if theTrigger:GetCustomProperty("ID")==5 then
+				for _,obj in pairs(theTrigger.parent:GetChildren()) do
+					if obj.name=="RPW5" then
 						obj:AttachToPlayer(player, "right_prop")
 						obj:SetPosition(Vector3.ZERO)
 						obj:SetRotation(Rotation.ZERO)
@@ -415,8 +444,23 @@ function HeavyHitOverlap(theTrigger)
 					break
 				end
 			end
-			player:ResetVelocity()
-			player:SetVelocity(directionVector3[theTrigger:GetCustomProperty("Direction")]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+			if player:GetVelocity().z==0 then
+				local triggerOwner
+				for _,pl in pairs(Game.GetPlayers()) do
+					if pl.name==theTrigger:GetCustomProperty("Owner") then
+						triggerOwner=pl
+					end
+				end
+				player:ResetVelocity()
+				if player:GetWorldPosition().y>triggerOwner:GetWorldPosition().y then
+					player:SetVelocity(directionVector3[2]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+				else
+					player:SetVelocity(directionVector3[4]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+				end
+			else
+				player:ResetVelocity()
+				player:SetVelocity(directionVector3[theTrigger:GetCustomProperty("Direction")]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+			end
 			PlayerState[playerId][5]=PlayerState[playerId][5]+theTrigger:GetCustomProperty("Damage")
 			script:SetNetworkedCustomProperty("Player"..playerId.."HP",PlayerState[playerId][5])
 			player.animationStance=ImpactID[math.random(2)]
@@ -450,7 +494,7 @@ function DeathOverlap(theTrigger)
 					break
 				end
 			end
-			if time()>=PlayerState[playerId][8]+5 then
+			if time()>=PlayerState[playerId][8]+3 then
 				local obj=World.SpawnAsset(Flash)
 				obj:SetWorldPosition(player:GetWorldPosition())
 				--player:ResetVelocity()
@@ -505,12 +549,16 @@ function BasicUpHit(player,direction)
 			PlayerState[MyLocalID][3]=true
 			PlayerState[MyLocalID][4]=time()
 			StunMovement(player)
+			if player:GetVelocity().z<0 then
+				player:ResetVelocity()
+			end
 			player:SetVelocity(player:GetVelocity()+directionVector3[direction]*3)
 			obj:GetCustomProperty("UpHit_Anim"):WaitForObject():Activate()
 			trigger=World.SpawnAsset(HeavyHitTrigger)
 			trigger:SetNetworkedCustomProperty("Owner",player.name)
 			trigger:SetNetworkedCustomProperty("Direction",direction)
 			trigger:SetNetworkedCustomProperty("Damage",10)
+			trigger:SetNetworkedCustomProperty("Power",3)
 			trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 			trigger:AttachToPlayer(player,"root")
 			if Object.IsValid(trigger) then trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y,player:GetWorldPosition().z+100)) end
@@ -547,6 +595,7 @@ function BasicDownHit(player,direction)
 			trigger:SetNetworkedCustomProperty("Owner",player.name)
 			trigger:SetNetworkedCustomProperty("Direction",direction)
 			trigger:SetNetworkedCustomProperty("Damage",10)
+			trigger:SetNetworkedCustomProperty("Power",3)
 			trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 			trigger:AttachToPlayer(player,"root")
 			if Object.IsValid(trigger) then trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y,player:GetWorldPosition().z-100)) end
@@ -584,6 +633,7 @@ function BasicSideHit(player,direction)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",3)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:AttachToPlayer(player,"root")
 				if Object.IsValid(trigger) then trigger:SetWorldPosition(Vector3.New(player:GetWorldPosition().x,player:GetWorldPosition().y+directionVector3[direction].y/1000,player:GetWorldPosition().z)) end
@@ -721,6 +771,7 @@ function ADE1(player,direction)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",5)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[direction])
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(4,4,2)) end
@@ -785,6 +836,7 @@ function SE1(player)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",5)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",3)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[5]/2)
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(2,2,2)) end
@@ -812,6 +864,7 @@ function SE1(player)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",1)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",3)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[1]/2)
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(2,2,2)) end
@@ -863,6 +916,7 @@ function WE1(player)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",7)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",2)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:SetWorldPosition(player:GetWorldPosition())
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(2,2,2)) end
@@ -891,6 +945,7 @@ function WE1(player)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",7)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",2)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[7]/2)
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(3,3,3)) end
@@ -959,11 +1014,18 @@ function ADE2(player,direction)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",5)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:AttachToPlayer(player,"root")
 				if Object.IsValid(trigger) then trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[direction]/2) end
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(2,2,1)) end
+				
+				--player.groundFriction=0
+				--player.brakingFrictionFactor=0
+				--player.brakingDecelerationWalking=0
+				--player.brakingDecelerationFlying=0
 				player:SetVelocity(player:GetVelocity()+directionVector3[direction]*8)
+				--player:SetVelocity(directionVector3[direction]*4)
 				for _,equip in pairs(player:GetAttachedObjects()) do
 					if equip.name=="DHW2" then
 						equip:GetCustomProperty("RocketVFX"):WaitForObject():Play()
@@ -978,13 +1040,25 @@ function ADE2(player,direction)
 					end
 				end
 				--	=====================	--
-				player:SetVelocity(player:GetVelocity()+directionVector3[direction]*8)
+				--[[	
+				player:SetVelocity(player:GetVelocity()+directionVector3[direction])
+					--player:SetVelocity(directionVector3[direction]*4)
+					for _,equip in pairs(player:GetAttachedObjects()) do
+						if equip.name=="DHW2" then
+							equip:GetCustomProperty("RocketVFX"):WaitForObject():Play()
+							break
+						end
+					end
+				]]
+				--[[
+				player:SetVelocity(player:GetVelocity()+directionVector3[direction]*4)
 				for _,equip in pairs(player:GetAttachedObjects()) do
 					if equip.name=="DHW2" then
 						equip:GetCustomProperty("RocketVFX"):WaitForObject():Play()
 						break
 					end
 				end
+				]]
 				Task.Wait(0.2)
 				if Object.IsValid(trigger) then trigger:Destroy() end
 				ResetMovement(player)
@@ -1030,6 +1104,7 @@ function SE2(player)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",3)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",3)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:SetWorldPosition(player:GetWorldPosition())
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(4,4,2)) end
@@ -1091,6 +1166,7 @@ function WE2(player)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",3)
 				trigger:SetNetworkedCustomProperty("Damage",10)
+				trigger:SetNetworkedCustomProperty("Power",4)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				trigger:AttachToPlayer(player,"root")
 				if Object.IsValid(trigger) then trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[3]/2) end
@@ -1153,9 +1229,40 @@ function ADE4(player,direction)
 				trigger:SetNetworkedCustomProperty("Owner",player.name)
 				trigger:SetNetworkedCustomProperty("Direction",direction)
 				trigger:SetNetworkedCustomProperty("Damage",30)
+				trigger:SetNetworkedCustomProperty("Power",5)
 				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
 				granade:SetWorldPosition(player:GetWorldPosition()+directionVector3[direction]/2)
 				granade:SetVelocity(player:GetVelocity()+directionVector3[direction]*5)
+				Task.Wait(0.2)
+				ResetWeapon(player)
+			end
+		end
+	end
+end
+--====================================================Weapon5==================================================================
+--------------------------------------------------------ADE5-------------------------------------------------------------------
+function ADE5(player,direction)
+	for _,obj in pairs(player:GetEquipment()) do
+		if obj.name=="ANIMS" then
+			if obj:GetCustomProperty("ADE5_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
+				--	|Check for hit reset|	--
+				for b=1,5 do
+				    if KeyState[b][0]==player.name and PlayerState[b][0] then
+				    	return
+					end
+				end
+				--	=====================	--
+				obj:GetCustomProperty("ADE5_Skill"):WaitForObject():Activate()
+				Task.Wait(0.1)
+				local mine=World.SpawnAsset(PhysicMine)
+				local trigger=mine:GetCustomProperty("HeavyHitTrigger"):WaitForObject()
+				trigger:SetNetworkedCustomProperty("Owner",player.name)
+				trigger:SetNetworkedCustomProperty("Direction",direction)
+				trigger:SetNetworkedCustomProperty("Damage",30)
+				trigger:SetNetworkedCustomProperty("Power",5)
+				trigger.beginOverlapEvent:Connect(HeavyHitOverlap)
+				mine:SetWorldPosition(player:GetWorldPosition()+directionVector3[direction]/2)
+				mine:SetVelocity(player:GetVelocity()+directionVector3[direction]*5)
 				Task.Wait(0.2)
 				ResetWeapon(player)
 			end
@@ -1230,6 +1337,9 @@ function OnBindingPressed(player, binding)
 					if PlayerState[a][6]==4 then
 		        		ADE4(player,5)
 					end
+					if PlayerState[a][6]==5 then
+		        		ADE5(player,5)
+					end
 
         		elseif KeyState[a][4] then
 					
@@ -1244,6 +1354,9 @@ function OnBindingPressed(player, binding)
 					end
 					if PlayerState[a][6]==4 then
 		        		ADE4(player,1)
+					end
+					if PlayerState[a][6]==5 then
+		        		ADE5(player,1)
 					end
 
         		elseif KeyState[a][3] and player.isJumping==false then
@@ -1301,6 +1414,8 @@ function OnBindingPressed(player, binding)
 						ADE2(player,5)
 					elseif PlayerState[a][6]==4 then
 						ADE4(player,5)
+					elseif PlayerState[a][6]==5 then
+						ADE5(player,5)
 					end
 
         		elseif KeyState[a][6] then
@@ -1339,6 +1454,8 @@ function OnBindingPressed(player, binding)
 						ADE2(player,1)
 					elseif PlayerState[a][6]==4 then
 						ADE4(player,1)
+					elseif PlayerState[a][6]==5 then
+						ADE5(player,1)
 					end
 
         		elseif KeyState[a][6] then

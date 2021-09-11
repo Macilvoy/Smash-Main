@@ -83,6 +83,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:RPW5"
+            AssetReference {
+              Id: 10892373483666863582
+            }
+          }
+          Overrides {
             Name: "cs:Weapon"
             ObjectReference {
               SubObjectId: 17460171835214601293
@@ -520,5 +526,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }

@@ -35,6 +35,7 @@ Assets {
         ChildIds: 8306263023790800459
         ChildIds: 14903484021092972883
         ChildIds: 80369309816768262
+        ChildIds: 17213757688463285203
         UnregisteredParameters {
           Overrides {
             Name: "cs:LFastHit_Anim"
@@ -133,15 +134,21 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:E3_Skill"
+            ObjectReference {
+              SubObjectId: 80369309816768262
+            }
+          }
+          Overrides {
             Name: "cs:ADE4_Skill"
             ObjectReference {
               SubObjectId: 14903484021092972883
             }
           }
           Overrides {
-            Name: "cs:E3_Skill"
+            Name: "cs:ADE5_Skill"
             ObjectReference {
-              SubObjectId: 80369309816768262
+              SubObjectId: 17213757688463285203
             }
           }
         }
@@ -493,7 +500,7 @@ Assets {
               Value: "mc:eabilitysetfacing:none"
             }
           }
-          Animation: "unarmed_punch_left"
+          Animation: "1hand_melee_thrust"
           KeyBinding_v2 {
             Value: "mc:egameaction:invalid"
           }
@@ -1451,11 +1458,87 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 17213757688463285203
+        Name: "ADE5_Skill"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11348860661077601830
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Ability {
+          IsEnabled: true
+          CastPhaseSettings {
+            Duration: 0.01
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          ExecutePhaseSettings {
+            Duration: 0.3
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          RecoveryPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            Duration: 1
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "unarmed_throw"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:invalid"
+          }
+        }
+      }
     }
     PrimaryAssetId {
       AssetType: "None"
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }

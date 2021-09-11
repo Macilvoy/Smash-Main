@@ -27,7 +27,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Power"
-            Int: 5
+            Int: 1
           }
           Overrides {
             Name: "cs:Damage"
@@ -80,5 +80,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }

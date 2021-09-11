@@ -84,7 +84,7 @@ Objects {
     }
     Overrides {
       Name: "cs:YLimit"
-      Int: 5000
+      Int: 4000
     }
     Overrides {
       Name: "cs:ZLimit"

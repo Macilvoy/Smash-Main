@@ -1,12 +1,12 @@
 Name: "PeterBlood"
 RootId: 501222096586984725
 Objects {
-  Id: 16843297398202809680
-  Name: "WeaponSpawner"
+  Id: 2131746587362381134
+  Name: "map3"
   Transform {
     Location {
-      Y: -650
-      Z: 100
+      X: 859.267578
+      Z: -50
     }
     Rotation {
     }
@@ -17,164 +17,21 @@ Objects {
     }
   }
   ParentId: 501222096586984725
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13270628130714032698
-      value {
-        Overrides {
-          Name: "Name"
-          String: "WeaponSpawner"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Y: -650
-            Z: 1200
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17293811209864485489
-    }
-  }
-}
-Objects {
-  Id: 6321110825053173920
-  Name: "WeaponSpawner"
-  Transform {
-    Location {
-      Y: 975
-      Z: 100
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 501222096586984725
-  WantsNetworking: true
-  Collidable_v2 {
+  CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13270628130714032698
-      value {
-        Overrides {
-          Name: "Name"
-          String: "WeaponSpawner"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Y: 975
-            Z: 1200
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17293811209864485489
-    }
-  }
-}
-Objects {
-  Id: 10346094735837903653
-  Name: "WeaponSpawner"
-  Transform {
-    Location {
-      Y: 975
-      Z: 100
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 501222096586984725
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13270628130714032698
-      value {
-        Overrides {
-          Name: "Name"
-          String: "WeaponSpawner"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Y: 3935
-            Z: 700
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17293811209864485489
-    }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "map3"
   }
 }
 Objects {
@@ -212,21 +69,13 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            Y: -4240
-            Z: 700
+            Y: 2750
+            Z: 100
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }
@@ -271,80 +120,13 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            Y: -2295
+            Y: -2750
             Z: 100
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17293811209864485489
-    }
-  }
-}
-Objects {
-  Id: 11051443294883974657
-  Name: "WeaponSpawner"
-  Transform {
-    Location {
-      Y: 975
-      Z: 100
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 501222096586984725
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 13270628130714032698
-      value {
-        Overrides {
-          Name: "Name"
-          String: "WeaponSpawner"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            Y: -650
-            Z: 100
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }
@@ -389,21 +171,13 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            Y: 2255
+            Y: -280
             Z: 100
           }
         }
         Overrides {
           Name: "Rotation"
           Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
           }
         }
       }
@@ -442,7 +216,7 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            Y: 975
+            Y: 280
             Z: 100
           }
         }
@@ -753,18 +527,18 @@ Objects {
   }
 }
 Objects {
-  Id: 616379706283916132
+  Id: 6452841994559763517
   Name: "Ground"
   Transform {
     Location {
-      Y: 3666.79199
-      Z: 508.972534
+      Y: 2690
+      Z: -45
     }
     Rotation {
     }
     Scale {
       X: 5
-      Y: 15
+      Y: 12
       Z: 1
     }
   }
@@ -775,7 +549,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:forceon"
@@ -797,18 +571,18 @@ Objects {
   }
 }
 Objects {
-  Id: 13664454813160857375
+  Id: 5722849583568493782
   Name: "Ground"
   Transform {
     Location {
-      Y: -3808.91602
-      Z: 508.972534
+      Y: -2805
+      Z: -45
     }
     Rotation {
     }
     Scale {
       X: 5
-      Y: 15
+      Y: 12
       Z: 1
     }
   }
@@ -819,51 +593,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 7311678943125745725
-  Name: "Ground"
-  Transform {
-    Location {
-      Y: -14.1221008
-      Z: 1017.94318
-    }
-    Rotation {
-    }
-    Scale {
-      X: 5
-      Y: 45
-      Z: 1
-    }
-  }
-  ParentId: 501222096586984725
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:forceon"
@@ -889,13 +619,13 @@ Objects {
   Name: "Ground"
   Transform {
     Location {
-      Z: -50
+      Z: -45
     }
     Rotation {
     }
     Scale {
       X: 5
-      Y: 50
+      Y: 16
       Z: 1
     }
   }
@@ -906,7 +636,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:forceon"
@@ -1368,8 +1098,8 @@ Objects {
   Settings {
     IsDefault: true
     PlayerMovementSettings {
-      WalkSpeed: 1400
-      MaxAcceleration: 2800
+      WalkSpeed: 1000
+      MaxAcceleration: 1000
       WalkableFloorAngle: 44
       JumpMaxCount: 3
       JumpVelocity: 900
@@ -1615,7 +1345,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RoundDuration"
-      Int: 90
+      Int: 120
     }
   }
   Collidable_v2 {
@@ -13093,11 +12823,11 @@ Objects {
   Name: "Spawn4"
   Transform {
     Location {
-      Y: 1810
-      Z: 65
+      Y: 750
+      Z: 100
     }
     Rotation {
-      Yaw: -89.9999924
+      Yaw: 90
     }
     Scale {
       X: 1
@@ -13130,11 +12860,11 @@ Objects {
   Name: "Spawn3"
   Transform {
     Location {
-      Y: -1830
-      Z: 60
+      Y: -600
+      Z: 100
     }
     Rotation {
-      Yaw: 89.9999619
+      Yaw: -90
     }
     Scale {
       X: 1
@@ -13168,7 +12898,7 @@ Objects {
   Transform {
     Location {
       Y: -3200
-      Z: 620
+      Z: 100
     }
     Rotation {
       Yaw: 89.9999847
@@ -13205,7 +12935,7 @@ Objects {
   Transform {
     Location {
       Y: 3220
-      Z: 625
+      Z: 100
     }
     Rotation {
       Yaw: -89.9999924

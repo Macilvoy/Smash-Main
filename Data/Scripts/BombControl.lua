@@ -12,7 +12,7 @@ function Overlap(_,theTrigger)
     if theTrigger.name=="Ground" then
         Bomb:StopMove()
         if Bomb:GetWorldPosition().z<theTrigger:GetWorldPosition().z then
-            Bomb:SetWorldPosition(Vector3.New(Bomb:GetWorldPosition().x,Bomb:GetWorldPosition().y,theTrigger:GetWorldPosition().z+(math.abs(Bomb:GetWorldPosition().z-theTrigger:GetWorldPosition().z))))
+            Bomb:SetWorldPosition(Vector3.New(Bomb:GetWorldPosition().x,Bomb:GetWorldPosition().y,theTrigger:GetWorldPosition().z+(theTrigger:GetWorldScale().z*50)+(Bomb:GetWorldScale().z*50)))--theTrigger:GetWorldPosition().z+(math.abs(Bomb:GetWorldPosition().z-theTrigger:GetWorldPosition().z))))
         end
         Geo.visibility=Visibility.FORCE_OFF
         DirtVFX:Play()

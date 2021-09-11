@@ -36,6 +36,7 @@ Objects {
   Name: "Macilvoy"
   Transform {
     Location {
+      Z: -10000
     }
     Rotation {
     }

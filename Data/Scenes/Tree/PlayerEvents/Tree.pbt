@@ -154,6 +154,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:PhysicMine"
+      AssetReference {
+        Id: 2111801297091686311
+      }
+    }
+    Overrides {
       Name: "cs:PhysicGranade"
       AssetReference {
         Id: 13930947040510552874
@@ -186,6 +192,15 @@ Objects {
     Overrides {
       Name: "cs:Player4Deaths"
       Int: -1
+    }
+    Overrides {
+      Name: "cs:StorageKey"
+      NetReference {
+        Key: "18fbc1f644fc4d648308f091103e6464"
+        Type {
+          Value: "mc:enetreferencetype:sharedpersistence"
+        }
+      }
     }
     Overrides {
       Name: "cs:Player1HP:isrep"
