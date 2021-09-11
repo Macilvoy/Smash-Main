@@ -8030,7 +8030,7 @@ Objects {
     }
     Overrides {
       Name: "cs:KeyframeInterval"
-      Float: 0.5
+      Float: 1
     }
     Overrides {
       Name: "cs:weapon"
@@ -8038,6 +8038,7 @@ Objects {
         Id: 2756677324820062396
       }
     }
+<<<<<<< HEAD
     Overrides {
       Name: "cs:PlayerCapsule"
       AssetReference {
@@ -8066,6 +8067,8 @@ Objects {
         Id: 9527180421896742730
       }
     }
+=======
+>>>>>>> parent of 1d69faa ( two steps from hell)
   }
   WantsNetworking: true
   Collidable_v2 {
@@ -8083,6 +8086,51 @@ Objects {
   Script {
     ScriptAsset {
       Id: 18215791265265690889
+    }
+  }
+}
+Objects {
+  Id: 11341932103299894993
+  Name: "AnimSystem Re"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1602072049588011465
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 6507950625677175225
+      value {
+        Overrides {
+          Name: "Name"
+          String: "AnimSystem Re"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -0.982068419
+            Y: -0.556820869
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 1865911534509973337
     }
   }
 }

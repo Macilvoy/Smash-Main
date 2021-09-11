@@ -804,6 +804,6 @@ Assets {
   Marketplace {
     Description: "sada"
   }
-  SerializationVersion: 98
+  SerializationVersion: 97
   DirectlyPublished: true
 }
