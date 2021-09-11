@@ -287,7 +287,7 @@
 --     AllPlayers = Game.GetPlayers()
 --     for _,player in ipairs(AllPlayers) do
 -- if player:GetResource(PNum) == 1 then
---     if player:GetResource(CapsuleAttached) == 1 then
+--  --   if player:GetResource(CapsuleAttached) == 1 then
 --         -- if player:GetResource(CapsuleAttached) == 1 then
 --     --     if player:GetVelocity().z ~= 0 then
 --     --         player:SetResource(Zpos,1)
@@ -339,7 +339,6 @@
 --     --print(multiply)
 --         player:SetVelocity(player:GetVelocity()+distance*multiply)
 --         --print(player:GetVelocity())
--- end
 -- else
 --         -- if player:GetResource(CapsuleAttached) == 1 then
 --     --     if player:GetVelocity().z ~= 0 then

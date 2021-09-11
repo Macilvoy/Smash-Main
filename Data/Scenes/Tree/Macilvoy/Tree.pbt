@@ -8060,6 +8060,12 @@ Objects {
       Name: "cs:MovingSpeed"
       Float: 150
     }
+    Overrides {
+      Name: "cs:ROOT"
+      AssetReference {
+        Id: 9527180421896742730
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

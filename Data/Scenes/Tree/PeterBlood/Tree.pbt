@@ -412,9 +412,6 @@ Objects {
       MountedJumpVelocity: 900
       HeadVisibleToSelf: true
       IsSlideEnabled: true
-      IsJumpEnabled: true
-      CanMoveLeft: true
-      CanMoveRight: true
       AbilityAimMode {
         Value: "mc:eabilityaimmode:viewrelative"
       }
