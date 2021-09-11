@@ -40,5 +40,5 @@ Assets {
     Version: "1.0.0"
     Description: "All animations & emotes in action, only press play button"
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }

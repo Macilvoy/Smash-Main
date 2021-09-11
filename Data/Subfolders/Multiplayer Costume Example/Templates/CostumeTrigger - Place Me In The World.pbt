@@ -2565,6 +2565,6 @@ Assets {
   Marketplace {
     Description: "This is a 1.0 version of a properly networked costume handler.  This will handle multiple types of costumes, applied either by trigger or by player joined.  It will additionally destroy costumes for players that leave the game properly.  Features for different body types costuming will be added in the future.\r\n\r\nThe costume example GEO in this scene was pulled from Sobchak\'s Mannequin Guy template in Community Content.  The scripts were done in collaboration with Stimson."
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
   DirectlyPublished: true
 }
