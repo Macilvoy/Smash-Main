@@ -1149,7 +1149,7 @@ Objects {
   }
 }
 Objects {
-  Id: 4595972765270393093
+  Id: 9055229151037669376
   Name: "Camera"
   Transform {
     Location {
@@ -1164,6 +1164,37 @@ Objects {
     }
   }
   ParentId: 501222096586984725
+  ChildIds: 4595972765270393093
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 4595972765270393093
+  Name: "Camera"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9055229151037669376
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1345,7 +1376,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RoundDuration"
-      Int: 120
+      Int: 20
     }
   }
   Collidable_v2 {

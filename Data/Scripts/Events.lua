@@ -191,49 +191,50 @@ function RoundStartCutscene()
 end
 
 function RoundEndCutscene()
-	local playersAmount=0
-	for a,player in pairs(Game.GetPlayers()) do
-		Stun(player)
-
-		local Table = Storage.GetSharedPlayerData(StorageKey, player)
-		--for _,res in pairs(Table) do
-		--	print(res)
-		--end
-		if Table["PlayedGames"]~=nil then
-			Table["PlayedGames"]=Table["PlayedGames"]+1
-			Table["TotalDeath"]=Table["TotalDeath"]+PlayerStats[a][0]
-			Table["TotalDamage"]=Table["TotalDamage"]+PlayerStats[a][1]
-		else
-			Table["PlayedGames"]=0
-			Table["TotalDeath"]=0
-			Table["TotalDamage"]=0
-		end
-		Storage.SetSharedPlayerData(StorageKey, player, Table)
-		
-		local string="Spawn"..a
-		player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
-		local Top={}
-		for a=1, 4 do
-			Top[a]=a
-		end
-		for a=1, 4 do
-			for b=1, 3 do--PlayerState[a][0]
-				if PlayerStats[Top[b+1]][0]~=nil and PlayerStats[Top[b+1]][0]~=-1 then
-					if PlayerStats[Top[b]][0]>PlayerStats[Top[b+1]][0] then
-						Top[b],Top[b+1]=Top[b+1],Top[b]
-					elseif PlayerState[Top[b]][5]>PlayerState[Top[b+1]][5] then
-						Top[b],Top[b+1]=Top[b+1],Top[b]
-					end
+	--local playersAmount=0
+	local Top={}
+	for a=1, 4 do
+		Top[a]=a
+	end
+	for a=1, 4 do
+		for b=1, 3 do--PlayerState[a][0]
+			if PlayerStats[Top[b+1]][0]~=nil and PlayerStats[Top[b+1]][0]~=-1 then
+				if PlayerStats[Top[b]][0]>PlayerStats[Top[b+1]][0] then
+					Top[b],Top[b+1]=Top[b+1],Top[b]
+				elseif PlayerState[Top[b]][5]>PlayerState[Top[b+1]][5] then
+					Top[b],Top[b+1]=Top[b+1],Top[b]
 				end
 			end
 		end
-		for a=1, 4 do
-			if KeyState[Top[a]][0]~=nil and KeyState[Top[a]][0]~="" then
-				--print(a.."- "..KeyState[Top[a]][0])
-				Events.BroadcastToAllPlayers("UpdateResult",a,KeyState[Top[a]][0],PlayerStats[Top[a]][0],PlayerStats[Top[a]][1])
-			end
+	end
+	for a=1, 4 do
+		if KeyState[Top[a]][0]~=nil and KeyState[Top[a]][0]~="" then
+			--print(a.."- "..KeyState[Top[a]][0])
+			Events.BroadcastToAllPlayers("UpdateResult",a,KeyState[Top[a]][0],PlayerStats[Top[a]][0],PlayerStats[Top[a]][1])
 		end
+	end
 
+	for plNum,player in pairs(Game.GetPlayers()) do
+		Stun(player)
+		
+		local string="Spawn"..plNum
+		player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
+
+		local Table = Storage.GetSharedPlayerData(StorageKey, player)
+		if Table["PlayedGames"]==nil then Table["PlayedGames"]=0 end
+		if Table["GamesWon"]==nil then Table["GamesWon"]=0 end
+		if Table["TotalDeath"]==nil then Table["TotalDeath"]=0 end
+		if Table["TotalDamage"]==nil then Table["TotalDamage"]=0 end
+
+		if Table["PlayedGames"]~=nil then
+			Table["PlayedGames"]=Table["PlayedGames"]+1
+			if plNum==Top[1] then
+				Table["GamesWon"]=Table["GamesWon"]+1
+			end
+			Table["TotalDeath"]=Table["TotalDeath"]+PlayerStats[plNum][0]
+			Table["TotalDamage"]=Table["TotalDamage"]+PlayerStats[plNum][1]
+		end
+		Storage.SetSharedPlayerData(StorageKey, player, Table)
 	end
 end
 
@@ -352,6 +353,27 @@ function PlayWeaponAnim(player,weaponID,anim,frameID)
 	end
 end
 
+function RandomHitDirection(currentVector)
+	local randomY=0
+	local randomZ=0
+	if currentVector.y>0 then
+		randomY=(currentVector.y/4)*(-1)+math.random(currentVector.y)/2
+	elseif currentVector.y<0 then
+		randomY=(math.abs(currentVector.y)/4)*(-1)+math.random(math.abs(currentVector.y))/2
+		randomY=randomY*(-1)
+	end
+
+	if currentVector.z>0 then
+		randomZ=(currentVector.z/4)*(-1)+math.random(currentVector.z)/2
+	elseif currentVector.z<0 then
+		randomZ=(math.abs(currentVector.z)/4)*(-1)+math.random(math.abs(currentVector.z))/2
+		randomZ=randomZ*(-1)
+	end
+
+	local resultVector=Vector3.New(0,randomY,randomZ)
+	return resultVector
+end
+
 --===========================================================HitOverlaps===================================================
 function ForwardOverlap(theTrigger)
 	list=theTrigger:GetOverlappingObjects()
@@ -428,11 +450,12 @@ function HeavyHitOverlap(theTrigger)
 	for _,player in pairs(list) do
 		if player and player:IsA("Player") and Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Owner")~=player.name then
 			
+			local damageValue=theTrigger:GetCustomProperty("Damage")+(math.random(CoreMath.Round(theTrigger:GetCustomProperty("Damage")/2))-CoreMath.Round(theTrigger:GetCustomProperty("Damage")/4))
 			for _,pl in pairs(Game.GetPlayers()) do
 				if pl.name==theTrigger:GetCustomProperty("Owner") then
 					for b=1,5 do
 						if KeyState[b][0]==pl.name then
-							PlayerStats[b][1]=PlayerStats[b][1]+theTrigger:GetCustomProperty("Damage")
+							PlayerStats[b][1]=PlayerStats[b][1]+damageValue
 						end
 					end
 				end
@@ -453,15 +476,15 @@ function HeavyHitOverlap(theTrigger)
 				end
 				player:ResetVelocity()
 				if player:GetWorldPosition().y>triggerOwner:GetWorldPosition().y then
-					player:SetVelocity(directionVector3[2]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+					player:SetVelocity((RandomHitDirection(directionVector3[2])+directionVector3[2])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40)) ))
 				else
-					player:SetVelocity(directionVector3[4]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+					player:SetVelocity((RandomHitDirection(directionVector3[4])+directionVector3[4])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40)) ))
 				end
 			else
 				player:ResetVelocity()
-				player:SetVelocity(directionVector3[theTrigger:GetCustomProperty("Direction")]*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)))
+				player:SetVelocity((RandomHitDirection(directionVector3[theTrigger:GetCustomProperty("Direction")])+directionVector3[theTrigger:GetCustomProperty("Direction")])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40))))
 			end
-			PlayerState[playerId][5]=PlayerState[playerId][5]+theTrigger:GetCustomProperty("Damage")
+			PlayerState[playerId][5]=PlayerState[playerId][5]+damageValue--theTrigger:GetCustomProperty("Damage")
 			script:SetNetworkedCustomProperty("Player"..playerId.."HP",PlayerState[playerId][5])
 			player.animationStance=ImpactID[math.random(2)]
 			local equips=player:GetEquipment()
@@ -1295,7 +1318,21 @@ function Tick()
 end
 
 function OnBindingPressed(player, binding)
-    if binding == "ability_extra_36" then
+    if binding == "ability_extra_23" then
+    	for a=1,5 do
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+				for _,obj in pairs(PlayerState[a][7]:GetOverlappingObjects()) do
+					if obj.name=="Weapon" and obj:IsA("Trigger") and obj:GetCustomProperty("isEquipped")==false then
+						EquipWeapon(player,obj)
+						break
+					end
+				end
+        		break
+        	end
+        end
+    end
+	
+	if binding == "ability_extra_36" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
     			KeyState[a][6]=true
@@ -1307,14 +1344,18 @@ function OnBindingPressed(player, binding)
         			BasicDownHit(player,7)
         		elseif KeyState[a][1] and PlayerState[a][3]==false then
         			BasicUpHit(player,3)
-				else--if PlayerState[a][6]==0 then
+				elseif player:GetWorldRotation().z<0 then
+					BasicSideHit(player,5)
+				elseif player:GetWorldRotation().z>0 then
+					BasicSideHit(player,1)
+				end
+				--[[else--if PlayerState[a][6]==0 then
 					for _,obj in pairs(PlayerState[a][7]:GetOverlappingObjects()) do
 						if obj.name=="Weapon" and obj:IsA("Trigger") and obj:GetCustomProperty("isEquipped")==false then
 							EquipWeapon(player,obj)
 							break
 						end
-					end
-				end
+					end]]
         		break
         	end
         end
@@ -1485,7 +1526,7 @@ function OnBindingPressed(player, binding)
 end
 
 function OnBindingReleased(player, binding)
-    if binding == "ability_extra_20" then
+    if binding == "ability_extra_36" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][6]=false
@@ -1493,7 +1534,7 @@ function OnBindingReleased(player, binding)
         	end
         end
     end
-    if binding == "ability_2" then
+    if binding == "ability_extra_37" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][5]=false

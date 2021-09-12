@@ -19,7 +19,6 @@ Objects {
   ParentId: 4595972765270393093
   UnregisteredParameters {
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -84,14 +83,13 @@ Objects {
     }
     Overrides {
       Name: "cs:YLimit"
-      Int: 4000
+      Int: 3000
     }
     Overrides {
       Name: "cs:ZLimit"
-      Int: 1500
+      Int: 1000
     }
   }
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -126,7 +124,6 @@ Objects {
     }
   }
   ParentId: 4595972765270393093
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
