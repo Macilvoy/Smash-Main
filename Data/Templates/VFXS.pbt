@@ -356,11 +356,24 @@ Assets {
           }
           Overrides {
             Name: "bp:Life"
-            Float: 0.5
+            Float: 2
           }
           Overrides {
             Name: "bp:Particle Scale Multiplier"
             Float: 2
+          }
+          Overrides {
+            Name: "bp:Smoke Color"
+            Color {
+              R: 10
+              G: 10
+              B: 10
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 0
           }
         }
         WantsNetworking: true

@@ -349,7 +349,7 @@ Assets {
         Transform {
           Location {
             X: 4.090909
-            Y: -26.363636
+            Y: -16.364
             Z: 24.545454
           }
           Rotation {
@@ -414,7 +414,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 14892713865258459264
+            Id: 159119758430980031
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -504,12 +504,12 @@ Assets {
       }
     }
     Assets {
-      Id: 14892713865258459264
-      Name: "Text 03: Q"
+      Id: 159119758430980031
+      Name: "Text 03: J"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "F5_Text_016"
+        AssetId: "F5_Text_009"
       }
     }
     Assets {

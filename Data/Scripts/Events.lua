@@ -28,11 +28,11 @@ local Flare = script:GetCustomProperty("Flare")
 local directionVector3={}
 directionVector3[1]=Vector3.New(0,295,50)--(0,50000,0)
 directionVector3[2]=Vector3.New(0,200,200)
-directionVector3[3]=Vector3.New(0,50,295)
+directionVector3[3]=Vector3.New(0,0,295)
 directionVector3[4]=Vector3.New(0,-200,200)
 directionVector3[5]=Vector3.New(0,-295,50)
 directionVector3[6]=Vector3.New(0,-200,-200)
-directionVector3[7]=Vector3.New(0,50,-295)
+directionVector3[7]=Vector3.New(0,0,-295)
 directionVector3[8]=Vector3.New(0,200,-200)
 
 local ImpactID={}
@@ -467,7 +467,7 @@ function HeavyHitOverlap(theTrigger)
 			local equips=player:GetEquipment()
 			for _,obj in pairs(equips) do
 				if obj.name=="VFXS" then
-					if theTrigger:GetCustomProperty("Power")>5 then
+					if Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)>5 then
 						VFX=obj:GetCustomProperty("Trail_VFX"):WaitForObject()
 						VFX:Play()
 					end
@@ -1295,7 +1295,7 @@ function Tick()
 end
 
 function OnBindingPressed(player, binding)
-    if binding == "ability_extra_20" then
+    if binding == "ability_extra_36" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
     			KeyState[a][6]=true
@@ -1319,7 +1319,7 @@ function OnBindingPressed(player, binding)
         	end
         end
     end
-    if binding == "ability_2" then
+    if binding == "ability_extra_37" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
     			KeyState[a][5]=true
@@ -1335,10 +1335,10 @@ function OnBindingPressed(player, binding)
 		        		ADE2(player,5)
 					end
 					if PlayerState[a][6]==4 then
-		        		ADE4(player,5)
+						ADE4(player,5)
 					end
 					if PlayerState[a][6]==5 then
-		        		ADE5(player,5)
+						ADE5(player,5)
 					end
 
         		elseif KeyState[a][4] then
@@ -1376,10 +1376,27 @@ function OnBindingPressed(player, binding)
 					if PlayerState[a][6]==2 then
 		        		WE2(player)
 					end
-
-        		elseif PlayerState[a][6]==3 then
+				--===============SideHitsWithoutDirection================
+        		elseif player:GetWorldRotation().z<0 then	
+					if PlayerState[a][6]==4 then
+						ADE4(player,5)
+					end
+					if PlayerState[a][6]==5 then
+						ADE5(player,5)
+					end
+				elseif player:GetWorldRotation().z>0 then
+					if PlayerState[a][6]==4 then
+		        		ADE4(player,1)
+					end
+					if PlayerState[a][6]==5 then
+		        		ADE5(player,1)
+					end
+				end
+				--===============OneButtonWeapons================
+				if PlayerState[a][6]==3 then
 					E3(player)
 				end
+
         		break
         	end
         end
