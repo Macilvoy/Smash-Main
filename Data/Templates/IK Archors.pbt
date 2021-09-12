@@ -1,13 +1,13 @@
 Assets {
-  Id: 1865911534509973337
-  Name: "AnimSystem Re"
+  Id: 3377361614529639697
+  Name: "IK Archors"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 6507950625677175225
+      RootId: 5693960876777306915
       Objects {
-        Id: 6507950625677175225
-        Name: "AnimSystem Re"
+        Id: 5693960876777306915
+        Name: "IK Archors"
         Transform {
           Scale {
             X: 1
@@ -15,15 +15,15 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 1602072049588011465
-        ChildIds: 609442148217565746
-        ChildIds: 12689440425104103763
+        ParentId: 4781671109827199097
+        ChildIds: 7876345000814242847
+        ChildIds: 8641005619263660220
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -31,13 +31,15 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "AnimSystem Re_1"
+        Equipment {
+          SocketName: "root"
+          PickupTrigger {
+            SubObjectId: 8641005619263660220
+          }
         }
       }
       Objects {
-        Id: 609442148217565746
+        Id: 7876345000814242847
         Name: "Anchor"
         Transform {
           Location {
@@ -53,12 +55,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 6507950625677175225
-        ChildIds: 16271063772542861760
-        ChildIds: 18170091866621025506
-        ChildIds: 7401915755413137898
-        ChildIds: 14167233987125716866
-        ChildIds: 7264726859581983093
+        ParentId: 5693960876777306915
+        ChildIds: 12290442521523058458
+        ChildIds: 1435050361235400468
+        ChildIds: 15986463109159703762
+        ChildIds: 17575678580228393632
+        ChildIds: 10758951104529678251
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -78,7 +80,7 @@ Assets {
         }
       }
       Objects {
-        Id: 16271063772542861760
+        Id: 12290442521523058458
         Name: "LHand"
         Transform {
           Location {
@@ -92,7 +94,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 609442148217565746
+        ParentId: 7876345000814242847
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -118,7 +120,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18170091866621025506
+        Id: 1435050361235400468
         Name: "RFoot"
         Transform {
           Location {
@@ -132,7 +134,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 609442148217565746
+        ParentId: 7876345000814242847
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -159,7 +161,7 @@ Assets {
         }
       }
       Objects {
-        Id: 7401915755413137898
+        Id: 15986463109159703762
         Name: "LFoot"
         Transform {
           Location {
@@ -173,7 +175,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 609442148217565746
+        ParentId: 7876345000814242847
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -200,7 +202,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14167233987125716866
+        Id: 17575678580228393632
         Name: "Pelvis"
         Transform {
           Location {
@@ -214,7 +216,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 609442148217565746
+        ParentId: 7876345000814242847
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -238,7 +240,7 @@ Assets {
         }
       }
       Objects {
-        Id: 7264726859581983093
+        Id: 10758951104529678251
         Name: "RHand"
         Transform {
           Location {
@@ -252,7 +254,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 609442148217565746
+        ParentId: 7876345000814242847
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -278,7 +280,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12689440425104103763
+        Id: 8641005619263660220
         Name: "Equip Trigger"
         Transform {
           Location {
@@ -295,7 +297,7 @@ Assets {
             Z: 0.159397885
           }
         }
-        ParentId: 6507950625677175225
+        ParentId: 5693960876777306915
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceon"

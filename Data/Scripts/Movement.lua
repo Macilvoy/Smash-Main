@@ -258,29 +258,29 @@
 
 -- end
 
--- -- T I M E R 
--- local UpdatemilsecondTask = Task.Spawn(function()
---     for _,player in ipairs(AllPlayers) do
---         if player:GetResource(PNum) == 1 then
---             if player:GetResource(CapsuleAttached) == 1 then
---     -- local distance=PlayerCapsule1:GetWorldPosition()-player:GetWorldPosition()
---     -- local multiply = 0
+-- -- -- T I M E R 
+-- -- local UpdatemilsecondTask = Task.Spawn(function()
+-- --     for _,player in ipairs(AllPlayers) do
+-- --         if player:GetResource(PNum) == 1 then
+-- --             if player:GetResource(CapsuleAttached) == 1 then
+-- --     -- local distance=PlayerCapsule1:GetWorldPosition()-player:GetWorldPosition()
+-- --     -- local multiply = 0
     
---     -- if distance.size > 150 then
---     --     multiply = 5
---     -- else
---     --     multiply = SmoothCurve:GetValue(distance.size)
---     -- end
---     -- --print(distance.size)
---     -- print(multiply)
---     --     player:SetVelocity((player:GetVelocity()+distance)*multiply)
--- end
--- end
--- end
--- end)
--- UpdatemilsecondTask.repeatInterval = 0.01
--- UpdatemilsecondTask.repeatCount = -1
--- ------------------------------------------------------
+-- --     -- if distance.size > 150 then
+-- --     --     multiply = 5
+-- --     -- else
+-- --     --     multiply = SmoothCurve:GetValue(distance.size)
+-- --     -- end
+-- --     -- --print(distance.size)
+-- --     -- print(multiply)
+-- --     --     player:SetVelocity((player:GetVelocity()+distance)*multiply)
+-- -- end
+-- -- end
+-- -- end
+-- -- end)
+-- -- UpdatemilsecondTask.repeatInterval = 0.01
+-- -- UpdatemilsecondTask.repeatCount = -1
+-- -- ------------------------------------------------------
 
 
 -- function Tick(MyTick)
@@ -337,7 +337,7 @@
 --     end
 --     --print(distance.size)
 --     --print(multiply)
---         player:SetVelocity(player:GetVelocity()+distance*multiply)
+--         player:SetVelocity(player:GetVelocity()+distance*multiply/10)
 --         --print(player:GetVelocity())
 -- end
 -- else
