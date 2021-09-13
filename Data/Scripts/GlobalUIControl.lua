@@ -27,9 +27,12 @@ local BlackPanel = script:GetCustomProperty("BlackPanel"):WaitForObject()
 local ResultPanel = script:GetCustomProperty("ResultPanel"):WaitForObject()
 
 local MainScript = script:GetCustomProperty("MainScript"):WaitForObject()
+local StorageKey = script:GetCustomProperty("StorageKey")
 
 local fadeIn=false
 local fadeTime=-1
+
+local localPlayer=Game.GetLocalPlayer()
 
 function Tick()
     for a,player in pairs(Game.GetPlayers()) do
@@ -70,13 +73,15 @@ function UpdatePlayersUI()
         PlayersAmount=a
     end
     --if PlayersAmount<4 then
-    for a=1,4 do
-        if a>=PlayersAmount+1 then
-            local string="PlayerPanel"..a
-            script:GetCustomProperty(string):WaitForObject().visibility=Visibility.FORCE_OFF
-        else
-            local string="PlayerPanel"..a
-            script:GetCustomProperty(string):WaitForObject().visibility=Visibility.FORCE_ON
+    if localPlayer:GetResource("SelectedUI")==2 then
+        for a=1,4 do
+            if a>=PlayersAmount+1 then
+                local string="PlayerPanel"..a
+                script:GetCustomProperty(string):WaitForObject().visibility=Visibility.FORCE_OFF
+            else
+                local string="PlayerPanel"..a
+                script:GetCustomProperty(string):WaitForObject().visibility=Visibility.INHERIT
+            end
         end
     end
     --end
@@ -100,13 +105,13 @@ function RoundStartCutscene()
         Task.Wait(1.5)
 	end
     UpdatePlayersUI()
-    TimerPanel.visibility=Visibility.FORCE_ON
+    TimerPanel.visibility=Visibility.INHERIT
     fadeIn=false
     fadeTime=time()
 end
 
 function RoundEndCutscene()
-    ResultPanel.visibility=Visibility.FORCE_ON
+    ResultPanel.visibility=Visibility.INHERIT
 end
 
 function UpdateResult(id,name,d,dmg)
@@ -115,6 +120,9 @@ function UpdateResult(id,name,d,dmg)
     script:GetCustomProperty("Damage"..id):WaitForObject().text=tostring(dmg)
 end
 
-Events.Connect("RoundStartCutsceneClient",RoundStartCutscene)
-Events.Connect("RoundEndCutsceneClient",RoundEndCutscene)
-Events.Connect("UpdateResult",UpdateResult)
+if localPlayer:GetResource("SelectedUI")==2 then
+    Events.Connect("RoundStartCutsceneClient",RoundStartCutscene)
+    Events.Connect("RoundEndCutsceneClient",RoundEndCutscene)
+    Events.Connect("UpdateResult",UpdateResult)
+    TimerPanel.visibility=Visibility.INHERIT
+end

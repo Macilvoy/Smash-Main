@@ -1,6 +1,7 @@
 local MainScript = script:GetCustomProperty("MainScript"):WaitForObject()
 local LobbyDuration = script:GetCustomProperty("LobbyDuration")
 local RoundDuration = script:GetCustomProperty("RoundDuration")
+local StorageKey = script:GetCustomProperty("StorageKey")
 
 local GameState=nil   -- nil= nothing / false= lobby / true= match
 local LobbyTime
@@ -64,6 +65,11 @@ function Tick()
 end
 
 function OnPlayerJoined(player)
+    local Table = Storage.GetSharedPlayerData(StorageKey, player)
+    for resName,val in pairs(Table) do
+        player:SetResource(resName,val)
+    end
+
     if GameState~=true then
         local playersAmount=0
         for a,PLAYER in pairs(Game.GetPlayers()) do
