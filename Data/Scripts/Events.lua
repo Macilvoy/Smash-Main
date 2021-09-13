@@ -10,6 +10,8 @@
 
 local propInvWall = script:GetCustomProperty("InvWall"):WaitForObject()	-- need to prevent player access to death triggers during lobby time (turn off collision on round start)
 local StorageKey = script:GetCustomProperty("StorageKey")
+local LastGameKey = script:GetCustomProperty("LastGameKey")
+
 
 local ANIM_API = require(script:GetCustomProperty("ANIM_API"))
 local propANIMS = script:GetCustomProperty("ANIMS")
@@ -223,20 +225,25 @@ function RoundEndCutscene()
 		player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
 
 		local Table = Storage.GetSharedPlayerData(StorageKey, player)
+		local Table2 = Storage.GetSharedPlayerData(LastGameKey, player)
 		if Table["PlayedGames"]==nil then Table["PlayedGames"]=0 end
 		if Table["GamesWon"]==nil then Table["GamesWon"]=0 end
+		Table2["GamesWon"]=0
 		if Table["TotalDeath"]==nil then Table["TotalDeath"]=0 end
 		if Table["TotalDamage"]==nil then Table["TotalDamage"]=0 end
+		Table2["TotalDamage"]=PlayerStats[plNum][1]
 
 		if Table["PlayedGames"]~=nil then
 			Table["PlayedGames"]=Table["PlayedGames"]+1
 			if plNum==Top[1] then
 				Table["GamesWon"]=Table["GamesWon"]+1
+				Table2["GamesWon"]=1
 			end
 			Table["TotalDeath"]=Table["TotalDeath"]+PlayerStats[plNum][0]
 			Table["TotalDamage"]=Table["TotalDamage"]+PlayerStats[plNum][1]
 		end
 		Storage.SetSharedPlayerData(StorageKey, player, Table)
+		Storage.SetSharedPlayerData(LastGameKey, player, Table2)
 	end
 	Task.Wait(1)
 	gameState=2

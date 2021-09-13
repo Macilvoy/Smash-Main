@@ -53,10 +53,13 @@ end
 function Tick()
     for a,player in pairs(Game.GetPlayers()) do
         local PlayerHP=MainScript:GetCustomProperty("Player"..a.."HP")
+        local PlayerDeath=MainScript:GetCustomProperty("Player"..a.."Deaths")--Player1Deaths
+        if PlayerDeath<0 then   PlayerDeath=0   end
 
         local string="PlayerPanel"..a
         local Panel=script:GetCustomProperty(string):WaitForObject()
         Panel:GetCustomProperty("DamageBox"):WaitForObject().text=tostring(CoreMath.Round(PlayerHP)).."%"
+        Panel:GetCustomProperty("Death"):WaitForObject().text=tostring(CoreMath.Round(PlayerDeath))
     end
     local Time=MainScript:GetCustomProperty("Time")
     TimerText.text=SetTimer(Time)

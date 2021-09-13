@@ -421,12 +421,13 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 159119758430980031
+            Id: 14571216269251064088
           }
           Teams {
             IsTeamCollisionEnabled: true
             IsEnemyCollisionEnabled: true
           }
+          DisableDistanceFieldLighting: true
           StaticMesh {
             Physics {
               Mass: 100
@@ -516,8 +517,8 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 10.8800049
-              G: 3.89086056
+              R: 5.88000488
+              G: 2.10278201
               A: 1
             }
           }
@@ -571,12 +572,12 @@ Assets {
       }
     }
     Assets {
-      Id: 159119758430980031
-      Name: "Text 03: J"
+      Id: 14571216269251064088
+      Name: "Text 03: R"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "F5_Text_009"
+        AssetId: "F5_Text_017"
       }
     }
     Assets {

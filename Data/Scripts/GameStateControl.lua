@@ -21,6 +21,9 @@ function GameStart()
         GameState=true
         Game.StartRound()
     else
+        for _,pl in pairs(Game.GetPlayers()) do
+            pl:TransferToGame("e39f3e/core-world")
+        end
         Game.EndRound()
     end
 end
@@ -60,6 +63,9 @@ function Tick()
             GameEnd()
         end
         timeValue=CoreMath.Round(GameTime+RoundDuration-time())
+    end
+    if timeValue<0 then
+        timeValue=0
     end
     MainScript:SetNetworkedCustomProperty("Time",timeValue)
 end
