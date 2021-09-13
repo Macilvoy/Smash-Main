@@ -187,6 +187,7 @@ Assets {
         ParentId: 6125797174319189715
         ChildIds: 4896065686684080801
         ChildIds: 13551782555001820347
+        ChildIds: 8080626424722447259
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -229,6 +230,12 @@ Assets {
             Name: "cs:WeaponDialogWindow"
             ObjectReference {
               SubObjectId: 13551782555001820347
+            }
+          }
+          Overrides {
+            Name: "cs:Sphere"
+            ObjectReference {
+              SubObjectId: 8080626424722447259
             }
           }
         }
@@ -484,6 +491,66 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 8080626424722447259
+        Name: "Sphere"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.1
+            Y: 2
+            Z: 2
+          }
+        }
+        ParentId: 10681324258899337536
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 2632878926356200390
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 10.8800049
+              G: 3.89086056
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 896875555958293030
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
     }
     Assets {
       Id: 4905110911351917977
@@ -519,6 +586,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cube_rounded_002"
+      }
+    }
+    Assets {
+      Id: 896875555958293030
+      Name: "Sphere"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_sphere_002"
       }
     }
     PrimaryAssetId {
