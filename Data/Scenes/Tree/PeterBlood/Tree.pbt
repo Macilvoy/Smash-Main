@@ -1376,7 +1376,7 @@ Objects {
     }
     Overrides {
       Name: "cs:RoundDuration"
-      Int: 20
+      Int: 120
     }
   }
   Collidable_v2 {

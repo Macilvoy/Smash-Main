@@ -40,13 +40,15 @@ local ImpactID={}
 ImpactID[1]="unarmed_stun_dizzy"
 ImpactID[2]="unarmed_stun_electric"
 
+
+local gameState=0
 local KeyState={}
 for a=1,5 do
 	KeyState[a]={}	--0-name / 1-W / 2-A / 3-S / 4-D / 5-E / 6-Q
 end
 local PlayerState={}
 for a=1,5 do
-	PlayerState[a]={}	--0-BreakHitState / 1-BreakHitTime / 2-BasicDownHit state / 3-BasicUpHit state / 4-BasicUpHit time / 5- player hp / 6- weapon Id / 7- playerHitbox (to pick items) / 8- DeathOverlapTime
+	PlayerState[a]={}	--0-BreakHitState / 1-BreakHitTime / 2-BasicDownHit state / 3-BasicUpHit state / 4-BasicUpHit time / 5- player hp / 6- weapon Id / 7- playerHitbox (to pick items) / 8- DeathOverlapTime / 9- Block state / 10- BlockHP / 11- BlockReleaseTime / 12- BlockEffect
 end
 local PlayerStats={}
 for a=1,5 do
@@ -236,6 +238,8 @@ function RoundEndCutscene()
 		end
 		Storage.SetSharedPlayerData(StorageKey, player, Table)
 	end
+	Task.Wait(1)
+	gameState=2
 end
 
 function EquipWeapon(player,theTrigger)
@@ -449,60 +453,70 @@ function HeavyHitOverlap(theTrigger)
 	list=theTrigger:GetOverlappingObjects()
 	for _,player in pairs(list) do
 		if player and player:IsA("Player") and Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Owner")~=player.name then
-			
 			local damageValue=theTrigger:GetCustomProperty("Damage")+(math.random(CoreMath.Round(theTrigger:GetCustomProperty("Damage")/2))-CoreMath.Round(theTrigger:GetCustomProperty("Damage")/4))
-			for _,pl in pairs(Game.GetPlayers()) do
-				if pl.name==theTrigger:GetCustomProperty("Owner") then
-					for b=1,5 do
-						if KeyState[b][0]==pl.name then
-							PlayerStats[b][1]=PlayerStats[b][1]+damageValue
-						end
-					end
-				end
-			end
-
 			for b=1,5 do
 			    if KeyState[b][0]==player.name then
 					playerId=b
 					break
 				end
 			end
-			if player:GetVelocity().z==0 then
-				local triggerOwner
+			if PlayerState[playerId][9]==false or damageValue>PlayerState[playerId][10] then
+				if damageValue>PlayerState[playerId][10] then
+					PlayerState[playerId][9]=false
+					PlayerState[playerId][10]=0
+					PlayerState[playerId][11]=time()
+					PlayerState[playerId][12].visibility=Visibility.FORCE_OFF
+				end
 				for _,pl in pairs(Game.GetPlayers()) do
 					if pl.name==theTrigger:GetCustomProperty("Owner") then
-						triggerOwner=pl
+						for b=1,5 do
+							if KeyState[b][0]==pl.name then
+								PlayerStats[b][1]=PlayerStats[b][1]+damageValue
+							end
+						end
 					end
 				end
-				player:ResetVelocity()
-				if player:GetWorldPosition().y>triggerOwner:GetWorldPosition().y then
-					player:SetVelocity((RandomHitDirection(directionVector3[2])+directionVector3[2])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40)) ))
+
+				if player:GetVelocity().z==0 then
+					local triggerOwner
+					for _,pl in pairs(Game.GetPlayers()) do
+						if pl.name==theTrigger:GetCustomProperty("Owner") then
+							triggerOwner=pl
+						end
+					end
+					player:ResetVelocity()
+					if player:GetWorldPosition().y>triggerOwner:GetWorldPosition().y then
+						player:SetVelocity((RandomHitDirection(directionVector3[2])+directionVector3[2])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40)) ))
+					else
+						player:SetVelocity((RandomHitDirection(directionVector3[4])+directionVector3[4])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40)) ))
+					end
 				else
-					player:SetVelocity((RandomHitDirection(directionVector3[4])+directionVector3[4])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40)) ))
+					player:ResetVelocity()
+					player:SetVelocity((RandomHitDirection(directionVector3[theTrigger:GetCustomProperty("Direction")])+directionVector3[theTrigger:GetCustomProperty("Direction")])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40))))
 				end
-			else
-				player:ResetVelocity()
-				player:SetVelocity((RandomHitDirection(directionVector3[theTrigger:GetCustomProperty("Direction")])+directionVector3[theTrigger:GetCustomProperty("Direction")])*(theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10) ))--+(math.random(CoreMath.Round(PlayerState[playerId][5]/20))-(PlayerState[playerId][5]/40))))
-			end
-			PlayerState[playerId][5]=PlayerState[playerId][5]+damageValue--theTrigger:GetCustomProperty("Damage")
-			script:SetNetworkedCustomProperty("Player"..playerId.."HP",PlayerState[playerId][5])
-			player.animationStance=ImpactID[math.random(2)]
-			local equips=player:GetEquipment()
-			for _,obj in pairs(equips) do
-				if obj.name=="VFXS" then
-					if Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)>5 then
-						VFX=obj:GetCustomProperty("Trail_VFX"):WaitForObject()
-						VFX:Play()
+				PlayerState[playerId][5]=PlayerState[playerId][5]+damageValue--theTrigger:GetCustomProperty("Damage")
+				script:SetNetworkedCustomProperty("Player"..playerId.."HP",PlayerState[playerId][5])
+				player.animationStance=ImpactID[math.random(2)]
+				local equips=player:GetEquipment()
+				for _,obj in pairs(equips) do
+					if obj.name=="VFXS" then
+						if Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Power")+(PlayerState[playerId][5]/10)>5 then
+							VFX=obj:GetCustomProperty("Trail_VFX"):WaitForObject()
+							VFX:Play()
+						end
 					end
 				end
+				
+				PlayerState[playerId][0]=true
+				PlayerState[playerId][1]=time()
+				
+				if Object.IsValid(theTrigger) then theTrigger:Destroy() end
+				Task.Wait(0.3)
+				ResetAnim(player)
+			else
+				PlayerState[playerId][10]=PlayerState[playerId][10]-damageValue
+				PlayerState[playerId][12]:SetScale(Vector3.New(50/PlayerState[playerId][10],50/PlayerState[playerId][10],50/PlayerState[playerId][10]))
 			end
-			
-			PlayerState[playerId][0]=true
-			PlayerState[playerId][1]=time()
-			
-			if Object.IsValid(theTrigger) then theTrigger:Destroy() end
-			Task.Wait(0.3)
-			ResetAnim(player)
 		end
 	end
 end
@@ -1318,7 +1332,25 @@ function Tick()
 end
 
 function OnBindingPressed(player, binding)
-    if binding == "ability_extra_23" then
+    if binding == "ability_extra_12" then
+    	for a=1,5 do
+    		if KeyState[a][0]==player.name then
+				if PlayerState[a][9]==false then
+					local newValue=PlayerState[a][10]+CoreMath.Round((time()-PlayerState[a][11])*5)
+					if newValue>50 then newValue=50 end
+					if newValue>10 then
+						PlayerState[a][9]=true
+						PlayerState[a][10]=newValue
+						PlayerState[a][12]:SetScale(Vector3.New(50/newValue,50/newValue,50/newValue))
+						PlayerState[a][12].visibility=Visibility.FORCE_ON
+					end
+				end
+        		break
+        	end
+        end
+    end
+
+	if binding == "ability_extra_23" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
 				for _,obj in pairs(PlayerState[a][7]:GetOverlappingObjects()) do
@@ -1334,7 +1366,7 @@ function OnBindingPressed(player, binding)
 	
 	if binding == "ability_extra_36" then
     	for a=1,5 do
-    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][6]=true
     			if KeyState[a][2] then
 		        	BasicSideHit(player,5)
@@ -1359,10 +1391,13 @@ function OnBindingPressed(player, binding)
         		break
         	end
         end
+		if gameState==2 then
+			player:TransferToGame("e39f3e/core-world")
+		end
     end
     if binding == "ability_extra_37" then
     	for a=1,5 do
-    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][5]=true
     			if KeyState[a][2] then
 					
@@ -1444,7 +1479,7 @@ function OnBindingPressed(player, binding)
     end
     if binding == "ability_extra_21" then
     	for a=1,5 do
-    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][1]=true
     			if KeyState[a][6] and PlayerState[a][3]==false then
         			BasicUpHit(player,3)
@@ -1460,7 +1495,7 @@ function OnBindingPressed(player, binding)
     end
   	if binding == "ability_extra_30" then
     	for a=1,5 do
-    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][2]=true
     			if KeyState[a][5] then
 					
@@ -1485,7 +1520,7 @@ function OnBindingPressed(player, binding)
     end
     if binding == "ability_extra_31" then
     	for a=1,5 do
-    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][3]=true
     			if KeyState[a][6] and player.isJumping and PlayerState[a][2]==false then
         			BasicDownHit(player,7)
@@ -1500,7 +1535,7 @@ function OnBindingPressed(player, binding)
     end
     if binding == "ability_extra_32" then
     	for a=1,5 do
-    		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
+    		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][4]=true
     			if KeyState[a][5] then
 
@@ -1526,7 +1561,19 @@ function OnBindingPressed(player, binding)
 end
 
 function OnBindingReleased(player, binding)
-    if binding == "ability_extra_36" then
+    if binding == "ability_extra_12" then
+    	for a=1,5 do
+    		if KeyState[a][0]==player.name then
+    			if PlayerState[a][9] then
+					PlayerState[a][9]=false
+					PlayerState[a][11]=time()
+					PlayerState[a][12].visibility=Visibility.FORCE_OFF
+				end
+           		break
+        	end
+        end
+    end
+	if binding == "ability_extra_36" then
     	for a=1,5 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][6]=false
@@ -1608,6 +1655,14 @@ function OnRoundStart()
 				PlayerState[a][7]:AttachToPlayer(pl,"nameplate")
 				PlayerState[a][7]:SetWorldPosition(pl:GetWorldPosition())
 				PlayerState[a][8]=0
+				PlayerState[a][9]=false
+				PlayerState[a][10]=50
+				PlayerState[a][11]=time()
+				for _,equip in pairs(pl:GetEquipment()) do
+					if equip.name=="VFXS" then
+						PlayerState[a][12]=equip:GetCustomProperty("Block"):WaitForObject()
+					end
+				end
 				PlayerStats[a][0]=0
 				PlayerStats[a][1]=0
 				script:SetNetworkedCustomProperty("Player"..a.."Deaths",PlayerStats[a][0])
@@ -1616,6 +1671,7 @@ function OnRoundStart()
 		end
 	end
 	propInvWall.collision=Collision.FORCE_OFF
+	gameState=1
 end
 Game.roundStartEvent:Connect(OnRoundStart)
 
