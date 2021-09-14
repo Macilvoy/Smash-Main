@@ -15,9 +15,11 @@ function GameStart()
 
     if playersAmount>1 then
         Events.BroadcastToAllPlayers("RoundStartCutsceneClient")
+        Events.BroadcastToAllPlayers("RunVS")
         Events.Broadcast("RoundStartCutsceneNetworked")
         Game.StopAcceptingPlayers()
         Task.Wait(1+playersAmount*2.5)
+        Events.BroadcastToAllPlayers("UpdateCamera")
         GameState=true
         Game.StartRound()
     else
@@ -82,6 +84,7 @@ function OnPlayerJoined(player)
             playersAmount=a
         end
         if playersAmount==4 then
+            Task.Wait(2)
             GameStart()
         elseif playersAmount==2 then
             LobbyTime=time()

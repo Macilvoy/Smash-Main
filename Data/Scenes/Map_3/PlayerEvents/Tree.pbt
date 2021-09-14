@@ -212,6 +212,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:Spawns"
+      ObjectReference {
+        SelfId: 14895804425366688671
+      }
+    }
+    Overrides {
       Name: "cs:Player1HP:isrep"
       Bool: true
     }

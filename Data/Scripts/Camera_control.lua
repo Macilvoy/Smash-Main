@@ -1,3 +1,5 @@
+local MainCamera = script:GetCustomProperty("MainCamera"):WaitForObject()
+
 local GlobalCamera = script:GetCustomProperty("GlobalCamera"):WaitForObject()
 local CameraCube = script:GetCustomProperty("CameraCube"):WaitForObject()
 local YLimit = script:GetCustomProperty("YLimit")
@@ -91,7 +93,7 @@ function RoundStartCutscene()
 	local cutscenePlayers=Game.GetPlayers()
 	for a,obj in pairs(cutscenePlayers) do
 		Task.Wait(1.25)
-		GlobalCamera:SetWorldPosition(obj:GetWorldPosition()+Vector3.New(-205,5,15))
+		--GlobalCamera:SetWorldPosition(obj:GetWorldPosition()+Vector3.New(-205,5,15))
 		Task.Wait(1.25)
 	end
 	Task.Wait(1)
@@ -99,3 +101,10 @@ function RoundStartCutscene()
 end
 
 Events.Connect("RoundStartCutsceneClient",RoundStartCutscene)
+
+function UpdateCamera()
+	local player=Game.GetLocalPlayer()
+	player:SetDefaultCamera(GlobalCamera)
+end
+
+Events.Connect("UpdateCamera",UpdateCamera)

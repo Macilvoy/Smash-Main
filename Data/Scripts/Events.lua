@@ -1,3 +1,4 @@
+local propSpawns = script:GetCustomProperty("Spawns"):WaitForObject()
 --local propGeo = script:GetCustomProperty("Geo"):WaitForObject()
 --local propHeavyHitTrigger = script:GetCustomProperty("HeavyHitTrigger"):WaitForObject()
 --local propExplosionVFX = script:GetCustomProperty("ExplosionVFX"):WaitForObject()
@@ -179,6 +180,12 @@ end
 function RoundStartCutscene()
 	local playersAmount=0
 	for a,player in pairs(Game.GetPlayers()) do
+		player:SetWorldPosition(propSpawns:GetChildren()[a]:GetWorldPosition())
+		player:SetWorldRotation(Rotation.New(0,0,180))
+		playersAmount=a
+	end
+	Task.Wait(3+playersAmount*2.5)
+	for a,player in pairs(Game.GetPlayers()) do
 		Stun(player)
 		local string="Spawn"..a
 		player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
@@ -188,7 +195,6 @@ function RoundStartCutscene()
 		obj:Equip(player)
 		playersAmount=a
 	end
-	Task.Wait(3+playersAmount*2.5)
 	for _,player in pairs(Game.GetPlayers()) do
 		ResetMovement(player)
 	end
@@ -1644,7 +1650,7 @@ function OnRoundStart()
 	end
 	local players=Game.GetPlayers()
 	for _,pl in pairs(players) do
-		for a=1,5 do
+		for a=1,4 do
 			if KeyState[a][0]==nil then
 				KeyState[a][0]=pl.name 
 				for b=1,20 do 

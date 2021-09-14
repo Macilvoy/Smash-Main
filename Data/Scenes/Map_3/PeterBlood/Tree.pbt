@@ -907,11 +907,11 @@ Objects {
     }
     Overrides {
       Name: "cs:LobbyDuration"
-      Int: 10
+      Int: 20
     }
     Overrides {
       Name: "cs:RoundDuration"
-      Int: 120
+      Int: 180
     }
     Overrides {
       Name: "cs:StorageKey"

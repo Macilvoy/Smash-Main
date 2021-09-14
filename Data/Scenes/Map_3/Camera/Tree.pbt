@@ -32,7 +32,6 @@ Objects {
     Value: "mc:eindicatorvisibility:alwaysvisible"
   }
   Camera {
-    UseAsDefault: true
     InitialDistance: 400
     MinDistance: 300
     MaxDistance: 600
@@ -88,6 +87,12 @@ Objects {
     Overrides {
       Name: "cs:ZLimit"
       Int: 1000
+    }
+    Overrides {
+      Name: "cs:MainCamera"
+      ObjectReference {
+        SelfId: 10759265883331716115
+      }
     }
   }
   Collidable_v2 {
