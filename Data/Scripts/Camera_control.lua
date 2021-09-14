@@ -1,4 +1,5 @@
 local MainCamera = script:GetCustomProperty("MainCamera"):WaitForObject()
+local propGroup = script:GetCustomProperty("Group"):WaitForObject()
 
 local GlobalCamera = script:GetCustomProperty("GlobalCamera"):WaitForObject()
 local CameraCube = script:GetCustomProperty("CameraCube"):WaitForObject()
@@ -104,7 +105,8 @@ Events.Connect("RoundStartCutsceneClient",RoundStartCutscene)
 
 function UpdateCamera()
 	local player=Game.GetLocalPlayer()
-	player:SetDefaultCamera(GlobalCamera)
+	player:SetDefaultCamera(GlobalCamera) 
+	propGroup.visibility=Visibility.FORCE_OFF
 end
 
 Events.Connect("UpdateCamera",UpdateCamera)

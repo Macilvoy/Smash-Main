@@ -337,10 +337,7 @@ Objects {
   ParentId: 1353552899944142591
   ChildIds: 17763262287652417742
   ChildIds: 10759265883331716115
-  ChildIds: 3862915609150846623
-  ChildIds: 15054918000223118496
-  ChildIds: 2679133462274922008
-  ChildIds: 12408386448077937041
+  ChildIds: 9374086925142849247
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -363,6 +360,41 @@ Objects {
   }
 }
 Objects {
+  Id: 9374086925142849247
+  Name: "Group"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1918841961993616903
+  ChildIds: 3862915609150846623
+  ChildIds: 15054918000223118496
+  ChildIds: 2679133462274922008
+  ChildIds: 12408386448077937041
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+}
+Objects {
   Id: 12408386448077937041
   Name: "VS2Players"
   Transform {
@@ -378,7 +410,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1918841961993616903
+  ParentId: 9374086925142849247
   ChildIds: 11813457205137600598
   ChildIds: 1114651330956898138
   ChildIds: 12801863143513867264
@@ -3582,7 +3614,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1918841961993616903
+  ParentId: 9374086925142849247
   ChildIds: 16108738013742314189
   ChildIds: 3910848709463739597
   ChildIds: 8845927232370665920
@@ -6860,7 +6892,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1918841961993616903
+  ParentId: 9374086925142849247
   ChildIds: 68934191457686825
   ChildIds: 6840861493160887054
   ChildIds: 10962155200165231859
@@ -10208,7 +10240,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 1918841961993616903
+  ParentId: 9374086925142849247
   ChildIds: 16134735133693026686
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

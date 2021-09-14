@@ -94,6 +94,12 @@ Objects {
         SelfId: 10759265883331716115
       }
     }
+    Overrides {
+      Name: "cs:Group"
+      ObjectReference {
+        SelfId: 9374086925142849247
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
