@@ -172,6 +172,8 @@ local p2KeyState={}
 local p1AnimLength = 0
 local p2AnimLength = 0
 
+local playerSlots = {}
+
 function OnPlayerJoined(player)
 
     player:SetResource(isAttached,0)
@@ -194,11 +196,15 @@ end
 
     if player:GetResource(ColRes) == 1 then
         player:SetResource(PNum,1)
-    else
+    elseif player:GetResource(ColRes) == 2 then
         player:SetResource(PNum,2)
+    elseif player:GetResource(ColRes) == 3 then
+        player:SetResource(PNum,3)
+    elseif player:GetResource(ColRes) == 4 then
+        player:SetResource(PNum,4)
     end
     EquipWeapon(player)
-    SpawnIKRig(player)
+    --SpawnIKRig(player)
     player.bindingPressedEvent:Connect(OnBindingPressed)
     player.bindingReleasedEvent:Connect(OnBindingReleased)
 end
@@ -319,7 +325,7 @@ function OnBindingPressed(player, binding)
 
         end
         if binding == "ability_extra_1" then
-print(player:GetWorldRotation())
+--print(player:GetWorldRotation())
         end
         if binding == "ability_extra_2" then
 
@@ -470,7 +476,7 @@ if player:GetResource(PNum) == 1 then
     --    print(p1Keyframe)
     --    print("p1Length")
     --    print(p1Length)
-    ResyncAnimation(player)-- CHANGED POSITION CAN CAUSE LAG
+   -- ResyncAnimation(player)-- CHANGED POSITION CAN CAUSE LAG
     end
 else
 

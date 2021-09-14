@@ -1,13 +1,19 @@
 local CameraCube = script:GetCustomProperty("CameraCube"):WaitForObject()
 local GlobalCamera = script:GetCustomProperty("GlobalCamera"):WaitForObject()
 
-local EnemyCamera = script:GetCustomProperty("EnemyCamera"):WaitForObject()
-local PlayerCamera = script:GetCustomProperty("PlayerCamera"):WaitForObject()
+local P1Camera = script:GetCustomProperty("p1Camera"):WaitForObject()
+local P2Camera = script:GetCustomProperty("p2Camera"):WaitForObject()
+local P3Camera = script:GetCustomProperty("p3Camera"):WaitForObject()
+local P4Camera = script:GetCustomProperty("p4Camera"):WaitForObject()
 
 local P1UI = script:GetCustomProperty("p1UI"):WaitForObject()
 local P2UI = script:GetCustomProperty("p2UI"):WaitForObject()
+local P3UI = script:GetCustomProperty("p3UI"):WaitForObject()
+local P4UI = script:GetCustomProperty("p4UI"):WaitForObject()
 local P1Frame = script:GetCustomProperty("p1Frame"):WaitForObject()
 local P2Frame = script:GetCustomProperty("p2Frame"):WaitForObject()
+local P3Frame = script:GetCustomProperty("p3Frame"):WaitForObject()
+local P4Frame = script:GetCustomProperty("p4Frame"):WaitForObject()
 
 local Centr=Vector3.New(0,0,100)
 local MinY=nil
@@ -17,13 +23,20 @@ local MaxZ=nil
 local Dist=nil
 local speed=nil
 
-local MapCameraLimit = Vector3.New(1500,2000,1000) --LINK TO MAP
+
+--local MapCameraLimit = Vector3.New(1500,2600,1500) --LINK TO TRAINING-MAP
+--local MapCameraLimit = Vector3.New(1500,3500,1500) --LINK TO MAP1
+local MapCameraLimit = Vector3.New(1500,3500,1500) --LINK TO MAP2
+--local MapCameraLimit = Vector3.New(1500,3500,1500) --LINK TO MAP3
+
 
 local YLimit = MapCameraLimit.y
 local ZLimit = MapCameraLimit.z
 
 local camCapture1 = nil
 local camCapture2 = nil
+local camCapture3 = nil
+local camCapture4 = nil
 
 local LOCAL_PLAYER = Game.GetLocalPlayer()
 
@@ -40,13 +53,6 @@ end
 function OnPlayerJoined(player)
         player:SetDefaultCamera(GlobalCamera)
         --print(player:GetDefaultCamera())
-        if LOCAL_PLAYER:GetResource(ColRes) == 1 then
-            P1Frame:SetColor(Color.RED)
-            P2Frame:SetColor(Color.BLUE)
-        else
-            P2Frame:SetColor(Color.RED)
-            P1Frame:SetColor(Color.BLUE)
-        end
 end
 
 function round(number, decimals)
@@ -54,7 +60,7 @@ function round(number, decimals)
     return math.floor(number * power) / power
 end
 
-function PositionArrow(Arrow,Frame,Pos)
+function PositionArrow(Arrow,Frame,Pos, player)
           local screenPos = UI.GetScreenPosition(Pos)
           if screenPos ~= nil then
          local ScreenCenter = Vector2.New(UI.GetScreenSize().x/2,UI.GetScreenSize().y/2)
@@ -62,9 +68,11 @@ function PositionArrow(Arrow,Frame,Pos)
     if (screenPos ~= nil and screenPos.x >= 0 and screenPos.x <= UI.GetScreenSize().x and screenPos.y >= 0 and screenPos.y <= UI.GetScreenSize().y) then
         Arrow.visibility = Visibility.FORCE_OFF
         Frame.visibility = Visibility.FORCE_OFF --// Object center is visible
-    else        
+        Events.Broadcast("HideMinimap",player)
+    else
         Arrow.visibility = Visibility.FORCE_ON
         Frame.visibility = Visibility.FORCE_ON
+        Events.Broadcast("ShowMinimap",player)
 
   --  screenPos.x = screenPos.x-screenPos.x*0.5
     --screenPos.y = screenPos.y-screenPos.y*0.5
@@ -90,8 +98,8 @@ function PositionArrow(Arrow,Frame,Pos)
    -- Arrow.x = screenPos.x
     --Arrow.y = screenPos.y
 
-    Arrow.x = (ScreenCenter.x*0.2) * math.sin(angle) + ScreenCenter.x*0.5 -- // Place on ellipse touching 
-    Arrow.y = (ScreenCenter.y*0.4) * math.cos(angle) + ScreenCenter.y*0.4 -- //   side of viewport
+    Arrow.x = (ScreenCenter.x*0.45) * math.sin(angle) + ScreenCenter.x*0.47 -- // Place on ellipse touching 
+    Arrow.y = (ScreenCenter.y*0.2) * math.cos(angle) + ScreenCenter.y*0.4 -- //   side of viewport
     Frame.x = Arrow.x
     Frame.y = Arrow.y
    -- Arrow.rotationAngle = -fAngle * (180 / math.pi)
@@ -114,25 +122,44 @@ function Tick()
 		 Dist=nil
 	local	players=Game.GetPlayers()
 		speed=nil
-        if camCapture1 and camCapture1:IsValid() and camCapture2 and camCapture2:IsValid() then
+        if camCapture1 and camCapture1:IsValid() then
             camCapture1:Refresh()
+        else
+            camCapture1 = P1Camera:Capture(CameraCaptureResolution.MEDIUM)
+            P1UI:SetCameraCapture(camCapture1)
+        end
+        if camCapture2 and camCapture2:IsValid() then
             camCapture2:Refresh()
         else
-           camCapture1 = PlayerCamera:Capture(CameraCaptureResolution.MEDIUM)
-            P1UI:SetCameraCapture(camCapture1)
-            camCapture2 = EnemyCamera:Capture(CameraCaptureResolution.MEDIUM)
+            camCapture2 = P2Camera:Capture(CameraCaptureResolution.MEDIUM)
             P2UI:SetCameraCapture(camCapture2)
+        end
+        if camCapture3 and camCapture3:IsValid() then
+            camCapture3:Refresh()
+        else
+            camCapture3 = P3Camera:Capture(CameraCaptureResolution.MEDIUM)
+            P3UI:SetCameraCapture(camCapture3)
+        end
+        if camCapture4 and camCapture4:IsValid() then
+            camCapture4:Refresh()
+        else
+            camCapture4 = P4Camera:Capture(CameraCaptureResolution.MEDIUM)
+            P4UI:SetCameraCapture(camCapture4)
         end
         if #players > 0 then
         for _, player in ipairs(players) do
-        if player.name == LOCAL_PLAYER.name then 
-            PlayerCamera:MoveTo(Vector3.New(LOCAL_PLAYER:GetWorldPosition()-Vector3.New(200,0,0)),0.1,false)
-            local LocalPlayerPos =  player:GetWorldPosition()
-            PositionArrow(P1UI,P1Frame,LocalPlayerPos)
-        else
-            EnemyCamera:MoveTo(Vector3.New(player:GetWorldPosition()-Vector3.New(200,0,0)),0.1,false)
-            local EnemyPlayerPos =  player:GetWorldPosition()
-            PositionArrow(P2UI,P2Frame,EnemyPlayerPos)
+        if player:GetResource(ColRes) == 1 then 
+            P1Camera:MoveTo(Vector3.New(player:GetWorldPosition()-Vector3.New(200,0,0)),0.1,false)
+            PositionArrow(P1UI,P1Frame,player:GetWorldPosition(),player)
+        elseif player:GetResource(ColRes) == 2 then
+            P2Camera:MoveTo(Vector3.New(player:GetWorldPosition()-Vector3.New(200,0,0)),0.1,false)
+            PositionArrow(P2UI,P2Frame,player:GetWorldPosition(),player)
+        elseif player:GetResource(ColRes) == 3 then
+            P3Camera:MoveTo(Vector3.New(player:GetWorldPosition()-Vector3.New(200,0,0)),0.1,false)
+            PositionArrow(P3UI,P3Frame,player:GetWorldPosition(),player)
+        elseif player:GetResource(ColRes) == 4 then
+            P4Camera:MoveTo(Vector3.New(player:GetWorldPosition()-Vector3.New(200,0,0)),0.1,false)
+            PositionArrow(P4UI,P4Frame,player:GetWorldPosition(),player)
         end
     end
     else return --print("what lol")
@@ -173,15 +200,24 @@ function Tick()
             else
                 lowZ = MaxZ
             end
+        local OutXin = round((MapCameraLimit.x),3)
+        local OutYin = round((LOCAL_PLAYER:GetWorldPosition().y/2),3)
+        local OutZin = round((LOCAL_PLAYER:GetWorldPosition().z/2),3)
         local OutX = round((Centr.x+MapCameraLimit.x)/2,3)
-        local OutY = round((Centr.y+lowY)/2,3)
-        local OutZ = round((Centr.z+lowZ)/2,3)
+        local OutY = round((0-Centr.y/5),3)
+        local OutZ = round((0-Centr.z/5),3)
          Dist=math.sqrt( (MaxY-MinY)^2+(MaxZ-MinZ)^2 )/1.7
-          if Dist < math.sqrt(MapCameraLimit.x^2) and InRange(player)  then
+         --if player.id == LOCAL_PLAYER.id then
+          if not InRange(player) then
+            print("not")
+        Centr=Vector3.New(OutX*-1, OutY, OutZ)
+          elseif Dist > math.sqrt(MapCameraLimit.x^2) and InRange(player) then
+            print("still in")
+          Centr=Vector3.New(OutXin*-1, OutYin, OutZin)
+          elseif Dist < math.sqrt(MapCameraLimit.x^2) and InRange(player)  then
 			Centr=Vector3.New( (100+Dist)*-1,	Centr.y, Centr.z)
-          else
-          Centr=Vector3.New(OutX*-1, OutY, OutZ) 
           end
+       -- end
 			speed=math.sqrt( (Centr.y-GlobalCamera:GetWorldPosition().y)^2+(Centr.z-GlobalCamera:GetWorldPosition().z)^2 )/0.13
 			GlobalCamera:Follow(CameraCube,speed/5,1)
 			CameraCube:MoveTo(Centr,0.1,false)

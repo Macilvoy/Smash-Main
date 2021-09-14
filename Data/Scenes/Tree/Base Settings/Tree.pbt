@@ -152,34 +152,46 @@ Objects {
     Overrides {
       Name: "cs:MacilvoyPlayerSettings"
       ObjectReference {
-        SelfId: 1717891859878914807
-        SubObjectId: 11592647923584693331
-        InstanceId: 14263285556400518742
-        TemplateId: 1114260666827892489
+        SelfId: 8300878634995552250
+        SubObjectId: 1717891859878914807
+        InstanceId: 870361367446915240
+        TemplateId: 15434381957125043846
       }
     }
     Overrides {
       Name: "cs:PeterBloodSettings"
       ObjectReference {
-        SelfId: 4226120016796708080
+        SelfId: 1707782638194445143
+        SubObjectId: 8311054371785600602
+        InstanceId: 870361367446915240
+        TemplateId: 15434381957125043846
       }
     }
     Overrides {
       Name: "cs:DefaultFloor"
       ObjectReference {
-        SelfId: 10388756161646481612
+        SelfId: 17638855949009745345
+        SubObjectId: 10388756161646481612
+        InstanceId: 870361367446915240
+        TemplateId: 15434381957125043846
       }
     }
     Overrides {
       Name: "cs:DefaultFloor_1"
       ObjectReference {
-        SelfId: 8481916656217401939
+        SelfId: 1247597059735457630
+        SubObjectId: 8481916656217401939
+        InstanceId: 870361367446915240
+        TemplateId: 15434381957125043846
       }
     }
     Overrides {
       Name: "cs:UIContainer"
       ObjectReference {
-        SelfId: 5144988581941737194
+        SelfId: 2558927990843495399
+        SubObjectId: 5144988581941737194
+        InstanceId: 870361367446915240
+        TemplateId: 15434381957125043846
       }
     }
   }
