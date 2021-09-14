@@ -218,6 +218,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:results"
+      ObjectReference {
+        SelfId: 5686716901687746413
+      }
+    }
+    Overrides {
       Name: "cs:Player1HP:isrep"
       Bool: true
     }

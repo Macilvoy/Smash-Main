@@ -1,4 +1,6 @@
 local propSpawns = script:GetCustomProperty("Spawns"):WaitForObject()
+local propResults = script:GetCustomProperty("results"):WaitForObject()
+
 --local propGeo = script:GetCustomProperty("Geo"):WaitForObject()
 --local propHeavyHitTrigger = script:GetCustomProperty("HeavyHitTrigger"):WaitForObject()
 --local propExplosionVFX = script:GetCustomProperty("ExplosionVFX"):WaitForObject()
@@ -201,6 +203,17 @@ function RoundStartCutscene()
 end
 
 function RoundEndCutscene()
+	propResults:GetCustomProperty("UIContainer"):WaitForObject().visibility=Visibility.FORCE_ON
+	local topAnims={}
+	topAnims[1]={"unarmed_dance_party"}
+	topAnims[2]={"unarmed_dance_basic"}
+	topAnims[3]={"unarmed_waiting"}
+	topAnims[4]={"unarmed_stun_dizzy"}
+	local topColor = {"9E0000FF","00329CFF","009E00FF","9E7700FF"}
+	local topPos={}--propResults:GetCustomProperty()
+	for a=1,4 do
+		topPos[a]=propResults:GetCustomProperty(a.."Pos"):WaitForObject()
+	end
 	--local playersAmount=0
 	local Top={}
 	for a=1, 4 do
@@ -219,16 +232,35 @@ function RoundEndCutscene()
 	end
 	for a=1, 4 do
 		if KeyState[Top[a]][0]~=nil and KeyState[Top[a]][0]~="" then
-			--print(a.."- "..KeyState[Top[a]][0])
-			Events.BroadcastToAllPlayers("UpdateResult",a,KeyState[Top[a]][0],PlayerStats[Top[a]][0],PlayerStats[Top[a]][1])
+			for _,player in pairs(Game.GetPlayers()) do
+				if player.name==KeyState[Top[a]][0] then
+					Stun(player)
+					player:SetWorldPosition(topPos[a]:GetWorldPosition())
+					player:SetWorldRotation(Rotation.New(0,0,180))
+					player.animationStance=topAnims[a][1]
+					break
+				end
+			end
+			--Events.BroadcastToAllPlayers("UpdateResult",a,KeyState[Top[a]][0],PlayerStats[Top[a]][0],PlayerStats[Top[a]][1])
+
+			if a==1 then
+				propResults:GetCustomProperty("1Place"):WaitForObject().text=KeyState[Top[a]][0]
+				propResults:GetCustomProperty("1Place"):WaitForObject():SetColor(Color.FromLinearHex(topColor[Top[a]]))
+			end
+			propResults:GetCustomProperty("Player"..a):WaitForObject().text=KeyState[Top[a]][0]
+			propResults:GetCustomProperty("Player"..a):WaitForObject():SetColor(Color.FromLinearHex(topColor[Top[a]]))
+			propResults:GetCustomProperty("Player"..a):WaitForObject().visibility=Visibility.FORCE_ON
+			propResults:GetCustomProperty("Score"..a):WaitForObject().text=tostring(PlayerStats[Top[a]][1])
+			propResults:GetCustomProperty("Score"..a):WaitForObject():SetColor(Color.FromLinearHex(topColor[Top[a]]))
+			propResults:GetCustomProperty("Score"..a):WaitForObject().visibility=Visibility.FORCE_ON
 		end
 	end
 
 	for plNum,player in pairs(Game.GetPlayers()) do
-		Stun(player)
+		--Stun(player)
 		
-		local string="Spawn"..plNum
-		player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
+		--local string="Spawn"..plNum
+		--player:SetWorldPosition(script:GetCustomProperty(string):WaitForObject():GetWorldPosition())
 
 		local Table = Storage.GetSharedPlayerData(StorageKey, player)
 		local Table2 = Storage.GetSharedPlayerData(LastGameKey, player)

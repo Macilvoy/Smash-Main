@@ -19,6 +19,7 @@ Objects {
   ChildIds: 1602072049588011465
   ChildIds: 4471016609754802560
   ChildIds: 1353552899944142591
+  ChildIds: 5686716901687746413
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -31,6 +32,131 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 5686716901687746413
+  Name: "results"
+  Transform {
+    Location {
+      X: 128.679077
+      Z: -296.565735
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:1Pos"
+      ObjectReference {
+        SelfId: 7521563721290825033
+      }
+    }
+    Overrides {
+      Name: "cs:2Pos"
+      ObjectReference {
+        SelfId: 308853740132258333
+      }
+    }
+    Overrides {
+      Name: "cs:3Pos"
+      ObjectReference {
+        SelfId: 6879333978795878554
+      }
+    }
+    Overrides {
+      Name: "cs:4Pos"
+      ObjectReference {
+        SelfId: 15994296766000566471
+      }
+    }
+    Overrides {
+      Name: "cs:1Place"
+      ObjectReference {
+        SelfId: 12125304515426244860
+      }
+    }
+    Overrides {
+      Name: "cs:Player1"
+      ObjectReference {
+        SelfId: 16041495758218010945
+      }
+    }
+    Overrides {
+      Name: "cs:Player2"
+      ObjectReference {
+        SelfId: 240234488070378212
+      }
+    }
+    Overrides {
+      Name: "cs:Player3"
+      ObjectReference {
+        SelfId: 4808146068094631285
+      }
+    }
+    Overrides {
+      Name: "cs:Player4"
+      ObjectReference {
+        SelfId: 7726703940910033013
+      }
+    }
+    Overrides {
+      Name: "cs:Score1"
+      ObjectReference {
+        SelfId: 16145386374358559384
+      }
+    }
+    Overrides {
+      Name: "cs:Score2"
+      ObjectReference {
+        SelfId: 1869117123463509569
+      }
+    }
+    Overrides {
+      Name: "cs:Score3"
+      ObjectReference {
+        SelfId: 8817595735464678771
+      }
+    }
+    Overrides {
+      Name: "cs:Score4"
+      ObjectReference {
+        SelfId: 16650786497690722465
+      }
+    }
+    Overrides {
+      Name: "cs:UIContainer"
+      ObjectReference {
+        SelfId: 17879819950021998259
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "results"
+  }
+  InstanceHistory {
+    SelfId: 5686716901687746413
+    SubobjectId: 10228265021376542692
+    InstanceId: 2088940743062806076
+    TemplateId: 2064932381068137467
+    WasRoot: true
   }
 }
 Objects {

@@ -34,16 +34,18 @@ local fadeTime=-1
 
 local localPlayer=Game.GetLocalPlayer()
 
+Task.Wait(5)
 function Tick()
+    TimerText = script:GetCustomProperty("TimerText"):WaitForObject()
     for a,player in pairs(Game.GetPlayers()) do
         local PlayerHP=MainScript:GetCustomProperty("Player"..a.."HP")
 
         local string="PlayerPanel"..a
         local Panel=script:GetCustomProperty(string):WaitForObject()
-        Panel:GetCustomProperty("DamageBox"):WaitForObject().text=tostring(CoreMath.Round(PlayerHP)).."%"
+        if Panel and Object.IsValid(Panel) and Panel:GetCustomProperty("DamageBox"):WaitForObject() then Panel:GetCustomProperty("DamageBox"):WaitForObject().text=tostring(CoreMath.Round(PlayerHP)).."%" end
     end
     local Time=MainScript:GetCustomProperty("Time")
-    TimerText.text=tostring(Time)
+    if TimerText then TimerText.text=tostring(Time) end
     
     if fadeIn==true then
         if time()<fadeTime+1 then
