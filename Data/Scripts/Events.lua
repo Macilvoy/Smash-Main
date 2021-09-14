@@ -103,7 +103,7 @@ function ResetWeapon(player)
 	for _,obj in pairs(player:GetAttachedObjects()) do
 		if obj.name=="Weapon" then
 			obj:Destroy()
-			for b=1,5 do
+			for b=1,4 do
 				if KeyState[b][0]==player.name then
 					PlayerState[b][6]=0
 					break
@@ -140,7 +140,7 @@ function ResetAnim(player)
 			PA:Deactivate()
 		end
 	end
-	for b=1,5 do
+	for b=1,4 do
     	if KeyState[b][0]==player.name then
     		if PlayerState[b][6]==0 then
 				player.animationStance="unarmed_stance"
@@ -172,7 +172,7 @@ end
 propTrigger.beginOverlapEvent:Connect(OnBeginOverlap)		Old stuff
 ]]
 function HitReset(NickName)
-	for b=1,5 do
+	for b=1,4 do
     	if KeyState[b][0]==NickName and PlayerState[b][0] then
     		return
 		end
@@ -290,7 +290,7 @@ end
 function EquipWeapon(player,theTrigger)
 	ResetWeapon(player)
 	Task.Wait(0.1)
-	for b=1,5 do
+	for b=1,4 do
     	if KeyState[b][0]==player.name then
 			theTrigger:SetNetworkedCustomProperty("isEquipped",true)
 			theTrigger.parent:AttachToPlayer(player, "nameplate")
@@ -434,7 +434,7 @@ function ForwardOverlap(theTrigger)
 				if Object.IsValid(theTrigger) and obj.name==theTrigger:GetCustomProperty("Owner") then
 					HitSpree(obj, theTrigger:GetCustomProperty("Direction") )
 					
-					for b=1,5 do
+					for b=1,4 do
 					    if KeyState[b][0]==player.name then
 					    	PlayerState[b][0]=true
 					    	PlayerState[b][1]=time()
@@ -455,7 +455,7 @@ function HitOverlap(theTrigger)--
 			
 			for _,pl in pairs(Game.GetPlayers()) do
 				if pl.name==theTrigger:GetCustomProperty("Owner") then
-					for b=1,5 do
+					for b=1,4 do
 						if KeyState[b][0]==pl.name then
 							PlayerStats[b][1]=PlayerStats[b][1]+theTrigger:GetCustomProperty("Damage")
 						end
@@ -463,7 +463,7 @@ function HitOverlap(theTrigger)--
 				end
 			end
 			
-			for b=1,5 do
+			for b=1,4 do
 			    if KeyState[b][0]==player.name then
 					PlayerState[b][5]=PlayerState[b][5]+theTrigger:GetCustomProperty("Damage")
 					script:SetNetworkedCustomProperty("Player"..b.."HP",PlayerState[b][5])
@@ -480,7 +480,7 @@ function HitOverlap(theTrigger)--
 				end
 			end
 			
-			for b=1,5 do
+			for b=1,4 do
 			    if KeyState[b][0]==player.name then
 			    	PlayerState[b][0]=true
 			    	PlayerState[b][1]=time()
@@ -499,7 +499,7 @@ function HeavyHitOverlap(theTrigger)
 	for _,player in pairs(list) do
 		if player and player:IsA("Player") and Object.IsValid(theTrigger) and theTrigger:GetCustomProperty("Owner")~=player.name then
 			local damageValue=theTrigger:GetCustomProperty("Damage")+(math.random(CoreMath.Round(theTrigger:GetCustomProperty("Damage")/2))-CoreMath.Round(theTrigger:GetCustomProperty("Damage")/4))
-			for b=1,5 do
+			for b=1,4 do
 			    if KeyState[b][0]==player.name then
 					playerId=b
 					break
@@ -514,7 +514,7 @@ function HeavyHitOverlap(theTrigger)
 				end
 				for _,pl in pairs(Game.GetPlayers()) do
 					if pl.name==theTrigger:GetCustomProperty("Owner") then
-						for b=1,5 do
+						for b=1,4 do
 							if KeyState[b][0]==pl.name then
 								PlayerStats[b][1]=PlayerStats[b][1]+damageValue
 							end
@@ -570,7 +570,7 @@ function DeathOverlap(theTrigger)
 	list=theTrigger:GetOverlappingObjects()
 	for _,player in pairs(list) do
 		if player and player:IsA("Player") then
-			for b=1,5 do
+			for b=1,4 do
 			    if KeyState[b][0]==player.name then
 					playerId=b
 					break
@@ -616,13 +616,13 @@ function BasicUpHit(player,direction)
 
 	for _,obj in pairs(equips) do
 		if obj.name=="ANIMS" then
-			for a=1,5 do
+			for a=1,4 do
     			if KeyState[a][0]==player.name then
     				MyLocalID=a
     			end
     		end
 			--	|Check for hit reset|	--
-			for b=1,5 do
+			for b=1,4 do
 			    if KeyState[b][0]==player.name and PlayerState[b][0] then
 			    	return
 				end
@@ -657,13 +657,13 @@ function BasicDownHit(player,direction)
 
 	for _,obj in pairs(equips) do
 		if obj.name=="ANIMS" then
-			for a=1,5 do
+			for a=1,4 do
     			if KeyState[a][0]==player.name then
     				MyLocalID=a
     			end
     		end
 			--	|Check for hit reset|	--
-			for b=1,5 do
+			for b=1,4 do
 			    if KeyState[b][0]==player.name and PlayerState[b][0] then
 			    	return
 				end
@@ -704,7 +704,7 @@ function BasicSideHit(player,direction)
 			if obj:GetCustomProperty("LFastHit_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				StunMovement(player)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -735,7 +735,7 @@ function HitSpree(player,direction)
 	for a=0,10 do
 		Task.Wait(0.1)
 		--	|Check for hit reset|	--
-		for b=1,5 do
+		for b=1,4 do
 		    if KeyState[b][0]==player.name and PlayerState[b][0] then
 		    	return
 			end
@@ -761,7 +761,7 @@ function HitSpree(player,direction)
 		end
 	end
 	--	|Check for hit reset|	--
-	for b=1,5 do
+	for b=1,4 do
 	    if KeyState[b][0]==player.name and PlayerState[b][0] then
 	    	return
 		end
@@ -794,7 +794,7 @@ function ForwardHit(player,direction)
 				
 				obj:GetCustomProperty("ForwardHit_Skill"):WaitForObject():Activate()
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -823,7 +823,7 @@ function ADE1(player,direction)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("ADE1_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -834,7 +834,7 @@ function ADE1(player,direction)
 				PlayWeaponAnim(player,1,"ADE",1)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -842,7 +842,7 @@ function ADE1(player,direction)
 				--	=====================	--
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -858,7 +858,7 @@ function ADE1(player,direction)
 				trigger:SetWorldPosition(player:GetWorldPosition()+directionVector3[direction])
 				if Object.IsValid(trigger) then trigger:SetWorldScale(Vector3.New(4,4,2)) end
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -897,7 +897,7 @@ function SE1(player)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("SE1_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -908,7 +908,7 @@ function SE1(player)
 				PlayWeaponAnim(player,1,"SE",1)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -935,7 +935,7 @@ function SE1(player)
 				end
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -977,7 +977,7 @@ function WE1(player)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("WE1_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -988,7 +988,7 @@ function WE1(player)
 				PlayWeaponAnim(player,1,"WE",1)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1016,7 +1016,7 @@ function WE1(player)
 				end
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1059,7 +1059,7 @@ function ADE2(player,direction)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("ADE2_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1069,7 +1069,7 @@ function ADE2(player,direction)
 				Stun(player)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1078,14 +1078,14 @@ function ADE2(player,direction)
 				PlayWeaponAnim(player,2,"ADE",1)
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
 				end
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1116,7 +1116,7 @@ function ADE2(player,direction)
 				end
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1157,7 +1157,7 @@ function SE2(player)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("SE2_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1167,7 +1167,7 @@ function SE2(player)
 				Stun(player)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1176,7 +1176,7 @@ function SE2(player)
 				PlayWeaponAnim(player,2,"SE",1)
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1218,7 +1218,7 @@ function WE2(player)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("WE2_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1228,7 +1228,7 @@ function WE2(player)
 				Stun(player)
 				Task.Wait(0.1)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1237,7 +1237,7 @@ function WE2(player)
 				PlayWeaponAnim(player,2,"WE",1)
 				Task.Wait(0.2)
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1274,7 +1274,7 @@ function E3(player)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("E3_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1298,7 +1298,7 @@ function ADE4(player,direction)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("ADE4_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1328,7 +1328,7 @@ function ADE5(player,direction)
 		if obj.name=="ANIMS" then
 			if obj:GetCustomProperty("ADE5_Skill"):WaitForObject():GetCurrentPhase()==AbilityPhase.READY then
 				--	|Check for hit reset|	--
-				for b=1,5 do
+				for b=1,4 do
 				    if KeyState[b][0]==player.name and PlayerState[b][0] then
 				    	return
 					end
@@ -1354,7 +1354,7 @@ end
 -------------------------------------------------------------------------------------------------------------------------------
 
 function Tick()
-	for b=1,5 do
+	for b=1,4 do
 		if PlayerState[b][0] then
 			if time()>=PlayerState[b][1]+1 then
 				PlayerState[b][0]=false
@@ -1378,7 +1378,7 @@ end
 
 function OnBindingPressed(player, binding)
     if binding == "ability_extra_12" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
 				if PlayerState[a][9]==false then
 					local newValue=PlayerState[a][10]+CoreMath.Round((time()-PlayerState[a][11])*5)
@@ -1386,6 +1386,14 @@ function OnBindingPressed(player, binding)
 					if newValue>10 then
 						PlayerState[a][9]=true
 						PlayerState[a][10]=newValue
+						while PlayerState[a][12]==nil do
+							for _,equip in pairs(player:GetEquipment()) do
+								if equip.name=="VFXS" then
+									PlayerState[a][12]=equip:GetCustomProperty("Block"):WaitForObject()
+								end
+							end
+							Task.Wait(0.1)
+						end
 						PlayerState[a][12]:SetScale(Vector3.New(50/newValue,50/newValue,50/newValue))
 						PlayerState[a][12].visibility=Visibility.FORCE_ON
 					end
@@ -1396,7 +1404,7 @@ function OnBindingPressed(player, binding)
     end
 
 	if binding == "ability_extra_23" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false then
 				for _,obj in pairs(PlayerState[a][7]:GetOverlappingObjects()) do
 					if obj.name=="Weapon" and obj:IsA("Trigger") and obj:GetCustomProperty("isEquipped")==false then
@@ -1410,7 +1418,7 @@ function OnBindingPressed(player, binding)
     end
 	
 	if binding == "ability_extra_36" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][6]=true
     			if KeyState[a][2] then
@@ -1441,7 +1449,7 @@ function OnBindingPressed(player, binding)
 		end
     end
     if binding == "ability_extra_37" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][5]=true
     			if KeyState[a][2] then
@@ -1523,7 +1531,7 @@ function OnBindingPressed(player, binding)
         end
     end
     if binding == "ability_extra_21" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][1]=true
     			if KeyState[a][6] and PlayerState[a][3]==false then
@@ -1539,7 +1547,7 @@ function OnBindingPressed(player, binding)
         end
     end
   	if binding == "ability_extra_30" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][2]=true
     			if KeyState[a][5] then
@@ -1564,7 +1572,7 @@ function OnBindingPressed(player, binding)
         end
     end
     if binding == "ability_extra_31" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][3]=true
     			if KeyState[a][6] and player.isJumping and PlayerState[a][2]==false then
@@ -1579,7 +1587,7 @@ function OnBindingPressed(player, binding)
         end
     end
     if binding == "ability_extra_32" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name and PlayerState[a][0]==false and PlayerState[a][9]==false then
     			KeyState[a][4]=true
     			if KeyState[a][5] then
@@ -1607,7 +1615,7 @@ end
 
 function OnBindingReleased(player, binding)
     if binding == "ability_extra_12" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			if PlayerState[a][9] then
 					PlayerState[a][9]=false
@@ -1619,7 +1627,7 @@ function OnBindingReleased(player, binding)
         end
     end
 	if binding == "ability_extra_36" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][6]=false
            		break
@@ -1627,7 +1635,7 @@ function OnBindingReleased(player, binding)
         end
     end
     if binding == "ability_extra_37" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][5]=false
            		break
@@ -1635,7 +1643,7 @@ function OnBindingReleased(player, binding)
         end
     end
     if binding == "ability_extra_21" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][1]=false
         		break
@@ -1643,7 +1651,7 @@ function OnBindingReleased(player, binding)
         end
     end
     if binding == "ability_extra_30" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][2]=false
            		break
@@ -1651,7 +1659,7 @@ function OnBindingReleased(player, binding)
         end
     end
     if binding == "ability_extra_31" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][3]=false
         		break
@@ -1659,7 +1667,7 @@ function OnBindingReleased(player, binding)
         end
     end
     if binding == "ability_extra_32" then
-    	for a=1,5 do
+    	for a=1,4 do
     		if KeyState[a][0]==player.name then
     			KeyState[a][4]=false
         		break
