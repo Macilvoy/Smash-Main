@@ -1437,7 +1437,7 @@ function OnBindingPressed(player, binding)
         	end
         end
 		if gameState==2 then
-			player:TransferToGame("e39f3e/core-world")
+			player:TransferToGame("80b2d04b07c94ee5be46c0e9c42d4ab9")
 		end
     end
     if binding == "ability_extra_37" then

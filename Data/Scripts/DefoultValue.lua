@@ -14,7 +14,7 @@ function OnPlayerJoined(player)
     player:SetResource("armour", armour)
     player:SetResource("weapon", weapon)
     
-    player.bindingPressedEvent:Connect(OnBindingPressed)
+    --player.bindingPressedEvent:Connect(OnBindingPressed)
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)

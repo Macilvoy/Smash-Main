@@ -1,6 +1,96 @@
 Name: "maps, cams, yo-eye"
 RootId: 4471016609754802560
 Objects {
+  Id: 10258910884929692991
+  Name: "SideWall"
+  Transform {
+    Location {
+      X: -557.825928
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 100
+      Z: 100
+    }
+  }
+  ParentId: 4471016609754802560
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+}
+Objects {
+  Id: 5808889413024222559
+  Name: "SideWall"
+  Transform {
+    Location {
+      X: -307.537
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 100
+      Z: 100
+    }
+  }
+  ParentId: 4471016609754802560
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 12095835209017042614
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+}
+Objects {
   Id: 8999602089004288882
   Name: "Macilvoy Player Settings"
   Transform {

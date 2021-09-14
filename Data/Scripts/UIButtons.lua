@@ -44,7 +44,7 @@ end
 Input.escapeHook:Connect(OnEscape)
 
 function MMClick()
-    player:TransferToGame("e39f3e/core-world")
+    player:TransferToGame("80b2d04b07c94ee5be46c0e9c42d4ab9")
 end
 function MovesClick()
     FightingESCMenu.visibility=Visibility.FORCE_OFF

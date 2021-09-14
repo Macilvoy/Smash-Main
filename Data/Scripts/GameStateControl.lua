@@ -24,7 +24,7 @@ function GameStart()
         Game.StartRound()
     else
         for _,pl in pairs(Game.GetPlayers()) do
-            pl:TransferToGame("e39f3e/core-world")
+            pl:TransferToGame("80b2d04b07c94ee5be46c0e9c42d4ab9")
         end
         Game.EndRound()
     end
@@ -43,7 +43,7 @@ function GameEnd()
         Task.Wait(1+playersAmount*4)
 
         for a,player in pairs(Game.GetPlayers()) do
-            player:TransferToGame("e39f3e/core-world")
+            player:TransferToGame("80b2d04b07c94ee5be46c0e9c42d4ab9")
         end
         --GameState=true
         --Game.StartRound()
@@ -91,7 +91,7 @@ function OnPlayerJoined(player)
             GameState=false
         end
     else
-        player:TransferToGame("e39f3e/core-world")
+        player:TransferToGame("80b2d04b07c94ee5be46c0e9c42d4ab9")
     end
 end
 
